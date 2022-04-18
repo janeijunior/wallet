@@ -1,0 +1,151 @@
+
+.headerwrapper.collapsed {
+  .header-left {
+    position: relative;
+    left: -168px;
+  }
+
+  .header-right {
+    margin-left: 61px;
+  }
+}
+
+.mainwrapper.collapsed {
+  &:before {
+    width: 61px;
+  }
+
+  .mainpanel {
+    margin-left: 61px;
+  }
+
+  .leftpanel {
+    width: 61px;
+  }
+
+  .profile-left {
+    padding-left: 10px;
+
+    .profile-thumb {
+      margin: 12px 0 0;
+      img {
+        width: 30px;
+      }
+    }
+
+    .media-body {
+      display: none;
+    }
+  }
+
+  .leftpanel-title {
+    display:none;
+  }
+
+  .nav {
+    margin-top: 20px;
+
+    > li > a {
+      padding-left: 20px;
+
+      > span:not(.badge) {
+        position: absolute;
+        width: 190px;
+        z-index: 100;
+        background-color: #f7f7f7;
+        border: 1px solid #e7e7e7;
+        border-left: 0;
+        display: none;
+        top: -1px;
+        left: 60px;
+        padding: 12px 10px 0;
+        height: 46px;
+        .border-radius(0 3px 3px 0);
+      }
+
+      > span.badge {
+        position: absolute;
+        top: 12px;
+        right: -170px;
+        z-index: 200;
+        display: none;
+      }
+    }
+
+    > li:hover:not(.active) > a {
+      background-color: #f7f7f7;
+    }
+
+    > li.parent > a > span:not(.badge) {
+      .border-radius(0 3px 0 0);
+    }
+
+    > li.parent .children {
+      position: absolute;
+      z-index: 100;
+      background-color: #fff;
+      left: 61px;
+      width: 189px;
+      border: 1px solid #e7e7e7;
+      border-top: 0;
+      border-left: 0;
+      display: none;
+
+      > li > a {
+        padding-left: 10px;
+      }
+    }
+
+    > li.active > a > span:not(.badge) {
+      background-color: @brand-primary;
+      border: 0;
+      height: 44px;
+      top: 0;
+    }
+
+    > li.parent:after {
+      display: none;
+    }
+
+    > li:hover > a > span {
+      display: block;
+    }
+
+    > li:hover > .children {
+      display: block !important;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .show-left {
+    .headerwrapper .header-left {
+      margin-left: 0;
+    }
+
+    .headerwrapper .header-right {
+      margin-left: 230px;
+    }
+
+    .mainwrapper { overflow: hidden; }
+
+    .leftpanel,
+    .mainwrapper:before {
+      display: block;
+    }
+
+    .leftpanel {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      overflow-y: auto;
+
+      .profile-left {
+        margin-top: 60px;
+      }
+    }
+
+    .mainpanel { margin-left: 230px; }
+  }
+}

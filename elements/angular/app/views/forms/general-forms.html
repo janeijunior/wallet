@@ -1,0 +1,657 @@
+<div class="pageheader" page-header></div>
+
+<div class="contentpanel">
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">Input Fields</h4>
+          <p>Individual form controls automatically receive some global styling. All textual elements with <code>.form-control</code> are set to width: 100%; by default. Wrap labels and controls in <code>.form-group</code> for optimum spacing.</p>
+        </div><!-- panel-heading -->
+
+        <div class="panel-body nopadding">
+
+          <form class="form-horizontal form-bordered">
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Default Input</label>
+              <div class="col-sm-8">
+                <input type="text" placeholder="Default Input" class="form-control">
+              </div>
+            </div><!-- form-group -->
+
+            <div class="form-group">
+              <label class="col-sm-4 control-label" for="disabledinput">Disabled Input</label>
+              <div class="col-sm-8">
+                <input type="text" placeholder="Disabled Input" id="disabledinput" class="form-control" disabled="">
+              </div>
+            </div><!-- form-group -->
+
+            <div class="form-group">
+              <label class="col-sm-4 control-label" for="readonlyinput">Read-Only Input</label>
+              <div class="col-sm-8">
+                <input type="text" value="Read Only Input" id="readonlyinput" class="form-control" readonly="readonly">
+              </div>
+            </div><!-- form-group -->
+
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Help Text</label>
+              <div class="col-sm-8">
+                <input type="text" placeholder="Help Text" class="form-control">
+                <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+              </div>
+            </div><!-- form-group -->
+
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Input w/ Tooltip</label>
+              <div class="col-sm-8">
+                <input type="text" placeholder="Hover me" title="Tooltip goes here" data-toggle="tooltip" data-trigger="hover" class="form-control tooltips">
+              </div>
+            </div><!-- form-group -->
+
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Input w/ Popover</label>
+              <div class="col-sm-8">
+                <input type="text" placeholder="Click Me" class="form-control popovers" data-toggle="popover" data-placement="top" data-original-title="The Title" data-content="Content goes here..." data-trigger="click">
+              </div>
+            </div><!-- form-group -->
+
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Placeholder</label>
+              <div class="col-sm-8">
+                <input type="text" placeholder="This is a placeholder" class="form-control">
+              </div>
+            </div><!-- form-group -->
+
+            <div class="form-group has-success">
+              <label class="col-sm-4 control-label">Input with success</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control">
+              </div>
+            </div><!-- form-group -->
+
+            <div class="form-group has-warning">
+              <label class="col-sm-4 control-label">Input with warning</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control">
+              </div>
+            </div><!-- form-group -->
+
+            <div class="form-group has-error">
+              <label class="col-sm-4 control-label">Input with error</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control">
+              </div>
+            </div><!-- form-group -->
+
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Column sizing</label>
+              <div class="col-sm-3">
+                <input type="text" placeholder=".col-sm-4" class="form-control">
+              </div>
+              <div class="col-sm-3">
+                <input type="text" placeholder=".col-sm-3" class="form-control">
+              </div>
+              <div class="col-sm-2">
+                <input type="text" placeholder=".col-sm-2" class="form-control">
+              </div>
+            </div><!-- form-group -->
+
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Input Sizing</label>
+              <div class="col-sm-8">
+                <input type="text" placeholder=".input-sm" class="form-control input-sm mb15">
+                <input type="text" placeholder="default" class="form-control mb15">
+                <input type="text" placeholder=".input-lg" class="form-control input-lg">
+              </div>
+            </div><!-- form-group -->
+
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Input Tags</label>
+              <div class="col-sm-8">
+                <input name="tags" id="tags" class="form-control" value="foo,bar,baz">
+              </div>
+            </div><!-- form-group -->
+
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Textarea</label>
+              <div class="col-sm-8">
+                <textarea class="form-control" rows="5"></textarea>
+              </div>
+            </div><!-- form-group -->
+
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Autogrow Textarea</label>
+              <div class="col-sm-8">
+                <textarea autogrow class="form-control" rows="5"></textarea>
+              </div>
+            </div><!-- form-group -->
+
+          </form>
+        </div><!-- panel-body -->
+      </div><!-- panel -->
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">Input Groups</h4>
+          <p>Extend form controls by adding text or buttons before, after, or on both sides of any text-based input. Use <code>.input-group</code> with an <code>.input-group-addon</code> to prepend or append elements to a <code>.form-control</code>.</p>
+        </div><!-- panel-heading -->
+        <div class="panel-body nopadding">
+          <form method="get" class="form-bordered">
+
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Basic examples</label>
+              <div class="col-sm-8">
+                <div class="input-group mb15">
+                  <span class="input-group-addon">@</span>
+                  <input type="text" placeholder="Username" class="form-control">
+                </div><!-- input-group -->
+
+                <div class="input-group mb15">
+                  <input type="text" class="form-control">
+                  <span class="input-group-addon">.00</span>
+                </div><!-- input-group -->
+
+                <div class="input-group">
+                  <span class="input-group-addon">$</span>
+                  <input type="text" class="form-control">
+                  <span class="input-group-addon">.00</span>
+                </div><!-- input-group -->
+              </div>
+            </div><!-- form-group -->
+
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Sizing</label>
+              <div class="col-sm-8">
+                <div class="input-group input-group-lg mb15">
+                  <span class="input-group-addon">@</span>
+                  <input type="text" placeholder="Username" class="form-control">
+                </div><!-- input-group -->
+
+                <div class="input-group mb15">
+                  <span class="input-group-addon">@</span>
+                  <input type="text" placeholder="Username" class="form-control">
+                </div><!-- input-group -->
+
+                <div class="input-group input-group-sm">
+                  <span class="input-group-addon">@</span>
+                  <input type="text" placeholder="Username" class="form-control">
+                </div><!-- input-group -->
+              </div>
+            </div><!-- form-group -->
+
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Checkbox &amp; Radio</label>
+              <div class="col-sm-8">
+                <div class="input-group mb15">
+                  <span class="input-group-addon">
+                    <input type="checkbox">
+                  </span>
+                  <input type="text" class="form-control">
+                </div><!-- input-group -->
+
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <input type="radio">
+                  </span>
+                  <input type="text" class="form-control">
+                </div><!-- input-group -->
+              </div>
+            </div><!-- form-group -->
+
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Button addons</label>
+              <div class="col-sm-8">
+                <div class="input-group mb15">
+                  <span class="input-group-btn">
+                    <button type="button" class="btn btn-default">Go!</button>
+                  </span>
+                  <input type="text" class="form-control">
+                </div><!-- input-group -->
+
+                <div class="input-group mb15">
+                  <input type="text" class="form-control">
+                  <span class="input-group-btn">
+                    <button type="button" class="btn btn-default">Go!</button>
+                  </span>
+                </div><!--input-group -->
+
+                <div class="input-group mb15">
+                  <div class="input-group-btn">
+                    <button data-toggle="dropdown" class="btn btn-default dropdown-toggle" type="button">Action <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Action</a></li>
+                      <li><a href="#">Another action</a></li>
+                      <li><a href="#">Something else here</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">Separated link</a></li>
+                    </ul>
+                  </div><!-- input-group-btn -->
+                  <input type="text" class="form-control">
+                </div><!-- input-group -->
+
+                <div class="input-group">
+                  <input type="text" class="form-control">
+                  <div class="input-group-btn">
+                    <button data-toggle="dropdown" class="btn btn-default dropdown-toggle" type="button">Action <span class="caret"></span></button>
+                    <ul class="dropdown-menu pull-right">
+                      <li><a href="#">Action</a></li>
+                      <li><a href="#">Another action</a></li>
+                      <li><a href="#">Something else here</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">Separated link</a></li>
+                    </ul>
+                  </div><!-- input-group-btn -->
+                </div><!-- input-group -->
+              </div>
+            </div><!-- form-group -->
+
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Segmented buttons</label>
+              <div class="col-sm-8">
+                <div class="input-group mb15">
+                  <div class="input-group-btn">
+                    <button type="button" class="btn btn-default" tabindex="-1">Action</button>
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" tabindex="-1">
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#">Action</a></li>
+                      <li><a href="#">Another action</a></li>
+                      <li><a href="#">Something else here</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">Separated link</a></li>
+                    </ul>
+                  </div><!-- input-group-btn -->
+                  <input type="text" class="form-control">
+                </div><!-- input-group -->
+
+                <div class="input-group">
+                  <input type="text" class="form-control">
+                  <div class="input-group-btn">
+                    <button type="button" class="btn btn-default" tabindex="-1">Action</button>
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" tabindex="-1">
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu pull-right" role="menu">
+                      <li><a href="#">Action</a></li>
+                      <li><a href="#">Another action</a></li>
+                      <li><a href="#">Something else here</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">Separated link</a></li>
+                    </ul>
+                  </div><!-- input-group-btn -->
+                </div><!-- input-group -->
+              </div>
+            </div><!-- form-group -->
+          </form>
+        </div><!-- panel-body -->
+      </div><!-- panel -->
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">Enhanced Select Boxes</h4>
+          <p>We are using Select2 to enhanced select boxes. <a href="http://ivaynberg.github.io/select2/">Select2</a> is a jQuery based replacement for select boxes. It supports searching, remote data sets, and infinite scrolling of results. </p>
+        </div><!-- panel-heading -->
+        <div class="panel-body">
+          <h5 class="lg-title">The Basics</h5>
+          <p class="mb20">Select2 can take a regular select box like this</p>
+
+          <select ui-select2="select2Options" ng-model="select2" data-placeholder="Choose Country" class="width300">
+            <option value=""></option>
+            <option ng-repeat="country in countries" value="{{country.code}}">{{country.name}}</option>
+          </select>
+
+          <div class="mb30"></div>
+
+          <h5 class="lg-title">Multi-Value Select Boxes</h5>
+          <p class="mb20">Select2 also supports multi-value select boxes. The select below is declared with the multiple attribute. </p>
+
+          <select ui-select2="select2Options" ng-model="select2a" data-placeholder="Choose Country" class="width300" multiple>
+            <option ng-repeat="country in countries" value="{{country.code}}">{{country.name}}</option>
+          </select>
+
+          <div class="mb30"></div>
+
+          <h5 class="lg-title">Hiding Search Box</h5>
+          <p class="mb20">You can hide search box when you have only few items in select boxes.</p>
+
+          <select ui-select2="select2Options1" ng-model="select2b" data-placeholder="Choose Country" class="width300">
+            <option value=""></option>
+            <option ng-repeat="country in countries" value="{{country.code}}">{{country.name}}</option>
+          </select>
+
+          <div class="mb30"></div>
+
+          <h5 class="lg-title">Templating</h5>
+          <p class="mb20">Various display options of the Select2 component can be changed</p>
+          <select ui-select2="select2Options2" ng-model="select2c" data-placeholder="Choose One" class="width300">
+            <option value=""></option>
+            <option rel="fa-facebook" value="facebook">Facebook</option>
+            <option rel="fa-twitter" value="twitter">Twitter</option>
+            <option rel="fa-pinterest" value="pinterest">Pinterest</option>
+            <option rel="fa-youtube" value="youtube">YouTube</option>
+            <option rel="fa-linkedin" value="linkedin">LinkedIn</option>
+          </select>
+
+          <div class="mb30"></div>
+
+          <p>
+            To know more about examples and features visit: <a href="http://ivaynberg.github.io/select2/" target="_blank">http://ivaynberg.github.io/select2/</a><br>
+            To get more select2 skins visit: <a href="http://ui.themepixels.com/select2-skins/" target="_blank">http://ui.themepixels.com/select2-skins/</a>
+          </p>
+
+        </div><!-- panel-body -->
+      </div><!-- panel -->
+
+    </div><!-- col-md-6 -->
+
+
+
+    <div class="col-md-6">
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h5 class="panel-title">Checkboxes and Radios</h5>
+          <p>Below are native radios and checkboxes along with enhanced checkboxes and radios made with css.</p>
+        </div><!-- panel-heading -->
+        <div class="panel-body nopadding">
+          <form class="form-bordered">
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Native Radio</label>
+              <div class="col-sm-8">
+                <div class="radio"><label><input type="radio"> Unchecked</label></div>
+                <div class="radio"><label><input type="radio" checked=""> Checked</label></div>
+                <div class="radio"><label><input type="radio" disabled=""> Disabled Unchecked</label></div>
+                <div class="radio"><label><input type="radio" checked="" disabled=""> Disabled Checked</label></div>
+              </div>
+            </div><!-- form-group -->
+
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Native Checkbox</label>
+              <div class="col-sm-8">
+                <div class="checkbox block"><label><input type="checkbox"> Unchecked</label></div>
+                <div class="checkbox block"><label><input type="checkbox" checked=""> Checked</label></div>
+                <div class="checkbox block"><label><input type="checkbox" disabled=""> Disabled Unchecked</label></div>
+                <div class="checkbox block"><label><input type="checkbox" checked="" disabled=""> Disabled Checked</label></div>
+              </div>
+            </div><!-- form-group -->
+
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Enhanced Radios</label>
+              <div class="col-sm-8">
+
+                <label class="tpx-radio">
+                  <input type="radio" checked>
+                  <span></span>
+                  Default Radio
+                </label>
+
+                <br>
+
+                <label class="tpx-radio tpx-radio-primary">
+                  <input type="radio" checked>
+                  <span></span>
+                  Primary Radio
+                </label>
+
+                <br>
+
+                <label class="tpx-radio tpx-radio-success">
+                  <input type="radio" checked>
+                  <span></span>
+                  Success Radio
+                </label>
+
+                <br>
+
+                <label class="tpx-radio tpx-radio-warning">
+                  <input type="radio" checked>
+                  <span></span>
+                  Warning Radio
+                </label>
+
+                <br>
+
+                <label class="tpx-radio tpx-radio-danger">
+                  <input type="radio" checked>
+                  <span></span>
+                  Danger Radio
+                </label>
+
+                <br>
+                <small>More options at <a href="http://ui.themepixels.com/tpxforms/" target="_blank">http://ui.themepixels.com/tpxforms/</a></small>
+
+              </div><!-- col-sm-8 -->
+            </div><!-- form-group -->
+
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Enhanced Checkboxes</label>
+              <div class="col-sm-8">
+                <label class="tpx-checkbox">
+                  <input type="checkbox" checked>
+                  <span></span>
+                  Default Checkbox
+                </label>
+
+                <br>
+
+                <label class="tpx-checkbox tpx-checkbox-primary">
+                  <input type="checkbox">
+                  <span></span>
+                  Primary Checkbox
+                </label>
+
+                <br>
+
+                <label class="tpx-checkbox tpx-checkbox-success">
+                  <input type="checkbox">
+                  <span></span>
+                  Success Checkbox
+                </label>
+
+                <br>
+
+                <label class="tpx-checkbox tpx-checkbox-warning">
+                  <input type="checkbox">
+                  <span></span>
+                  Warning Checkbox
+                </label>
+
+                <br>
+
+                <label class="tpx-checkbox tpx-checkbox-danger">
+                  <input type="checkbox">
+                  <span></span>
+                  Danger Checkbox
+                </label>
+
+                <br>
+                <small>More options at <a href="http://ui.themepixels.com/tpxforms/" target="_blank">http://ui.themepixels.com/tpxforms/</a></small>
+
+              </div><!-- col-sm-8 -->
+            </div><!-- form-group -->
+          </form>
+        </div><!-- panel-body -->
+      </div><!-- panel -->
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">Toggle Switches</h4>
+        </div>
+        <div class="panel-body nopadding">
+          <form class="form-bordered">
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Default Switch</label>
+              <div class="col-sm-8">
+                <ng-toggle data-toggle-on="true" class="toggle toggle-default"></ng-toggle>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Primary Switch</label>
+              <div class="col-sm-8">
+                <ng-toggle data-toggle-on="true" class="toggle toggle-primary"></ng-toggle>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Success Switch</label>
+              <div class="col-sm-8">
+                <ng-toggle data-toggle-on="true" class="toggle toggle-success"></ng-toggle>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Warning Switch</label>
+              <div class="col-sm-8">
+                <ng-toggle data-toggle-on="true" class="toggle toggle-warning"></ng-toggle>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Danger Switch</label>
+              <div class="col-sm-8">
+                <ng-toggle data-toggle-on="true" class="toggle toggle-danger"></ng-toggle>
+              </div>
+            </div>
+          </form>
+        </div><!-- panel-body -->
+      </div><!-- panel -->
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">Time Picker</h4>
+        </div><!-- panel-heading -->
+        <div class="panel-body">
+          <p>Easily select a time for a text input using your mouse or keyboards arrow keys.</p>
+          <br>
+
+          <label>Default Time Picker</label>
+          <div class="input-group mb15">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+            <input type="text" class="form-control" ng-timepicker="timePickerOpts">
+          </div><!-- input-group -->
+
+          <label>24 Hour Mode Time Picker</label>
+          <div class="input-group mb15">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+            <input type="text" class="form-control" ng-timepicker="timePickerOpts2">
+          </div><!-- input-group -->
+
+          <label>Specify a step for the minute field</label>
+          <div class="input-group mb15">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+            <input type="text" class="form-control" ng-timepicker="timePickerOpts3">
+          </div><!-- input-group -->
+
+        </div><!-- panel-body -->
+      </div><!-- panel -->
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">Date Picker</h4>
+        </div><!-- panel-heading -->
+        <div class="panel-body">
+
+          <p>The datepicker is tied to a standard form input field. Click on the input to open an interactive calendar in a small overlay. Click elsewhere on the page or hit the Esc key to close. If a date is chosen, feedback is shown as the input's value.</p>
+          <br>
+          <label>Default Functionality</label>
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="mm/dd/yyyy" ng-datepicker>
+            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+          </div><!-- input-group -->
+
+          <br>
+
+          <p>Set the <code>numberOfMonths</code> option to an integer of 2 or more to show multiple months in a single datepicker.</p>
+          <br>
+          <label>Multiple Months</label>
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="mm/dd/yyyy" ng-datepicker="datePickerOpts">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+          </div><!-- input-group -->
+
+          <br>
+
+          <label>Display Inline</label>
+          <div class="input-group mb15">
+            <div ng-datepicker></div>
+          </div><!-- input-group -->
+
+          <p>Display the datepicker embedded in the page instead of in an overlay. Simply call <code>.datepicker()</code> on a <code>div</code> instead of an input.</p>
+        </div><!-- panel-body -->
+      </div><!-- panel -->
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">Input Masks</h4>
+        </div>
+        <div class="panel-body">
+
+          <p>Input masks allows a user to more easily enter fixed width input where you would like them to enter the data in a certain format (dates,phones, etc).</p>
+          <br>
+
+          <div class="input-group mb15">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+            <input type="text" placeholder="Date" id="date" class="form-control" mask data-mask="99/99/9999">
+          </div>
+
+          <div class="input-group mb20">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+            <input type="text" placeholder="Phone" id="phone" class="form-control" mask data-mask="(999) 999-9999">
+          </div>
+
+          <div class="input-group mb20">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-plus"></i></span>
+            <input type="text" placeholder="SSN" id="ssn" class="form-control" mask data-mask="999-99-9999">
+          </div>
+
+        </div><!-- panel-body -->
+      </div><!-- panel -->
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">Color Picker</h4>
+          <p>A simple component to select color in the same way you select color in Adobe Photoshop.</p>
+        </div>
+        <div class="panel-body">
+          <h5 class="lg-title mb10">Hexadecimal</h5>
+
+          <input colorpicker ng-model="hexPicker.color" type="text" class="form-control" placeholder="#000000" style="width: 100px">
+
+          <div class="mb30"></div>
+
+          <h5 class="lg-title mb10">RGB Picker</h5>
+          <input colorpicker="rgb" ng-model="rgbPicker.color" type="text" class="form-control" placeholder="rgb(0,0,0)" style="width: 150px">
+
+          <div class="mb30"></div>
+
+          <h5 class="lg-title mb10">RGBA Picker</h5>
+          <input colorpicker="rgba" ng-model="rgbaPicker.color" type="text" class="form-control" placeholder="rgba(0,0,0,0.0)" style="width: 160px">
+
+        </div><!-- panel-body -->
+      </div><!-- panel -->
+
+    </div><!-- col-md-6 -->
+  </div><!-- row -->
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-btns">
+        <a href="" class="panel-minimize tooltips" data-toggle="tooltip" title="Minimize Panel"><i class="fa fa-minus"></i></a>
+        <a href="" class="panel-close tooltips" data-toggle="tooltip" title="Close Panel"><i class="fa fa-times"></i></a>
+      </div><!-- panel-btns -->
+      <h4 class="panel-title">Dropzone Multi-File Upload</h4>
+      <p>DropzoneJS is an open source library that provides drag'n'drop file uploads with image previews. <a href="http://dropzonejs.com/" target="_blank">http://dropzonejs.com/</a></p>
+    </div>
+    <div class="panel-body">
+      <p>This is just a demo. Uploaded files are <strong>not</strong> stored. This does not handle your file uploads on the server. You have to implement the code to receive and store the file yourself.</p>
+      <br>
+      <form class="dropzone" method="post" enctype="multipart/form-data" ng-dropzone dropzone="dropzone" dropzone-config="dropzoneConfig">
+        <input name="file" type="file" multiple>
+      </form>
+    </div><!-- panel-body -->
+  </div><!-- panel -->
+
+</div><!-- contentpanel -->

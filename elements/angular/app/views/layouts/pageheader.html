@@ -1,0 +1,13 @@
+<div class="media">
+  <div class="pageicon pull-left">
+    <i class="{{pageicon}}"></i>
+  </div>
+  <div class="media-body">
+    <ul class="breadcrumb">
+      <li><a ui-sref="dashboard"><i class="glyphicon glyphicon-home"></i></a></li>
+      <li ng-repeat="parent in parentpages"><a ui-sref="{{parent.url}}">{{parent.pagetitle}}</a></li>
+      <li>{{pagetitle}}</li>
+    </ul>
+    <h4>{{pagetitle}}</h4>
+  </div>
+</div><!-- media -->

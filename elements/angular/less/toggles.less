@@ -1,0 +1,31 @@
+.toggle-slide {
+  overflow: hidden;
+  cursor: pointer;
+  direction: ltr;
+  -webkit-touch-callout: none;
+  .user-select(none);
+
+  .toggle-on,
+  .toggle-off,
+  .toggle-blob {
+    float: left;
+    text-align: center;
+  }
+
+  .toggle-blob {
+    position: relative;
+    z-index: 99;
+    cursor: hand;
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+    cursor: grab;
+  }
+}
+
+// Toggle Skins
+// code for .toggle-variant(@type) mixin can be found in mixins.less
+.toggle-variant(default);
+.toggle-variant(primary);
+.toggle-variant(success);
+.toggle-variant(warning);
+.toggle-variant(danger);

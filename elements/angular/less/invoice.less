@@ -1,0 +1,80 @@
+
+.table-invoice {
+  border-bottom: 1px solid #ddd;
+  margin-top: 20px;
+  .noshadow();
+
+  thead > tr > th {
+    font-weight: 500;
+    padding: 15px;
+
+    &:last-child {
+      text-align: right;
+      background-color: #555;
+    }
+
+    &:nth-child(2) {
+      text-align: right;
+      background-color: @brand-dark;
+    }
+
+    &:nth-child(3) {
+      text-align: right;
+      background-color: @brand-dark;
+    }
+  }
+
+  tbody > tr > td {
+    padding: 15px;
+    border-color: #ddd;
+
+    h5, p {
+      margin:0;
+    }
+
+    &:last-child {
+      width: 15%;
+      text-align: right;
+    }
+
+    &:nth-child(2) {
+      width: 15%;
+      text-align: right;
+      background-color: #eee;
+    }
+
+    &:nth-child(3) {
+      width: 15%;
+      text-align: right;
+      background-color: #f7f7f7;
+    }
+  }
+}
+
+.table-total {
+  float:right;
+  .noshadow();
+
+  > tbody > tr > td:first-child {
+    border: 0;
+    text-transform: uppercase;
+    font-weight: normal;
+    text-align: right;
+  }
+
+  > tbody > tr > td:last-child {
+    border-bottom: 1px solid #ddd;
+    width: 15%;
+    text-align: right;
+    font-size: 24px;
+    font-weight: 500;
+    color: #333;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .btn-invoice .btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

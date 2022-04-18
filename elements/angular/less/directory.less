@@ -1,0 +1,97 @@
+
+.nav-contacts {
+  margin-bottom: 20px;
+
+  li a {
+    color: #666;
+    font-weight: 400;
+    font-size: @font-size-base;
+  }
+
+  li .badge {
+    background: none;
+    font-weight: 500;
+    color: #333;
+  }
+
+  li.active .badge {
+    color: #fff;
+    background: none;
+  }
+}
+
+.people-group {
+  .media img {
+    width: 45px;
+  }
+
+  .list-group-item {
+    border-width: 0;
+    margin: 0;
+    .transition();
+    .border-radius();
+  }
+
+  .media-heading {
+    margin-top: 5px;
+    line-height: normal;
+  }
+
+  .media-body { line-height:normal; }
+}
+
+.pagination-contact {
+  margin-top: -3px;
+}
+
+.contact-group {
+  margin-top: 20px;
+
+  .media img {
+    width: 80px;
+  }
+
+  .list-group-item {
+    border-color: #e7e7e7;
+    margin-top: 10px;
+    .border-radius();
+  }
+
+  .media-heading {
+    font-size: 16px;
+    font-weight: 500;
+
+    small {
+      margin-left: 5px;
+      font-size: @font-size-base;
+      font-weight: 400;
+      color: #999;
+    }
+  }
+
+  .list-group-item:hover {
+    background-color: #fcfcfc;
+  }
+
+  .media-content {
+    margin-top: 5px;
+
+    .fa {
+      font-size: 16px;
+      vertical-align: middle;
+      width: 20px;
+      color: #333;
+    }
+
+    ul {
+      margin-top: 15px;
+      margin-bottom: 0;
+
+      > li {
+        display: inline-block;
+        min-width: 200px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}

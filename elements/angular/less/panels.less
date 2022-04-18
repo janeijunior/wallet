@@ -1,0 +1,184 @@
+
+.panel-custom-variant(dark, @brand-dark);
+.panel-custom-variant(success-alt, @brand-success);
+.panel-custom-variant(info-alt, @brand-info);
+.panel-custom-variant(warning-alt, @brand-warning);
+.panel-custom-variant(danger-alt, @brand-danger);
+
+.panel-success-alt .panel-heading p a,
+.panel-info-alt .panel-heading p a,
+.panel-warning-alt .panel-heading p a,
+.panel-danger-alt .panel-heading p a,
+.panel-dark .panel-heading p a {
+  color: #fff;
+}
+
+.panel-success-alt .panel-heading .panel-btns a,
+.panel-info-alt .panel-heading .panel-btns a,
+.panel-warning-alt .panel-heading .panel-btns a,
+.panel-danger-alt .panel-heading .panel-btns a,
+.panel-dark .panel-heading .panel-btns a {
+  border-color: #fff;
+  color: #fff;
+  opacity: .75;
+}
+
+.panel-heading-variant(primary, @brand-primary);
+.panel-heading-variant(success, @brand-success);
+.panel-heading-variant(warning, @brand-warning);
+.panel-heading-variant(danger, @brand-danger);
+.panel-heading-variant(info, @brand-info);
+.panel-heading-variant(dark, @brand-dark);
+
+.panel-primary-head .panel-heading p,
+.panel-success-head .panel-heading p,
+.panel-warning-head .panel-heading p,
+.panel-danger-head .panel-heading p,
+.panel-info-head .panel-heading p,
+.panel-dark-head .panel-heading p {
+  opacity: .75;
+}
+
+.panel-primary-head .panel-body,
+.panel-success-head .panel-body,
+.panel-warning-head .panel-body,
+.panel-danger-head .panel-body,
+.panel-info-head .panel-body,
+.panel-dark-head .panel-body {
+  border: 1px solid #ddd;
+  border-top: 0;
+}
+
+.panel-primary-head .panel-footer,
+.panel-success-head .panel-footer,
+.panel-warning-head .panel-footer,
+.panel-danger-head .panel-footer,
+.panel-info-head .panel-footer,
+.panel-dark-head .panel-footer {
+  border: 1px solid #ddd;
+  border-top: 0;
+}
+
+.panel-primary-head .panel-heading p a,
+.panel-success-head .panel-heading p a,
+.panel-info-head .panel-heading p a,
+.panel-warning-head .panel-heading p a,
+.panel-danger-head .panel-heading p a,
+.panel-dark-head .panel-heading p a {
+  color: #fff;
+}
+
+.panel-primary-head .panel-heading .panel-btns a,
+.panel-success-head .panel-heading .panel-btns a,
+.panel-info-head .panel-heading .panel-btns a,
+.panel-warning-head .panel-heading .panel-btns a,
+.panel-danger-head .panel-heading .panel-btns a,
+.panel-dark-head .panel-heading .panel-btns a {
+  border-color: #fff;
+  color: #fff;
+  opacity: .75;
+}
+
+.panel-metro {
+  .panel-heading,
+  .panel-footer {
+    .border-radius(0);
+  }
+}
+
+.widget-messaging {
+  .new-msg {
+    color: #fff;
+    font-size: 18px;
+    margin: 0;
+    line-height: normal;
+    opacity: .5;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  ul li:hover {
+    background-color: #f7f7f7;
+  }
+
+  ul li p {
+    line-height: normal;
+    margin: 0;
+  }
+
+  .sender {
+    color: #333;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: normal;
+    margin: 0;
+  }
+
+}
+
+.widget-todo {
+  .panel-heading a {
+    color: #fff;
+  }
+
+  ul > li:after {
+    clear: both;
+    display: block;
+    content: '';
+  }
+
+  ul > li input:checked + label {
+    text-decoration: line-through;
+  }
+}
+
+.widget-slider {
+  .carousel-control {
+    background: none;
+    bottom: auto;
+    color: #fff;
+    line-height: 10px;
+    padding: 0;
+    text-shadow: none;
+    top: -65px;
+    width: auto;
+    opacity: .75;
+    border: 1px solid #fff;
+    cursor: pointer;
+    .border-radius(50px);
+
+    span {
+      font-size: 18px;
+      line-height: normal;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &.left {
+      left: auto;
+      right: 25px;
+      padding: 1px 10px 3px 8px;
+    }
+
+    &.right {
+      right: -5px;
+      padding: 1px 8px 3px 10px;
+    }
+  }
+
+  .media {
+    padding-bottom: 0;
+  }
+
+  .carousel-indicators {
+    bottom: auto;
+    left: auto;
+    right: 0;
+    top: -58px;
+    width: auto;
+  }
+}

@@ -1,0 +1,38 @@
+.mainwrapper {
+  position: relative;
+  top: @header-min-height;
+}
+
+.mainwrapper {
+  &:before {
+    content: '';
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 230px;
+    border-right: 1px solid #e7e7e7;
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &:after {
+    clear: both;
+    display: block;
+    content: '';
+  }
+}
+
+.img-online {
+  border: 2px solid @online-color;
+  padding: 2px;
+  background-color: #fff;
+}
+
+.img-offline {
+  border: 2px solid @offline-color;
+  padding: 2px;
+  background-color: #fff;
+}

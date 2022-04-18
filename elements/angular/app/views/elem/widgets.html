@@ -1,0 +1,430 @@
+<div class="pageheader" page-header></div>
+
+<div class="contentpanel">
+
+  <h5 class="lg-title">Basic Panel</h5>
+  <p>By default, all the <code>.panel</code> does is apply some basic border and padding to contain some content.</p>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      I am the default panel. I have no header and footer
+    </div>
+  </div><!-- panel -->
+
+  <br />
+
+  <div class="row">
+    <div class="col-sm-6">
+      <h5 class="lg-title mb10">Panel With Heading</h5>
+      <p class="mb20">Easily add a heading container to your panel with <code>.panel-heading</code>. You may also include any <code>h1</code> - <code>h6</code> with a <code>.panel-title</code> class to add a pre-styled heading.</p>
+
+      <chain-panel title="Panel Title">
+        Panel content
+      </chain-panel>
+
+    </div><!-- col-sm-6 -->
+
+    <div class="col-sm-6">
+
+      <h5 class="lg-title mb10">Panel With Footer</h5>
+      <p class="mb20">Wrap content in <code>.panel-footer</code>. Note that panel footers do not inherit colors and borders when using contextual variations as they are not meant to be in the foreground.</p>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          Panel content
+        </div><!-- panel-body -->
+        <div class="panel-footer">
+          Footer content goes here...
+        </div><!-- panel-footer -->
+      </div><!-- panel -->
+    </div><!-- col-sm-6 -->
+
+  </div><!-- row -->
+
+  <br />
+
+  <h5 class="lg-title">Contextual Alternatives</h5>
+  <p>Like other components, easily make a panel more meaningful to a particular context by adding any of the contextual state classes.</p>
+
+  <br />
+
+  <div class="row">
+    <div class="col-sm-6 col-md-4">
+      <chain-panel title="Panel Title" skin="primary">
+        Panel content...
+      </chain-panel>
+    </div><!-- col-sm-6 -->
+
+    <div class="col-sm-6 col-md-4">
+      <chain-panel title="Panel Title" skin="success">
+        Panel content...
+      </chain-panel>
+    </div><!-- col-sm-6 -->
+
+    <div class="col-sm-6 col-md-4">
+      <chain-panel title="Panel Title" skin="info">
+        Panel content...
+      </chain-panel>
+    </div><!-- col-sm-6 -->
+
+    <div class="col-sm-6 col-md-4">
+      <chain-panel title="Panel Title" skin="warning">
+        Panel content...
+      </chain-panel>
+    </div><!-- col-sm-6 -->
+
+    <div class="col-sm-6 col-md-4">
+      <chain-panel title="Panel Title" skin="danger">
+        Panel content...
+      </chain-panel>
+    </div><!-- col-sm-6 -->
+
+    <div class="col-sm-6 col-md-4">
+      <chain-panel title="Panel Title" skin="success-alt">
+        Panel content...
+      </chain-panel>
+    </div><!-- col-sm-6 -->
+
+    <div class="col-sm-6 col-md-4">
+      <chain-panel title="Panel Title" skin="info-alt">
+        Panel content...
+      </chain-panel>
+    </div><!-- col-sm-6 -->
+
+    <div class="col-sm-6 col-md-4">
+      <chain-panel title="Panel Title" skin="warning-alt">
+        Panel content...
+      </chain-panel>
+    </div><!-- col-sm-6 -->
+
+    <div class="col-sm-6 col-md-4">
+      <chain-panel title="Panel Title" skin="danger-alt">
+        Panel content...
+      </chain-panel>
+    </div><!-- col-sm-6 -->
+
+    <div class="col-sm-6 col-md-4">
+      <chain-panel title="Panel Title" skin="primary-head">
+        Panel content...
+      </chain-panel>
+    </div><!-- col-sm-6 -->
+
+    <div class="col-sm-6 col-md-4">
+      <chain-panel title="Panel Title" skin="success-head">
+        Panel content...
+      </chain-panel>
+    </div><!-- col-sm-6 -->
+
+    <div class="col-sm-6 col-md-4">
+      <chain-panel title="Panel Title" skin="danger-head">
+        Panel content...
+      </chain-panel>
+    </div><!-- col-sm-6 -->
+
+  </div><!-- row -->
+
+  <br />
+
+  <h5 class="lg-title">Available Widgets</h5>
+  <p class="mb30">Below are some predesigned widgets that may be useful in your projects. You can put this somewhere in your web pages (ie. dashboard, sidebar).</p>
+
+  <div class="row">
+    <div class="col-sm-6 col-md-4">
+      <div class="panel panel-primary widget-messaging">
+        <div class="panel-heading">
+          <div class="pull-right">
+            <a href="" class="new-msg"><i class="fa fa-edit"></i></a>
+          </div><!-- pull-right -->
+          <h3 class="panel-title">Messaging</h3>
+        </div>
+
+        <ul class="list-group">
+          <li class="list-group-item">
+            <small class="pull-right">Dec 10</small>
+            <h4 class="sender">Jennier Lawrence</h4>
+            <p>Lorem ipsum dolor sit amet...</p>
+          </li>
+          <li class="list-group-item">
+            <small class="pull-right">Dec 9</small>
+            <h4 class="sender">Marsha Mellow</h4>
+            <p>Lorem ipsum dolor sit amet...</p>
+          </li>
+          <li class="list-group-item">
+            <small class="pull-right">Dec 9</small>
+            <h4 class="sender">Holly Golightly</h4>
+            <p>Lorem ipsum dolor sit amet...</p>
+          </li>
+          <li class="list-group-item">
+            <small class="pull-right">Dec 10</small>
+            <h4 class="sender">Jennier Lawrence</h4>
+            <p>Lorem ipsum dolor sit amet...</p>
+          </li>
+        </ul>
+      </div><!-- panel -->
+
+      <div class="panel panel-success-alt widget-todo">
+        <div class="panel-heading">
+          <div class="pull-right">
+            <a href="" class="tooltips mr5" data-toggle="tooltip" title="Settings"><i class="glyphicon glyphicon-cog"></i></a>
+            <a href="" id="addnewtodo" class="tooltips" data-toggle="tooltip" title="Add New"><i class="glyphicon glyphicon-plus"></i></a>
+          </div><!-- panel-btns -->
+          <h3 class="panel-title">To-Do List Widget</h3>
+        </div>
+        <ul class="list-group">
+          <li class="list-group-item">
+            <label class="tpx-checkbox tpx-checkbox-xs pull-left">
+              <input type="checkbox">
+              <span></span>
+              Wash car in neighbors house
+            </label>
+          </li>
+          <li class="list-group-item">
+            <label class="tpx-checkbox tpx-checkbox-xs pull-left">
+              <input type="checkbox" checked>
+              <span></span>
+              Find and eat pizza anywhere
+            </label>
+          </li>
+          <li class="list-group-item">
+            <label class="tpx-checkbox tpx-checkbox-xs pull-left">
+              <input type="checkbox" checked>
+              <span></span>
+              Wash the dishes and map the floor
+            </label>
+          </li>
+          <li class="list-group-item">
+            <label class="tpx-checkbox tpx-checkbox-xs pull-left">
+              <input type="checkbox" checked>
+              <span></span>
+              Buy some clothes
+            </label>
+          </li>
+          <li class="list-group-item">
+            <label class="tpx-checkbox tpx-checkbox-xs pull-left">
+              <input type="checkbox" checked>
+              <span></span>
+              Throw the garbage
+            </label>
+
+          </li>
+          <li class="list-group-item">
+            <label class="tpx-checkbox tpx-checkbox-xs pull-left">
+              <input type="checkbox" checked>
+              <span></span>
+              Reply all emails for this week
+            </label>
+          </li>
+        </ul>
+      </div><!-- panel -->
+    </div><!-- col-sm-6 -->
+
+    <div class="col-sm-6 col-md-4">
+      <ul class="nav nav-tabs nav-justified">
+        <li class="active"><a data-toggle="tab" data-target="#popular">Popular</a></li>
+        <li><a data-toggle="tab" data-target="#recent">Recent</a></li>
+        <li><a data-toggle="tab" data-target="#comments">Comments</a></li>
+      </ul>
+      <div class="tab-content">
+        <div id="popular" class="tab-pane active">
+          <div class="media">
+            <a class="pull-left">
+              <img class="media-object img-circle" src="holder.js/60x60" alt="60x60" holderjs>
+            </a>
+            <div class="media-body">
+              <h4 class="media-heading"><a ui-sref="blog.single">Adding Touch Support To Website</a></h4>
+              <p class="media-desc">Lorem ipsum dolor sit amet, consectetur adipisicing...</p>
+            </div>
+          </div><!-- media -->
+
+          <div class="media">
+            <a class="pull-left">
+              <img class="media-object img-circle" src="holder.js/60x60" alt="60x60" holderjs>
+            </a>
+            <div class="media-body">
+              <h4 class="media-heading"><a ui-sref="blog.single">Grab Info From URL</a></h4>
+              <p class="media-desc">Voluptatem quia voluptas sit aspernatur aut consectetur odit aut...</p>
+            </div>
+          </div><!-- media -->
+
+          <div class="media">
+            <a class="pull-left">
+              <img class="media-object img-circle" src="holder.js/60x60" alt="60x60" holderjs>
+            </a>
+            <div class="media-body">
+              <h4 class="media-heading"><a ui-sref="blog.single">jQuery Form Validation</a></h4>
+              <p class="media-desc">Voluptatem quia voluptas sit aspernatur aut consectetur odit aut...</p>
+            </div>
+          </div><!-- media -->
+        </div><!-- tab-pane -->
+
+        <div id="recent" class="widget-bloglist tab-pane">
+          <div class="media">
+            <a class="pull-left">
+              <img class="media-object img-circle" src="holder.js/60x60" alt="60x60" holderjs>
+            </a>
+            <div class="media-body">
+              <h4 class="media-heading"><a ui-sref="blog.single">Enhanced Checkboxes</a></h4>
+              <p class="media-desc">Voluptatem quia voluptas sit aspernatur aut consectetur odit aut...</p>
+            </div>
+          </div><!-- media -->
+
+          <div class="media">
+            <a class="pull-left">
+              <img class="media-object img-circle" src="holder.js/60x60" alt="60x60" holderjs>
+            </a>
+            <div class="media-body">
+              <h4 class="media-heading"><a ui-sref="blog.single">Textbox Field</a></h4>
+              <p class="media-desc">Voluptatem quia voluptas sit aspernatur aut consectetur odit aut...</p>
+            </div>
+          </div><!-- media -->
+
+          <div class="media">
+            <a class="pull-left">
+              <img class="media-object img-circle" src="holder.js/60x60" alt="60x60" holderjs>
+            </a>
+            <div class="media-body">
+              <h4 class="media-heading"><a ui-sref="blog.single">Creating Dropdown Menu</a></h4>
+              <p class="media-desc">Voluptatem quia voluptas sit aspernatur aut consectetur odit aut...</p>
+            </div>
+          </div><!-- media -->
+        </div><!-- tab-pane -->
+
+        <div id="comments" class="widget-bloglist tab-pane">
+          <div class="media">
+            <a class="pull-left">
+              <img class="media-object img-circle" src="holder.js/60x60" alt="60x60" holderjs>
+            </a>
+            <div class="media-body">
+              <h4 class="media-heading"><a ui-sref="profile({ uId: 1 })">John Doe</a> in <a ui-sref="blog.single" title="Adding To Support To Website">Adding Touch...</a></h4>
+              <p class="media-desc">Voluptatem quia voluptas sit aspernatur aut consectetur odit aut...</p>
+            </div>
+          </div><!-- media -->
+
+          <div class="media">
+            <a class="pull-left">
+              <img class="media-object img-circle" src="holder.js/60x60" alt="60x60" holderjs>
+            </a>
+            <div class="media-body">
+              <h4 class="media-heading"><a ui-sref="profile({ uId: 1 })">Jane Smith</a> in <a ui-sref="blog.single" title="Grab Info From URL">Grab Info From...</a></h4>
+              <p class="media-desc">Voluptatem quia voluptas sit aspernatur aut consectetur odit aut...</p>
+            </div>
+          </div><!-- media -->
+
+          <div class="media">
+            <a class="pull-left">
+              <img class="media-object img-circle" src="holder.js/60x60" alt="60x60" holderjs>
+            </a>
+            <div class="media-body">
+              <h4 class="media-heading"><a ui-sref="profile({ uId: 1 })">Donald Frank</a> in <a ui-sref="blog.single" title="jQuery Form Validation">jQuery Form...</a></h4>
+              <p class="media-desc">Voluptatem quia voluptas sit aspernatur aut consectetur odit aut...</p>
+            </div>
+          </div><!-- media -->
+        </div><!-- tab-pane -->
+      </div><!-- tab-content -->
+
+      <br />
+
+      <div class="panel panel-primary">
+        <div class="panel-heading padding5">
+          <div morris-chart type="line" data="lineData" options="lineOptions" style="height:200px"></div>
+        </div>
+        <div class="panel-body">
+          <div class="tinystat pull-left">
+            <div sparkline data="spData" options="spOptions" class="chart mt5"></div>
+            <div class="datainfo">
+              <span class="text-muted">Average Sales</span>
+              <h4>$712,500</h4>
+            </div>
+          </div><!-- tinystat -->
+          <div class="tinystat pull-right">
+            <div sparkline data="spData2" options="spOptions2" class="chart mt5"></div>
+            <div class="datainfo">
+              <span class="text-muted">Total Sales</span>
+              <h4>$141,513</h4>
+            </div>
+          </div><!-- tinystat -->
+        </div><!-- panel-body -->
+      </div><!-- panel -->
+
+    </div><!-- col-sm-6 -->
+
+    <div class="col-sm-6 col-md-4">
+      <div class="panel panel-primary widget-newsletter">
+        <div class="panel-heading">
+          <h4 class="panel-title">Subscribe To Newsletter</h4>
+        </div>
+        <div class="panel-body">
+          <p>Sign up below to receive all the latest updates &amp; news from us.</p>
+          <input type="text" name="name" class="form-control mt10 mb10" placeholder="Type Your Name" />
+          <input type="email" name="email" class="form-control mb10" placeholder="Type Your Email" />
+          <button class="btn btn-success btn-block">Subscribe Newsletter</button>
+        </div><!-- panel-body -->
+      </div><!-- panel -->
+
+      <div class="panel panel-dark-head widget-slider">
+        <div class="panel-heading">
+          <h5 class="panel-title">Content Slider</h5>
+        </div>
+        <div class="panel-body">
+
+          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+
+              <div class="item" ng-repeat="slide in slides" ng-class="slide.active">
+                <div class="media">
+                  <div class="media-body">
+                    <h4 class="media-heading"><a ui-sref="blog.single">{{slide.title}}</a></h4>
+                    <p class="media-desc">{{slide.desc}}</p>
+                  </div>
+                </div><!-- media -->
+              </div><!-- item -->
+
+            </div><!-- carousel-inner -->
+
+            <!-- Controls -->
+            <a class="left carousel-control" data-target="#carousel-example-generic" data-slide="prev">
+              <span class="fa fa-angle-left"></span>
+            </a>
+            <a class="right carousel-control" data-target="#carousel-example-generic" data-slide="next">
+              <span class="fa fa-angle-right"></span>
+            </a>
+
+          </div><!-- carousel -->
+        </div><!-- panel-body -->
+      </div><!-- panel -->
+
+      <div class="panel panel-dark-head widget-slider">
+        <div class="panel-heading">
+          <h5 class="panel-title">Slider With Indicators</h5>
+        </div>
+        <div class="panel-body">
+          <div id="carousel-example-generic2" class="carousel slide" data-ride="carousel">
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+
+              <div class="item" ng-repeat="slide in slides" ng-class="slide.active">
+                <div class="media">
+                  <div class="media-body">
+                    <h4 class="media-heading"><a ui-sref="blog.single">{{slide.title}}</a></h4>
+                    <p class="media-desc">{{slide.desc}}</p>
+                  </div>
+                </div><!-- media -->
+              </div><!-- item -->
+
+            </div><!-- carousel-inner -->
+
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#carousel-example-generic2" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel-example-generic2" data-slide-to="1"></li>
+              <li data-target="#carousel-example-generic2" data-slide-to="2"></li>
+            </ol>
+          </div><!-- carousel -->
+        </div><!-- panel-body -->
+      </div><!-- panel -->
+
+    </div><!-- col-sm-6 -->
+
+  </div><!-- row -->
+
+</div><!-- contentpanel -->

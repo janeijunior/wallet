@@ -1,0 +1,87 @@
+<div class="pageheader" page-header></div>
+
+<div class="contentpanel">
+
+  <chain-panel title="Alert Messages" description="Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.">
+    <div class="alert alert-success">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <strong>Well done!</strong> You successfully read this <a href="" class="alert-link">important alert message</a>.
+    </div>
+
+    <div class="alert alert-info">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <strong>Heads up!</strong> This <a href="" class="alert-link">alert needs your attention</a>, but it's not super important.
+    </div>
+
+    <div class="alert alert-warning">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <strong>Warning!</strong> Best check yo self, you're <a href="" class="alert-link">not looking too good</a>.
+    </div>
+
+    <div class="alert alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <strong>Oh snap!</strong> Change a <a href="" class="alert-link">few things</a> up and try submitting again.
+    </div>
+
+    <div class="alert alert-info fade in nomargin">
+      <button aria-hidden="true" data-dismiss="alert" class="close" type="button">&times;</button>
+      <h4>Announcements!</h4>
+      <p>Change this and that and try again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+      <p>
+        <button class="btn btn-info" type="button">Take this action</button>
+        <button class="btn btn-white" type="button">Or do this</button>
+      </p>
+    </div>
+  </chain-panel>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <chain-panel title="Growl Notifications" description="Growl is a jQuery plugin designed to provide informative messages in the browser.">
+        <a href="" class="btn btn-default mr5" ng-click="growl(1)">Growl With Image</a>
+        <a href="" class="btn btn-default" ng-click="growl(2)">Growl Without Image</a>
+
+        <div class="mb10"></div>
+
+        <a href="" class="btn btn-primary mr5 mb10" ng-click="growl(3)">Primary</a>
+        <a href="" class="btn btn-success mr5 mb10" ng-click="growl(4)">Success</a>
+        <a href="" class="btn btn-warning mr5 mb10" ng-click="growl(5)">Warning</a>
+        <a href="" class="btn btn-danger mr5 mb10" ng-click="growl(6)">Danger</a>
+        <a href="" class="btn btn-info mb10" ng-click="growl(7)">Info</a>
+      </chain-panel>
+    </div>
+
+    <div class="col-sm-6">
+      <chain-panel title="Modal Box" description="Modals are streamlined, but flexible, dialog prompts with the minimum required functionality and smart defaults.">
+        <!-- Button trigger modal -->
+        <button class="btn btn-primary mb9" ng-click="openModal()">Launch Modal</button>
+        <p class="nomargin">You can view more examples in using modals in <a href="modals.html">here</a></p>
+      </chain-panel>
+    </div>
+  </div><!-- row -->
+
+  <div class="row">
+    <div class="col-sm-6">
+      <chain-panel title="Popovers" description="Add small overlays of content, like those on the iPad, to any element for housing secondary information.">
+        <div class="popover-example">
+          <button class="btn btn-default" popover-title="Left"  popover-placement="left" popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popover-append-to-body="true">Popover Left</button>
+          <button class="btn btn-default" popover-title="Right"  popover-placement="right" popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popover-append-to-body="true">Popover Right</button>
+          <button class="btn btn-default" popover-title="Top"  popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popover-append-to-body="true">Popover Top</button>
+          <button class="btn btn-default" popover-title="Bottom"  popover-placement="bottom" popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popover-append-to-body="true">Popover Bottom</button>
+        </div>
+      </chain-panel>
+    </div><!-- col-sm-6 -->
+
+    <div class="col-sm-6">
+      <chain-panel title="Tooltips" description="The tooltip is a common graphical ui element. The user hovers the pointer over an item, without clicking it, and a tooltip may appear.">
+        <div class="tooltip-example">
+          <button class="btn btn-default" tooltip="Tooltip on left" tooltip-placement="left">Tooltip Left</button>
+          <button class="btn btn-default" tooltip="Tooltip on right" tooltip-placement="right">Tooltip Right</button>
+          <button class="btn btn-default" tooltip="Tooltip on top">Tooltip Top</button>
+          <button class="btn btn-default" tooltip="Tooltip on bottom" tooltip-placement="bottom">Tooltip Bottom</button>
+        </div>
+      </chain-panel>
+    </div><!-- col-sm-6 -->
+
+  </div><!-- row -->
+
+</div><!-- contentpanel -->

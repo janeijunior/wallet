@@ -1,0 +1,213 @@
+[
+  {
+    "id": 100,
+    "unread": true,
+    "starred": false,
+    "folder": "inbox",
+    "userpic": "images/photos/user1.png",
+    "sender": "Nusja Nawancali",
+    "subject": "Hi! How are you?...",
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...",
+    "date": "15 minutes ago",
+    "tag": "promotion",
+    "attachment": [
+      {
+        "photo": "pic1.png",
+        "doc": "doc1.txt"
+      }
+    ]
+  },
+  {
+    "id": 101,
+    "unread": true,
+    "starred": false,
+    "folder": "inbox",
+    "userpic": "images/photos/user2.png",
+    "sender": "Weno Carasbong",
+    "subject": "Lorem ipsum dolor sit amet...",
+    "summary": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt...",
+    "date": "July 04, 2014",
+    "tag": "promotion"
+  },
+  {
+    "id": 102,
+    "unread": true,
+    "starred": true,
+    "folder": "inbox",
+    "userpic": "images/photos/user3.png",
+    "sender": "Venro Leonga",
+    "subject": "Do you have the time to listen to me...",
+    "summary": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt...",
+    "date": "July 03, 2014",
+    "tag": "update"
+  },
+  {
+    "id": 103,
+    "starred": false,
+    "folder": "inbox",
+    "userpic": "images/photos/user4.png",
+    "sender": "Nanterey Reslaba",
+    "subject": "It might seem crazy what I'm about to say...",
+    "summary": "Sed do eiusmod tempor incididunt consectetur adipisicing elit, sed do...",
+    "date": "July 03, 2014",
+    "attachment": [
+      {
+        "photo": "pic2.png"
+      }
+    ]
+  },
+  {
+    "id": 104,
+    "unread": true,
+    "starred": true,
+    "folder": "inbox",
+    "userpic": "images/photos/user1.png",
+    "sender": "Nusja Nawancali",
+    "subject": "Hey I just met you and this is crazy...",
+    "summary": "Sed do eiusmod tempor incididunt consectetur adipisicing elit, sed do...",
+    "date": "July 02, 2014",
+    "attachment": [
+      {
+        "doc": "doc1.txt"
+      }
+    ]
+  },
+  {
+    "id": 105,
+    "starred": false,
+    "folder": "sent",
+    "userpic": "images/photos/user1.png",
+    "sender": "Nusja Nawancali",
+    "subject": "Hi! How are you?...",
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...",
+    "date": "July 01, 2014",
+    "tag": "promotion",
+    "attachment": [
+      {
+        "photo": "pic1.png",
+        "doc": "doc1.txt"
+      }
+    ]
+  },
+  {
+    "id": 106,
+    "starred": false,
+    "folder": "trash",
+    "userpic": "images/photos/user2.png",
+    "sender": "Weno Carasbong",
+    "subject": "Lorem ipsum dolor sit amet...",
+    "summary": "Sed do eiusmod tempor incididunt consectetur adipisicing elit, sed do...",
+    "date": "June 30, 2014",
+    "tag": "promotion"
+  },
+  {
+    "id": 107,
+    "starred": true,
+    "folder": "sent",
+    "userpic": "images/photos/user3.png",
+    "sender": "Venro Leonga",
+    "subject": "Do you have the time to listen to me...",
+    "summary": "Sed do eiusmod tempor incididunt consectetur adipisicing elit, sed do...",
+    "date": "June 30, 2014",
+    "tag": "update"
+  },
+  {
+    "id": 108,
+    "starred": false,
+    "folder": "sent",
+    "userpic": "images/photos/user4.png",
+    "sender": "Nanterey Reslaba",
+    "subject": "It might seem crazy what I'm about to say...",
+    "summary": "Sed do eiusmod tempor incididunt consectetur adipisicing elit, sed do...",
+    "date": "June 29, 2014",
+    "attachment": [
+      {
+        "photo": "pic2.png"
+      }
+    ]
+  },
+  {
+    "id": 109,
+    "starred": true,
+    "folder": "inbox",
+    "userpic": "images/photos/user1.png",
+    "sender": "Nusja Nawancali",
+    "subject": "Hey I just met you and this is crazy...",
+    "summary": "Sed do eiusmod tempor incididunt consectetur adipisicing elit, sed do...",
+    "date": "June 28, 2014",
+    "attachment": [
+      {
+        "doc": "doc1.txt"
+      }
+    ]
+  },
+  {
+    "id": 110,
+    "starred": false,
+    "folder": "inbox",
+    "userpic": "images/photos/user1.png",
+    "sender": "Nusja Nawancali",
+    "subject": "Hi! How are you?...",
+    "summary": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt...",
+    "date": "June 28, 2014",
+    "tag": "promotion",
+    "attachment": [
+      {
+        "photo": "pic1.png",
+        "doc": "doc1.txt"
+      }
+    ]
+  },
+  {
+    "id": 111,
+    "starred": false,
+    "folder": "sent",
+    "userpic": "images/photos/user2.png",
+    "sender": "Weno Carasbong",
+    "subject": "Lorem ipsum dolor sit amet...",
+    "summary": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt...",
+    "date": "June 27, 2014",
+    "tag": "promotion"
+  },
+  {
+    "id": 112,
+    "starred": true,
+    "folder": "draft",
+    "userpic": "images/photos/user3.png",
+    "sender": "Venro Leonga",
+    "subject": "Do you have the time to listen to me...",
+    "summary": "Sed do eiusmod tempor incididunt consectetur adipisicing elit, sed do...",
+    "date": "June 27, 2014",
+    "tag": "social"
+  },
+  {
+    "id": 113,
+    "starred": false,
+    "folder": "trash",
+    "userpic": "images/photos/user4.png",
+    "sender": "Nanterey Reslaba",
+    "subject": "It might seem crazy what I'm about to say...",
+    "summary": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt...",
+    "date": "June 26, 2014",
+    "attachment": [
+      {
+        "photo": "pic2.png"
+      }
+    ]
+  },
+  {
+    "id": 114,
+    "starred": true,
+    "folder": "trash",
+    "userpic": "images/photos/user1.png",
+    "sender": "Nusja Nawancali",
+    "subject": "Hey I just met you and this is crazy...",
+    "summary": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt...",
+    "date": "June 25, 2014",
+    "attachment": [
+      {
+        "doc": "doc1.txt"
+      }
+    ]
+  }
+]

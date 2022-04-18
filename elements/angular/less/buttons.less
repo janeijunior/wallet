@@ -1,0 +1,56 @@
+
+
+.btn-dark { .button-variant(#fff; @brand-dark; @brand-dark); }
+
+.btn-list .btn { margin: 0 3px 7px 0; }
+
+.btn-rounded {
+  .border-radius(100px);
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.btn-sm.btn-bordered { padding: 4px 10px; }
+.btn-xs.btn-bordered { padding: 2px 8px; }
+
+.btn-bordered {
+  padding: 6px 13px;
+  background: none !important;
+  border-width: 2px;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: none !important;
+  }
+
+  .btn-group > & {
+    border-width: 2px;
+  }
+}
+
+.btn-bordered-variant(btn-primary, @brand-primary);
+.btn-bordered-variant(btn-success, @brand-success);
+.btn-bordered-variant(btn-warning, @brand-warning);
+.btn-bordered-variant(btn-danger, @brand-danger);
+.btn-bordered-variant(btn-info, @brand-info);
+
+.btn.btn-metro {
+  font-weight: 300;
+  letter-spacing: 0.3px;
+  .border-radius(0);
+}
+
+.btn-group {
+  .btn-bordered + .btn-bordered,
+  .btn-bordered + .btn-group,
+  .btn-group + .btn-bordered,
+  .btn-group + .btn-group {
+    margin-left: -2px;
+  }
+
+  .btn-bordered {
+    padding-left: 14px;
+    padding-right: 15px;
+  }
+}

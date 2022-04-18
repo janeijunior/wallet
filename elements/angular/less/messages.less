@@ -1,0 +1,264 @@
+
+.nav-msg li a {
+  color: #444;
+  .transition();
+
+  &:hover { cursor: pointer; }
+
+  i {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  .badge {
+    font-weight: normal;
+    line-height: normal;
+    font-size: 11px;
+    margin-top: 1px;
+  }
+}
+
+.nav-msg li.active {
+
+  a:hover,
+  a:focus,
+  a:active {
+    background-color: #444649;
+  }
+
+  a {
+    background-color: #4e5154;
+    color: #fff;
+
+    .badge { color: #666; }
+  }
+}
+
+.sm-title {
+  font-size :11px;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.md-title {
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.lg-title {
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  font-size: @font-size-base;
+}
+
+.xlg-title {
+  margin: 0;
+  font-weight: 400;
+  color: #333;
+}
+
+.msg-list {
+
+  > li {
+    border: 1px solid #eee;
+    background-color: #fcfcfc;
+    border-bottom: 0;
+    padding: 10px;
+    margin: 0;
+
+    &.unread { background-color: #fff; }
+    &:first-child { .border-radius(3px 3px 0 0); }
+
+    &:last-child {
+      border-bottom: 1px solid #eee;
+      .border-radius(0 0 3px 3px);
+    }
+
+    &.media,
+    &.media .media-body {
+      overflow: visible;
+    }
+
+    &.media .media-body {
+      margin-left: 85px;
+      cursor: pointer;
+    }
+
+    &.highlighted {
+      background-color: #fffeee;
+    }
+  }
+
+  .sender {
+    font-weight: 500;
+    margin: 0;
+    font-size: 12px;
+    color: #333;
+
+    @media screen and (max-width: 360px) {
+      line-height: normal;
+    }
+  }
+
+  p {
+    margin: 0;
+
+    a:hover,
+    a:active,
+    a:focus {
+      text-decoration:none;
+    }
+
+    a { color:#999; }
+  }
+
+  .subject { color: #333; }
+  .media-object { width: 40px; }
+
+  .media-option > a {
+    color: #999;
+    margin-left: 5px;
+
+    &:hover { color: #666; }
+  }
+
+  .btn-group {
+    margin: 0;
+    margin-top: -3px;
+    margin-left: 5px;
+
+    > .btn {
+      padding: 0;
+      background: none;
+      color: #999;
+      border: 0;
+    }
+  }
+
+  .dropdown-menu {
+
+    li { font-size: 12px; }
+    .divider {
+      margin: 5px 0;
+    }
+  }
+}
+
+.msg-header {
+  margin-bottom: 25px;
+  margin-top: 5px;
+
+  .btn:hover,
+  .btn:active,
+  .btn:focus {
+    background-color: #fff;
+    border-color: #666;
+    color: #666;
+  }
+
+  .btn-group { margin: 0; }
+
+  .btn {
+    padding: 0;
+    border-width: 2px;
+    width: 35px;
+    height: 35px;
+    color: #999;
+    margin-right: 5px;
+    .border-radius(50px);
+  }
+
+  .btn-navi {
+    font-size: 14px;
+    color: #999;
+    margin-right: 0;
+  }
+
+  .btn-navi-left i { margin-left: -3px; }
+  .btn-navi-right i { margin-left:2px; }
+
+  .dropdown-menu {
+    margin-top: 12px;
+
+    li {
+      font-size: 12px;
+
+      i { margin-right: 8px; }
+    }
+
+    &:after {
+      border-bottom: 6px solid #fff;
+      border-left: 6px solid rgba(0,0,0,0);
+      border-right: 6px solid rgba(0,0,0,0);
+      content: '';
+      display: inline-block;
+      position: absolute;
+      top: -6px;
+      right: 15px;
+    }
+
+    &:before {
+      border-bottom: 7px solid #ddd;
+      border-left: 7px solid rgba(0,0,0,0);
+      border-right: 7px solid rgba(0,0,0,0);
+      content: '';
+      display: inline-block;
+      position: absolute;
+      top: -8px;
+      right: 14px;
+    }
+  }
+
+  &:after {
+    clear: both;
+    display: block;
+    content: '';
+  }
+}
+
+.panel-group-msg {
+  margin-top: 15px;
+
+  .panel {
+    .noshadow();
+  }
+
+  .panel-heading { padding: 10px; }
+
+  .img {
+    width: 30px;
+    margin: 0;
+  }
+
+  .panel-title {
+    font-weight: 500;
+    color: #444;
+    font-size: 14px;
+    display: block;
+    cursor: pointer;
+  }
+
+  .time {
+    margin: 5px 20px 0 0;
+    font-weight: normal;
+    font-size: 12px;
+
+    i { font-size: 16px; }
+  }
+}
+
+.msg-reply {
+  margin-left: 15px;
+
+  img { width: 30px; }
+}
+
+.btn-create-msg { padding: 12px 10px; }
+
+.alert-metro {
+  .border-radius(0);
+}

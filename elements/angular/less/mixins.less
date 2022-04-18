@@ -1,0 +1,226 @@
+
+.transition() {
+  -webkit-transition: all 0.2s ease-out 0s;
+     -moz-transition: all 0.2s ease-out 0s;
+       -o-transition: all 0.2s ease-out 0s;
+          transition: all 0.2s ease-out 0s;
+}
+
+.border-radius(@radius: 3px) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+
+.border-radius(@radius: 3px, @imp: false) when (@imp = true) {
+  -webkit-border-radius: @radius !important;
+     -moz-border-radius: @radius !important;
+          border-radius: @radius !important;
+}
+
+.box-shadow(@style, @color) {
+  -webkit-box-shadow: @style @color;
+     -moz-box-shadow: @style @color;
+          box-shadow: @style @color;
+}
+
+.noshadow() {
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
+}
+
+.noshadow(@imp) when (@imp = true) {
+  -webkit-box-shadow: none !important;
+     -moz-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+
+// creates bordered buttons
+.btn-bordered-variant(@selector, @color) {
+  .@{selector}.btn-bordered {
+    color: @color;
+    &:hover,
+    &:active,
+    &:focus {
+      color: darken(@color, 10%);
+    }
+  }
+}
+
+// creates dropdown menu variants
+.dropdown-menu-variant(@type, @color) {
+  .dropdown-menu-@{type} {
+    .noshadow();
+    border-color: @color;
+    > li > a { color: @color; }
+    > li > a:hover {
+      background-color: @color;
+      color: #fff;
+    }
+  }
+}
+
+// create pagination variant
+.pagination-variant(@type, @color) {
+
+  .pagination-@{type} > li {
+    > a,
+    > a:hover {
+      border-color: @color;
+      color: @color;
+    }
+  }
+
+  .pagination-@{type} > .disabled {
+    > span,
+    > span:hover,
+    > span:focus,
+    > a,
+    > a:hover,
+    > a:focus {
+      border-color: @color;
+      color: @color;
+      opacity: .5;
+    }
+  }
+}
+
+// create pagination variants for active button
+.pagination-active-variant(@type, @color) {
+  .pagination-active-@{type} > .active {
+    > a,
+    > span,
+    > a:hover,
+    > span:hover,
+    > a:focus,
+    > span:focus {
+      background-color: @color;
+      border-color: @color;
+    }
+  }
+
+  .pagination-active-@{type} > li {
+    > a:hover,
+    > span:hover,
+    > a:focus,
+    > span:focus {
+      color: @color;
+    }
+  }
+}
+
+// create custom panel variant
+.panel-custom-variant(@type, @color) {
+  .panel-@{type} {
+    border-color: @color;
+    .panel-heading {
+      background-color: @color;
+      color: #fff;
+    }
+  }
+}
+
+// create custom panel heading
+.panel-heading-variant(@type, @color) {
+  .panel-@{type}-head .panel-heading {
+    border-bottom: 0;
+    color: #fff;
+    background-color: @color;
+  }
+}
+
+// nav color variant
+.nav-variant(@type @color) {
+  .nav-@{type} {
+    border-color: darken(@color, 5%);
+    background-color: @color;
+
+    > li.active {
+      > a,
+      > a:hover,
+      > a:focus,
+      > a:active {
+        border-top-color: darken(@color, 5%);
+        border-left-color: darken(@color, 5%);
+        border-right-color: darken(@color, 5%);
+      }
+    }
+  }
+}
+
+// nav wizard color variant
+.nav-wizard-variant(@type, @color) {
+  .nav-wizard-@{type} > li.done > a {
+
+    background-color: @color;
+
+    &:after {
+      border-left-color: @color;
+    }
+  }
+}
+
+// table head color variant
+.table-head-variant(@type, @color) {
+  .table-@{type} thead tr th {
+    background-color: @color;
+  }
+}
+
+// btns variant in panel
+.panel-btns-variant(@color) {
+  color: @color;
+  border-color: @color;
+  opacity: 0.75;
+}
+
+// jquery ui slider variant
+.slider-variant(@type) {
+  @scolor: 'brand-@{type}';
+  .slider-@{type} .ui-slider-range,
+  .slider-@{type} .ui-slider-handle {
+    background-color: @@scolor;
+  }
+}
+
+// jquery toggle skin variant
+.toggle-variant(@type) {
+
+  @brand-default:   #666;
+  @toggle-color:    'brand-@{type}';
+
+  .toggle-@{type} {
+
+    .toggle-slide {
+
+      .toggle-on,
+      .toggle-off,
+      .toggle-blob {
+        font-size: 11px;
+        font-weight: 500;
+      }
+
+      .toggle-blob {
+        background: #fff;
+        border: 1px solid #ccc;
+      }
+
+      .toggle-on {
+        background-color: @@toggle-color;
+        color: #fff;
+        border: 1px solid darken(@@toggle-color, 5%);
+        &.active + .toggle-blob {
+          border-color: darken(@@toggle-color, 5%);
+        }
+      }
+
+      .toggle-off {
+        background-color: #ddd;
+        border: 1px solid #ccc;
+      }
+    }
+
+  }
+}

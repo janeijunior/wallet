@@ -1,0 +1,126 @@
+
+.dropdown-demo-only {
+  position: static;
+  display: inline-block;
+  margin-right: 10px;
+  width: 160px;
+  float: none;
+  margin-bottom: 20px;
+}
+
+.dropdown-menu-variant(primary, @brand-primary);
+.dropdown-menu-variant(success, @brand-success);
+.dropdown-menu-variant(danger, @brand-danger);
+.dropdown-menu-variant(warning, @brand-warning);
+.dropdown-menu-variant(info, @brand-info);
+
+.dropdown-menu-metro {
+  .border-radius(0);
+  .noshadow();
+
+  > li > a {
+    .border-radius(0);
+  }
+}
+
+.pagination-metro {
+  > li:first-child {
+    > a,
+    > span {
+      border-bottom-left-radius:0;
+      border-top-left-radius:0;
+    }
+  }
+
+  > li:last-child {
+    > a,
+    > span {
+      border-bottom-right-radius:0;
+      border-top-right-radius:0;
+    }
+  }
+
+  &.pagination-split > li {
+    > a,
+    > span {
+      .border-radius(0);
+    }
+  }
+}
+
+.pagination-variant(primary, @brand-primary);
+.pagination-variant(success, @brand-success);
+
+.pagination-success > .active {
+  > a,
+  > span,
+  > a:hover,
+  > span:hover,
+  > a:focus,
+  > span:focus {
+    background-color: @brand-success;
+    border-color: @brand-success;
+  }
+}
+
+.pagination-circled {
+
+  > li > a {
+    .border-radius(50px);
+  }
+
+  > li:first-child {
+    > a {
+      border-bottom-left-radius: 50px;
+      border-top-left-radius: 50px;
+      padding: 6px 13px;
+    }
+
+    > span {
+      border-bottom-left-radius: 50px;
+      border-top-left-radius: 50px;
+    }
+  }
+
+  > li:last-child {
+    > a {
+      border-bottom-right-radius: 50px;
+      border-top-right-radius: 50px;
+      padding: 6px 13px;
+    }
+
+    > span {
+      border-bottom-right-radius: 50px;
+      border-top-right-radius: 50px;
+    }
+  }
+}
+
+.pagination-active-variant(success, @brand-success);
+.pagination-active-variant(warning, @brand-warning);
+.pagination-active-variant(danger, @brand-danger);
+.pagination-active-variant(info, @brand-info);
+.pagination-active-variant(dark, @brand-dark);
+
+.progress-metro {
+  .border-radius(0);
+}
+
+// Icons
+
+.icon-list {
+  margin: 20px 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    margin-bottom: 5px;
+
+    span {
+      width: 20px;
+      display: inline-block;
+      margin-right: 5px;
+      color: #333;
+    }
+  }
+}

@@ -1,0 +1,128 @@
+<div class="pageheader" page-header></div>
+
+<div class="contentpanel">
+
+  <chain-panel title="Flot Charts" description="Flot is a pure JavaScript plotting library for jQuery, with a focus on simple usage, attractive looks and interactive features.">
+    <div class="row">
+      <div class="col-md-6 mb30">
+        <h5 class="lg-title mb10">Simple Chart</h5>
+        <p>Create a placeholder, make sure it has dimensions (so Flot knows at what size to draw the plot), then call the plot function with your data.</p>
+        <flot dataset="simpleData" options="simpleOptions" height="300px"></flot>
+      </div><!-- col-md-6 -->
+
+      <div class="col-md-6 mb30">
+        <h5 class="lg-title mb10">Using Other Symbols</h5>
+        <p class="mb15">For other point types, you can define a callback function to draw the symbol. Some common symbols are available in the symbol plugin.</p>
+        <flot dataset="symbolData" options="symbolOptions" height="300px"></flot>
+      </div><!-- col-md-6 -->
+    </div><!-- row -->
+
+    <div class="row">
+      <div class="col-md-6 mb30">
+        <h5 class="lg-title mb10">Tracking With Crosshair</h5>
+        <p class="mb15">You can add crosshairs that'll track the mouse position, either on both axes or as here on only one. </p>
+        <flot dataset="chData" options="chOptions" height="300px"></flot>
+      </div><!-- col-md-6 -->
+
+      <div class="col-md-6 mb30">
+        <h5 class="lg-title mb5">Real Time Updates</h5>
+        <p class="mb15">You can update a chart periodically to get a real-time effect by using a timer to insert the new data in the plot and redraw it.</p>
+        <flot dataset="rtData" options="rtOptions" height="300px"></flot>
+      </div><!-- col-md-6 -->
+    </div><!-- row -->
+
+    <div class="row">
+      <div class="col-md-6 mb30">
+        <h5 class="lg-title mb10">Bar Chart</h5>
+        <p class="mb15">With the categories plugin you can plot categories/textual data easily.</p>
+        <flot dataset="bcData" options="bcOptions" height="300px"></flot>
+      </div><!-- col-md-6 -->
+
+      <div class="col-md-6 mb30">
+        <h5 class="lg-title mb10">Pie Chart</h5>
+        <p class="mb15">Labels can be hidden if the slice is less than a given percentage of the pie.</p>
+        <flot dataset="pcData" options="pcOptions" height="300px"></flot>
+      </div><!-- col-md-6 -->
+    </div><!-- row -->
+
+  </chain-panel>
+
+  <chain-panel title="Morris Charts" description="Morris chart - good-looking charts shouldn't be difficult.">
+    <div class="row">
+      <div class="col-md-6 mb30">
+        <h5 class="lg-title mb10">Line Chart</h5>
+        <p>A line graph is a type of chart which displays information as a series of data points connected by straight line segments.</p>
+        <div morris-chart type="line" data="lineData" options="lineOptions" style="height:300px"></div>
+      </div>
+
+      <div class="col-md-6 mb30">
+        <h5 class="lg-title mb10">Area Chart</h5>
+        <p>Area charts are used to represent cumulated totals using numbers or percentages (stacked area charts in this case) over time.</p>
+        <div morris-chart type="area" data="areaData" options="areaOptions" style="height:300px"></div>
+      </div>
+    </div><!-- row -->
+
+    <div class="row">
+      <div class="col-md-6 mb30">
+        <h5 class="lg-title mb10">Bar Chart</h5>
+        <p>A bar chart or bar graph is a chart with rectangular bars with lengths proportional to the values that they represent.</p>
+        <div morris-chart type="bar" data="barData" options="barOptions" style="height:300px"></div>
+      </div>
+
+      <div class="col-md-6 mb30">
+        <h5 class="lg-title mb10">Stacked Chart</h5>
+        <p>The stacked charts are used when data sets have to be broken down into their constituents.</p>
+        <div morris-chart type="bar" data="stackedData" options="stackedOptions" style="height:300px"></div>
+      </div>
+    </div><!-- row -->
+
+    <div class="row">
+      <div class="col-md-6">
+        <h5 class="lg-title mb10">Donut Chart</h5>
+        <p>A donut chart, or doughnut chart, functions precisely like a pie chart. The only difference is that the center is blank.</p>
+        <div morris-donut data="donutData" style="height:300px"></div>
+      </div>
+
+      <div class="col-md-6">
+        <h5 class="lg-title mb10">Donut Chart</h5>
+        <p>A donut chart, or doughnut chart, functions precisely like a pie chart. The only difference is that the center is blank.</p>
+        <div morris-donut data="donut2Data" colors="donut2Colors" style="height:300px"></div>
+      </div>
+    </div><!-- row -->
+  </chain-panel>
+
+  <chain-panel title="Sparkline Charts" description="jQuery Sparkline generates sparklines (small inline charts) directly in the browser using data supplied either inline in the HTML, or via javascript. ">
+    <div class="tinystat mr20">
+      <div sparkline data="spBarData" options="spBarOptions" class="chart mt5"></div>
+      <div class="datainfo">
+        <span class="text-muted">Total Sales</span>
+        <h4>$630,201</h4>
+      </div>
+    </div><!-- tinystat -->
+
+    <div class="tinystat mr20">
+      <div sparkline data="spLineData" options="spLineOptions" class="chart mt5"></div>
+      <div class="datainfo">
+        <span class="text-muted">Avg Sales</span>
+        <h4>$106,850</h4>
+      </div>
+    </div><!-- tinystat -->
+
+    <div class="tinystat mr20">
+      <div sparkline data="spPieData" options="spPieOptions" class="chart mt5"></div>
+      <div class="datainfo">
+        <span class="text-muted">Avg Order</span>
+        <h4>23,001,090</h4>
+      </div>
+    </div><!-- tinystat -->
+
+    <div class="tinystat">
+      <div sparkline data="spDoubleData" options="spDoubleOptions" class="chart mt5"></div>
+      <div class="datainfo">
+        <span class="text-muted">Avg Expenses</span>
+        <h4>$11,090</h4>
+      </div>
+    </div><!-- tinystat -->
+  </chain-panel>
+
+</div><!-- contentpanel -->

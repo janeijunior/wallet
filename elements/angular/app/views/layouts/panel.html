@@ -1,0 +1,11 @@
+<div class="panel panel-{{skin ? skin : 'default'}}">
+  <div class="panel-heading">
+    <div class="panel-btns">
+      <a ng-if="!toggable ? true : toggable" class="panel-minimize" tooltip="Toggle" ng-click="minPanel($event)"><i class="fa fa-minus"></i></a>
+      <a ng-if="!closable ? true : closable" class="panel-close" tooltip="Close" ng-click="closePanel($event)"><i class="fa fa-times"></i></a>
+    </div><!-- panel-btns -->
+    <h4 class="panel-title">{{title}}</h4>
+    <p ng-if="description">{{description}}</p>
+  </div><!-- panel-heading -->
+  <div class="panel-body" ng-transclude></div>
+</div>

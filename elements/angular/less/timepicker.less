@@ -1,0 +1,148 @@
+.bootstrap-timepicker {
+  position: relative;
+
+  &.pull-right .bootstrap-timepicker-widget.dropdown-menu {
+    left: auto;
+    right: 0;
+
+
+    &:before {
+      left: auto;
+      right: 12px;
+    }
+
+    &:after {
+      left: auto;
+      right: 13px;
+    }
+  }
+
+  .add-on {
+    cursor: pointer;
+
+    i {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+.bootstrap-timepicker-widget {
+  &.dropdown-menu {
+    padding: 5px;
+    margin-top: -2px;
+    border-color: #ddd;
+    .border-top-radius(0);
+
+    &.open {
+      display: inline-block;
+    }
+
+    &:before {
+      border-bottom: 7px solid rgba(0,0,0,0.2);
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      content: "";
+      display: inline-block;
+      left: 9px;
+      position: absolute;
+      top: -7px;
+    }
+
+    &:after {
+      border-bottom: 6px solid #fff;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      content: "";
+      display: inline-block;
+      left: 10px;
+      position: absolute;
+      top: -6px;
+    }
+  }
+
+  a.btn,
+  input {
+    border-radius: @border-radius-base;
+  }
+
+  table {
+    width: 100%;
+    margin: 0;
+
+    td {
+      text-align: center;
+      height: 30px;
+      margin: 0;
+      padding: 2px;
+
+      &:not(.separator) {
+        min-width: 30px;
+      }
+
+      span { width: 100%; }
+
+      a {
+        display: inline-block;
+        margin: 0;
+        outline: 0;
+        text-align: center;
+
+        &:hover { text-decoration: none; }
+
+        i {
+          display: inline-block;
+          position: relative;
+          width: 60px;
+          font-style: normal;
+
+          &:before {
+            content: '\f106';
+            font-family: 'FontAwesome';
+            font-style: normal;
+            text-align: center;
+            font-size: 18px;
+            width: 60px;
+            color: #999;
+          }
+        }
+
+        &:hover i:before {
+          color: #666;
+        }
+      }
+
+      input {
+        border: 1px solid #ddd;
+        padding: 7px 8px;
+        font-size: @font-size-base;
+        width: 40px;
+        margin: 0;
+        text-align: center;
+
+        &:focus {
+          border-color: #999;
+        }
+      }
+    }
+
+    tr:last-child td a i:before {
+      content: '\f107';
+    }
+  }
+
+  .modal-content { padding: 4px; }
+
+  @media(min-width:767px) {
+    &.modal {
+      width: 200px;
+      margin-left: -100px;
+    }
+  }
+
+  @media(max-width:767px) {
+    width: 100%;
+    .dropdown-menu { width: 100%; }
+  }
+}

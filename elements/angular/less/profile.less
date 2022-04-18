@@ -1,0 +1,154 @@
+
+.img-profile {
+  display: inline-block;
+  max-width: 200px;
+}
+
+.social-list > li {
+  padding: 5px 0;
+  border-bottom: 1px dashed #eee;
+
+  > i {
+    width: 16px;
+    margin-right: 5px;
+  }
+}
+
+.activity-list {
+  > .media {
+    border-bottom: 1px dashed #ddd;
+    padding-bottom: 15px;
+    font-size: 14px;
+
+    &:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  .media-object {
+    width: 28px;
+    vertical-align: middle;
+  }
+
+  .media-body {
+    line-height: 18px;
+
+    p {
+      line-height: 21px;
+      font-size: @font-size-base;
+    }
+  }
+
+  .media-title {
+    font-size: 15px;
+    margin-bottom: 0;
+  }
+
+  .blog-media {
+    padding-bottom: 0;
+
+    .media-object {
+      width: 120px;
+      margin-right: 10px;
+      margin-top: 5px;
+    }
+
+    .media-title {
+      margin: 0;
+    }
+  }
+
+  .img-single img {
+    width: 50%;
+  }
+}
+
+.uploadphoto-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 20px;
+
+  li {
+    width: 20%;
+    float: left;
+
+    a {
+      display: block;
+      margin-right: 5px;
+    }
+  }
+}
+
+.follower-list {
+  padding: 10px 10px 0;
+
+  .media {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+
+    &:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+
+  .fa {
+    margin-right: 5px;
+    width: 16px;
+    text-align: center;
+  }
+
+  .media-object {
+    margin-right: 10px;
+  }
+}
+
+.follower-name {
+  color: #333;
+  margin: 5px 0 0 0;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.events {
+  .media {
+    margin-bottom: 20px;
+  }
+
+  .media-object {
+    .border-radius();
+  }
+}
+
+.events-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  .media-body {
+    font-size: @font-size-base;
+  }
+}
+
+.event-body small {
+  display: block;
+
+  .fa {
+    margin-right: 5px;
+    width: 14px;
+    text-align: center;
+  }
+}
+
+.event-body p {
+  margin-top: 10px;
+}
+
+.event-title {
+  margin: 0;
+  margin-bottom: 5px;
+  font-size: 16px;
+  line-height: normal;
+}

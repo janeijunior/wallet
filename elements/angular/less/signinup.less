@@ -1,0 +1,66 @@
+
+.signin {
+  background-color: @brand-primary;
+}
+
+.panel-signin {
+  margin: 80px auto 0;
+  width: 400px;
+
+  @media screen and (max-width: 768px) {
+    margin: 20px auto;
+  }
+
+  @media screen and (max-width: 360px) {
+    width: auto;
+    margin: 20px;
+
+    .panel-footer {
+      padding-left: 20px;
+      padding-right: 20px;
+
+      .btn { font-size: 13px; }
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    .panel-footer .btn {
+      font-size: 11px;
+    }
+  }
+}
+
+.panel-signup {
+  margin: 80px auto 0;
+  width: 600px;
+
+  @media screen and (max-width: 768px) {
+    margin: 20px;
+    width: auto;
+  }
+
+  @media screen and (max-width: 360px) {
+    .pull-left,
+    .pull-right {
+      float: none !important;
+    }
+
+    .btn.btn-success { width: 100%; }
+  }
+}
+
+.panel-signin,
+.panel-signup {
+  .panel-body {
+    padding: 40px;
+
+    @media screen and (max-width: 320px) {
+      padding: 30px 20px;
+    }
+  }
+
+  .panel-footer {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}

@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="../template/images/favicon.png" type="image/png">
+
+  <title>Chain Documentation</title>
+
+  <link href="assets/style.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="../template/js/html5shiv.js"></script>
+  <script src="../template/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+
+<section>
+
+  <div class="mainwrapper">
+    <div class="row">
+        <div class="col-md-3">
+
+            <div class="logopanel">
+                <h1><span style="color: #428bca">chain</span></h1>
+            </div><!-- logopanel -->
+
+            <ul class="leftmenu">
+                <li class="active"><a href="#introduction">Introduction</a></li>
+                <li>
+                    <a href="#gettingstarted">Getting Started</a>
+                    <ul class="children">
+                        <li><a href="#gettingstarted">HTML Structure</a></li>
+                        <li><a href="#basictemplate">Basic Template</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#css">CSS</a>
+                    <ul class="children">
+                        <li><a href="#bootstrap">Bootstrap</a></li>
+                        <li><a href="#filesandstructure">Files &amp; Structure</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#javascript">Javascript</a>
+                    <ul class="children">
+                        <li><a href="#jquery">jQuery</a></li>
+                        <li><a href="#jqueryui">jQuery UI</a></li>
+                        <li><a href="#chosen">Select2</a></li>
+                        <li><a href="#colorpicker">Colorpicker</a></li>
+                        <li><a href="#fileuploads">File Upload</a></li>
+                        <li><a href="#calendar">Calendar</a></li>
+                        <li><a href="#maps">Maps</a></li>
+                        <li><a href="#forms">Forms</a></li>
+                        <li><a href="#prettyphoto">Pretty Photo</a></li>
+                        <li><a href="#charts">Charts</a></li>
+                        <li><a href="#tables">Tables</a></li>
+                        <li><a href="#wysiwyg">WYSIWYG</a></li>
+                        <li><a href="#codeeditor">Code Editor</a></li>
+                    </ul>
+                </li>
+                <li><a href="#angular">Using AngularJS Version</a></li>
+                <li><a href="#credits">Credits</a></li>
+                <li><a href="#changelog">Changelog</a></li>
+            </ul>
+        </div><!-- col-md-3 -->
+
+        <div class="col-md-9">
+
+            <div class="content">
+
+                <p>Chain Admin Template Documentation v2.0 by <a href="http://themepixels.com/">ThemePixels</a></p>
+
+
+                <h3 id="introduction" class="sectitle">Chain Responsive Bootstrap 3 Admin Template</h3>
+                <p>Created: August 08, 2014 by: ThemePixels.com (themepixels@gmail.com)</p>
+                <br /><br />
+                <div class="alert alert-info"><p>Thank you for purchasing my theme. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="http://themeforest.net/themepixels">here</a>. Thanks so much!</p></div>
+
+                <br />
+                <h3 id="gettingstarted" class="sectitle">Getting Started</h3>
+                <p>Chain is yet another admin template built using Bootstrap and other jQuery plugins that is perfect for your next projects. It provides an easy to use user interface design and a fully responsive layout that is compatible with handheld devices such as phones and tablets. </p>
+                <p>Chain is built to work best in the latest desktop and mobile browsers but older browsers might display differently styled, though fully functional, renderings of certain components.</p>
+                <p class="alert alert-warning"><strong>Note:</strong> Internet Explorer 8 and below are not supported in this template.</p>
+                <h4 id="htmlstructure" class="sectitle">HTML Structure</h4>
+                <p>This theme is a fluid and responsive layout with two columns. The general template structure is the same throughout the template. Below are the general structures.</p>
+
+                <h5 class="sectitle text-primary">Main Wrapper</h5>
+                <pre>&lt;header&gt;
+  &lt;div class="headerwrapper"&gt;...&lt;/div&gt;
+&lt;/header&gt;
+&lt;section&gt;
+  &lt;div class="mainwrapper"&gt;
+    &lt;div class="leftpanel"&gt;...&lt;/div&gt;
+    &lt;div class="mainpanel"&gt;...&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</pre>
+
+                <br />
+                <h5 class="sectitle text-primary">Navigation</h5>
+                <p>This is the navigation menu in the left panel of the template.</p>
+                <pre>&lt;ul class="nav nav-pills nav-stacked"&gt;
+  &lt;li&gt;&lt;a href="index.html"&gt;&lt;i class="fa fa-home"&gt;&lt;/i&gt; &lt;span&gt;Dashboard&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li class="parent"&gt;&lt;a href=""&gt;&lt;i class="fa fa-edit"&gt;&lt;/i&gt; &lt;span&gt;Forms&lt;/span&gt;&lt;/a&gt;
+    &lt;ul class="children"&gt;
+      &lt;li&gt;&lt;a href="general-forms.html"&gt;&lt;i class="fa fa-caret-right"&gt;&lt;/i&gt; General Forms&lt;/a&gt;&lt;/li&gt;
+      ...
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</pre>
+                <p>The top parent element menu name should always wrap with <code>span</code> and a parent menu with sub menus should always have a class of <code>.parent</code>.</p>
+                <p>When a parent menu is active it should have a class of <code>active</code></p>
+                <pre>&lt;li class="active"&gt; ... &lt;/li&gt;</pre>
+                <p>When a parent menu with sub menus is in a dropdown active state the class should be <code>parent parent-focus</code></p>
+                <pre>&lt;li class="parent active"&gt; ... &lt;/li&gt;</pre>
+                <p>When a parent menu with sub menus is active and also in a dropdown active state the class should be <code>parent active</code></p>
+                <pre>&lt;li class="parent active"&gt; ... &lt;/li&gt;</pre>
+
+                <div class="alert alert-info"><strong>Note:</strong> The navigation menu only has two levels at this time. We may add up to three levels for the coming updates of this template.</div>
+
+                <br />
+                <h5 class="sectitle text-primary">Main Panel</h5>
+                <p>The main panel is compose of header, the page header and the main content of the page.</p>
+                <pre>&lt;div class="mainpanel"&gt;
+   &lt;div class="pageheader"&gt;
+      &lt;!-- title and breadcrumb goes here --&gt;
+   &lt;/div&gt;
+   &lt;div class="contentpanel"&gt;
+      &lt;!-- content goes here --&gt;
+   &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+                <br />
+                <h4 id="basictemplate" class="sectitle">Basic Template</h4>
+                <p>For the basic template, open the file <code>blank.html</code> to create a new empty page and then start adding content by adding it inside the <code>contentpanel</code>. You can refer the above structure to create your own page.</p>
+
+                <br />
+                <h3 id="css" class="sectitle">CSS</h3>
+                <p>This template uses many css files and most of it are imported in a single css file (style.default.css).</p>
+
+                <br />
+                <h4 id="bootstrap" class="sectitle">Bootstrap</h4>
+                <p>We use Bootstrap as the main framework of this template. Bootstrap is open source. It's hosted, developed, and maintained on GitHub. Bootstrap makes front-end web development faster and easier. It's made for folks of all skill levels, devices of all shapes, and projects of all sizes. That's why we use Bootstrap.</p>
+                <p>In this documentation, we will not discuss more about Bootstrap. When using this template it is also important to read their documentation for better understanding and use of the framework. </p>
+                <p><a href="http://getbootstrap.com/" target="_blank" class="btn btn-primary">Learn More About Bootstrap</a></p>
+
+                <br />
+                <h4 id="filesandstructure" class="sectitle">Files &amp; Structure</h4>
+                <p>All CSS files are located in the css folder. Some of these files are in minified version so it is not recommended to edit these files but it's also not required so don't worry about it. </p>
+                <p>Below are some of the css files that are allowed for you to edit. </p>
+
+                <h5 class="sectitle text-primary">style.default.css</h5>
+                <p>This is the main css files of this template. Any new css or changes of the template should be added here.</p>
+
+                <h5 class="sectitle text-primary">bootstrap.override.css</h5>
+                <p>The css that overrides the css for bootstrap. Any changes that you want to override from bootstrap should be added in here.</p>
+
+                <p>The rest of the css files are not recommended to edit it but if you know what you're doing then feel free to make changes to it. If you have trouble changing something from it do not hesitate to send us a message.</p>
+
+                <br />
+                <h3 id="javascript" class="sectitle">Javascript</h3>
+                <p>This template is powered more by javascript. Disabling javascript in your browser will break the template and some of the features will not work so it is highly recommended that you make sure javascript is enabled.</p>
+                <p>The javascript files can be found in the js/ folder of template. Please be aware that any updates and changes made by yourself on this plugins might break the template. If you have trouble regarding this, please do not hesitate to ask our help.</p>
+
+                <h4 id="jquery" class="sectitle">jQuery</h4>
+                <p>We use jQuery in all of our pages. For any issues related to jQuery, please contact us for any assistance or you may visit <a href="http://jquery.com/">jQuery Website</a>.</p>
+                <p>The below code should be included in every page of the template by adding it in the <code>&lt;head&gt;</code>
+                or below the page right before the <code>&lt;/body&gt;</code>. </p>
+
+                <pre>&lt;script src="js/jquery-1.11.2.min.js"&gt;&lt;/script&gt;
+&lt;script src="js/jquery-migrate-1.2.1.min.js"&gt;&lt;/script&gt;</pre>
+
+                <br />
+                <h4 id="jquery" class="sectitle">jQuery UI</h4>
+                <p><a href="https://jqueryui.com/">jQuery UI</a> is a curated set of user interface interactions, effects, widgets, and themes built on top of the jQuery JavaScript Library.</p>
+                <p>We use this plugin to create animation effects in the elements. Consider visiting their site for more information about using this plugin.</p>
+                <pre>&lt;script src="js/jquery-ui-1.10.3.min.js"&gt;&lt;/script&gt;</pre>
+                <p>Not all pages in the template are using this plugin so if you want to use this just add the code above to the <code>head</code> or below the page.</p>
+
+                <br />
+                <h4 id="chosen" class="sectitle">Select 2</h4>
+                <p>Select2 is a jQuery based replacement for select boxes. It supports searching, remote data sets, and infinite scrolling of results. </p>
+                <p><a href="http://ivaynberg.github.io/select2/">See their documentation</a></p>
+
+                <br />
+                <h4 id="colorpicker" class="sectitle">Color Picker</h4>
+                <p><span class="text-info">colorpicker.js</span> is a simple jQuery plugin that selects color in the same way you select color in Adobe Photoshop.</p>
+                <p>The use of this plugin is implemented in the <code>general-forms.html</code>. To know more about this plugin, please click the following links below.</p>
+                <p><a href="http://www.eyecon.ro/colorpicker/#about">About</a> | <a href="http://www.eyecon.ro/colorpicker/#download">Download &amp; Updates</a> | <a href="http://www.eyecon.ro/colorpicker/#implement">Implement</a></p>
+                <p>To use this plugin, please refer to Implement link above.</p>
+
+                <br />
+                <h4 id="fileuploads" class="sectitle">Dropzone</h4>
+                <p><a href="http://www.dropzonejs.com/">dropzone js</a> is an open source library that provides drag'n'drop file uploads with image previews.</p>
+                <div class="alert alert-info">
+                    <strong>Note:</strong> This does not handle your file uploads on the server. You have to implement the code to receive and store the file yourself.
+                </div>
+                <p>You can see the actual implementation of this in the template of the file <code>general-forms.html</code>. You can learn more about this js code by going to their website.</p>
+                <p><a href="http://www.dropzonejs.com/" class="btn btn-primary btn-small">Learn more about Dropzone</a></p>
+
+                <br />
+                <h4 id="chosen" class="sectitle">Calendar</h4>
+                <p>We use Full Calendar as the main calendar for this template.</p>
+                <p><a href="http://arshaw.com/fullcalendar/">FullCalendar</a> is a jQuery plugin that provides a full-sized, drag & drop calendar like the one below. It uses AJAX to fetch events on-the-fly for each month and is easily configured to use your own feed format (an extension is provided for Google Calendar).</p>
+                <p>To learn more about this plugin, please visit <a href="http://arshaw.com/fullcalendar/">http://arshaw.com/fullcalendar/</a>. There you can read their documentation on how to implement the calendar. They also have support to answer your problems related to this plugin.</p>
+                <p>The actual implementation of this plugin to the template can be found in <code>calendar.html</code> or you can view it in demo under the menu <code>Pages -> Calendar</code>.</p>
+
+                <br />
+                <h4 id="maps" class="sectitle">Maps</h4>
+                <p>We use two kinds of map for this template, one is the gmaps.js powered by Google map and the other one is jVectorMap.</p>
+
+                <h5 class="sectitle text-primary">Gmaps</h5>
+                <p>gmaps.js allows you to use the potential of Google Maps in a simple way. No more extensive documentation or large amount of code.</p>
+                <p>You can see the example in our template in <code>maps.html</code>. You can also look for more examples from their website by going to this link - <a href="http://hpneo.github.io/gmaps/examples.html">http://hpneo.github.io/gmaps/examples.html</a>.</p>
+                <p>You can also spend some time reading their documentation in this link - <a href="http://hpneo.github.io/gmaps/documentation.html">http://hpneo.github.io/gmaps/documentation.html</a></p>
+
+                <br />
+                <h5 class="sectitle text-primary">jVectorMap</h5>
+                <p>jVectorMap uses only native browser technologies like JavaScript, CSS, HTML, SVG or VML. No Flash or any other proprietary browser plug-in is required.</p>
+                <p>You can view our template by clicking the menu Maps to view the actual implementation of this map to our template. For better understanding you can also read more on this link - <a href="http://jvectormap.com/tutorials/getting-started/">http://jvectormap.com/tutorials/getting-started/</a>. You
+                can also see some of their examples on this link - <a href="http://jvectormap.com/examples/world-gdp/">http://jvectormap.com/examples/world-gdp/</a></p>
+                <p>jVectorMap also allows you to display map by country as what you see in our demo. We only display the map of the USA but you can display your own country by downloading some additional file in this link - <a href="http://jvectormap.com/maps/world/europe/">http://jvectormap.com/maps/world/europe/</a></p>
+
+                <br />
+                <h4 id="forms" class="sectitle">Forms</h4>
+                <p>In this section, we will discuss about form related scripts that we use in our template. Everything discuss here can all be found and implemented under <strong>Forms</strong> menu in our template demo.</p>
+
+                <h5 class="sectitle text-primary">jQuery Tags Input</h5>
+                <p>This plugin will turn your boring tag list into a magical input that turns each tag into a style-able object with its own delete link. The following code below are needed to add in <code>&lt;head&gt;</code> of your page.</p>
+                <p>The CSS</p>
+                <pre>&lt;link rel="stylesheet" href="css/jquery.tagsinput.css" /&gt;</pre>
+                <p>The Plugin</p>
+                <pre>&lt;script src="js/jquery.tagsinput.min.js"&gt;&lt;/script&gt;</pre>
+                <p>Usage</p>
+                <pre>&lt;script&gt;
+jQuery(function(){
+    jQuery('#tags').tagsInput({width:'auto'});
+});
+&lt;/script&gt;</pre>
+                <p>Markup</p>
+                <pre>&lt;input name="tags" id="tags" class="form-control" value="foo,bar,baz" /&gt;</pre>
+
+                <br />
+                <h5 class="sectitle text-primary">Autogrow Textarea</h5>
+                <p><strong>jquery.autogrow-textarea.js</strong> automatically grow and shrink textareas with the content as you type.</p>
+                <p>The Plugin</p>
+                <pre>&lt;script src="js/jquery.autogrow-textarea.js"&gt;&lt;/script&gt;</pre>
+                <p>Usage</p>
+                <pre>&lt;script&gt;
+jQuery(function(){
+    jQuery('#autoResizeTA').autogrow();
+});
+&lt;/script&gt;</pre>
+                <p>Markup</p>
+                <pre>&lt;textarea id="autoResizeTA" class="form-control" rows="5"&gt;&lt;/textarea&gt;</pre>
+
+                <br />
+                <h5 class="sectitle text-primary">Spinner</h5>
+                <p>Enhance a text input for entering numeric values, with up/down buttons and arrow key handling. This feature is part of jQuery UI</p>
+                <p>The Plugin</p>
+                <pre>&lt;script src="js/jquery-ui-1.10.3.min.js"&gt;&lt;/script&gt;</pre>
+                <p>Usage</p>
+                <pre>jQuery(function(){
+   var spinner = jQuery('#spinner').spinner();
+   spinner.spinner('value', 0);
+});</pre>
+                <p>Markup</p>
+                <pre>&lt;input type="text" id="spinner" /&gt;</pre>
+
+                <br />
+                <h5 class="sectitle text-primary">Time Picker</h5>
+                <p>Easily select a time for a text input using your mouse or keyboards arrow keys. To lean more about time picker, please go this link - <a href="http://jdewit.github.io/bootstrap-timepicker/">http://jdewit.github.io/bootstrap-timepicker/</a></p>
+                <p>The CSS</p>
+                <pre>&lt;link rel="stylesheet" href="css/bootstrap-timepicker.min.css" /&gt;</pre>
+                <p>The Plugin</p>
+                <pre>&lt;script src="js/bootstrap-timepicker.min.js"&gt;&lt;/script&gt;</pre>
+                <p>Usage</p>
+                <pre>jQuery('#timepicker').timepicker({defaultTIme: false});</pre>
+                <p>Markup</p>
+                <pre>&lt;div class="input-group"&gt;
+   &lt;span class="input-group-addon"&gt;
+      &lt;i class="glyphicon glyphicon-time"&gt;&lt;/i&gt;
+   &lt;/span&gt;
+   &lt;div class="bootstrap-timepicker"&gt;
+      &lt;input id="timepicker" type="text" class="form-control"/&gt;
+   &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+                <br />
+                <h5 class="sectitle text-primary">Input Mask</h5>
+                <p>Input masks allows a user to more easily enter fixed width input where you would like them to enter the data in a certain format (dates,phones, etc). To learn more about this plugin, please visit - <a href="http://digitalbush.com/projects/masked-input-plugin">http://digitalbush.com/projects/masked-input-plugin</a></p>
+                <p>The Plugin</p>
+                <pre>&lt;script src="js/jquery.maskedinput.min.js"&gt;&lt;/script&gt;</pre>
+                <p>Usage</p>
+                <pre>jQuery(function(){
+   jQuery("#date").mask("99/99/9999");
+});</pre>
+                <p>Markup</p>
+                <pre>&lt;div class="input-group"&gt;
+   &lt;span class="input-group-addon"&gt;
+      &lt;i class="glyphicon glyphicon-calendar"&gt;&lt;/i&gt;
+   &lt;/span&gt;
+   &lt;input type="text" placeholder="Date" id="date" class="form-control" /&gt;
+&lt;/div&gt;</pre>
+
+                <br />
+                <h5 class="sectitle text-primary">Form Validation</h5>
+                <p>This jQuery plugin makes simple clientside form validation trivial, while offering lots of option for customization. To learn more about this plugin, please visit - <a href="http://bassistance.de/jquery-plugins/jquery-plugin-validation/">http://bassistance.de/jquery-plugins/jquery-plugin-validation/</a></p>
+                <p>The Plugin</p>
+                <pre>&lt;script src="js/jquery.validate.min.js"&gt;&lt;/script&gt;</pre>
+                <p>Usage</p>
+                <pre>jQuery("#basicForm").validate({
+   highlight: function(element) {
+      jQuery(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+   },
+   success: function(element) {
+      jQuery(element).closest('.form-group').removeClass('has-error');
+   }
+});</pre>
+                <p>Markup</p>
+                <pre>&lt;div class="form-group"&gt;
+   &lt;label class="col-sm-3 control-label"&gt;Email &lt;span class="asterisk"&gt;*&lt;/span&gt;&lt;/label&gt;
+   &lt;div class="col-sm-9"&gt;
+      &lt;input type="email" name="email" class="form-control" placeholder="Type your email..." required /&gt;
+   &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+                <br />
+                <h5 class="sectitle text-primary">Bootstrap Wizard</h5>
+                <p>This twitter bootstrap plugin builds a wizard out of a formatter tabbable structure. It allows to build a wizard functionality using buttons to go through the different wizard steps and using events allows to hook into each step individually.
+                 To learn more about this template, please visit - <a href="https://github.com/VinceG/twitter-bootstrap-wizard">https://github.com/VinceG/twitter-bootstrap-wizard</a></p>
+                <p>The Plugin</p>
+                <pre>&lt;script src="js/bootstrap-wizard.min.js"&gt;&lt;/script&gt;</pre>
+                <p>Usage</p>
+                <pre>jQuery(function(){
+   jQuery('#basicWizard').bootstrapWizard();
+});</pre>
+                <p>Markup</p>
+                <pre>&lt;div id="validationWizard" class="basic-wizard"&gt;
+   &lt;ul class="nav nav-pills nav-justified"&gt;
+      ...
+   &lt;/ul&gt;
+   &lt;div class="tab-content"&gt;
+      &lt;div class="tab-pane" id="tab1"&gt;
+         ...
+      &lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+                <br />
+                <h4 id="prettyphoto" class="sectitle">Pretty Photo</h4>
+                <p>This template uses <a href="http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/">prettyPhoyo</a> plugin in Media Manager page. PrettyPhoto is a jQuery lightbox clone. Not only does it support images, it also support for videos, flash, YouTube, iframes and ajax. It's a full blown media lightbox.</p>
+
+                <p>If you need support with prettyPhoto, first take a look at their <a href="http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/prettyphoto-faqs/">FAQs</a></p>
+                <p>If you were not able to find an answer, feel free to take look at their <a href="http://forums.no-margin-for-errors.com/categories/prettyphoto-support">Forum</a></p>
+
+                <p>The CSS</p>
+                <pre>&lt;link href="css/prettyPhoto.css" rel="stylesheet"&gt;</pre>
+
+                <p>The Plugin</p>
+                <pre>&lt;script src="js/jquery.prettyPhoto.js"&gt;&lt;/script&gt;</pre>
+
+                <p>Usage</p>
+                <pre>jQuery("a[rel^='prettyPhoto']").prettyPhoto();</pre>
+
+                <p>Markup</p>
+                <pre>&lt;a href="images/photos/media3.png" rel="prettyPhoto"&gt;
+    &lt;img src="images/photos/media3.png" class="img-responsive" alt="" /&gt;
+&lt;/a&gt;</pre>
+
+
+                <br />
+                <h4 id="charts" class="sectitle">Charts</h4>
+                <p>This template uses 3 kinds of charts to be used in your page. You can view the demo of this template in <code>graphs.html</code></p>
+
+                <br />
+                <h5 class="sectitle text-primary">Flot</h5>
+                <p>Flot is a pure JavaScript plotting library for jQuery, with a focus on simple usage, attractive looks and interactive features. You can visit their site <a href="http://www.flotcharts.org/">here</a></p>
+                <p>You can view more examples to this link - <a href="http://www.flotcharts.org/flot/examples/">http://www.flotcharts.org/flot/examples/</a></p>
+                <p>The Javascript</p>
+                <pre>&lt;script src="js/flot/flot.min.js"&gt;&lt;/script&gt;
+&lt;script src="js/flot/flot.resize.min.js"&gt;&lt;/script&gt;
+&lt;script src="js/flot/flot.symbol.min.js"&gt;&lt;/script&gt;
+&lt;script src="js/flot/flot.crosshair.min.js"&gt;&lt;/script&gt;
+&lt;script src="js/flot/flot.categories.min.js"&gt;&lt;/script&gt;
+&lt;script src="js/flot/flot.pie.min.js"&gt;&lt;/script&gt;</pre>
+
+                <p><code>flot.resize.min.js</code> is used to resize the graph automatically when it detects an event in resizing the window.</p>
+                <p><code>flot.symbol.min.js</code> is used when you want to use other points instead of the default (circle) points.</p>
+                <p><code>flot.crosshair.min.js</code> is used when you want to have crosshair in pointing your cursor in the graph.</p>
+                <p><code>flot.pie.min.js</code> is used when you want to display a pie chart.</p>
+                <p><code>flot.categories.min.js</code> is used when you want to use a category (i.e month) instead of using numbers in the graph</p>
+
+                <br />
+                <h5 class="sectitle text-primary">Morris</h5>
+                <p>Morris is another javascript set for displaying charts in your project.</p>
+
+                <p><a href="http://www.oesmith.co.uk/morris.js/index.html" class="btn btn-primary">View Examples</a> &nbsp; <a href="http://www.oesmith.co.uk/morris.js/index.html#getting_started" class="btn btn-primary">How to Use</a></p>
+
+                <br />
+                <h5 class="sectitle text-primary">Sparkline</h5>
+                <p>This jQuery plugin generates sparklines (small inline charts) directly in the browser using data supplied either inline in the HTML, or via javascript. </p>
+                <p>To add some sparklines to your web page, please follow the quick guides in this link: <br />
+                <a href="http://omnipotent.net/jquery.sparkline/#s-docs">http://omnipotent.net/jquery.sparkline/#s-docs</a></p>
+
+                <br />
+                <h4 id="tables" class="sectitle">Tables</h4>
+                <p>We use Bootstrap styles for table in our template.</p>
+                <h5 class="sectitle text-primary">Basic Table</h5>
+                <p>For basic styling add the base class <code>.table</code> to any <code>&lt;table&gt;</code></p>
+                <pre>&lt;table class="table"&gt; ... &lt;/table&gt;</pre>
+
+                <h5 class="sectitle text-primary">Striped Rows</h5>
+                <p>Use <code>.table-striped</code> to add zebra-striping to any table row within the <code>&lt;tbody&gt;</code>.</p>
+                <pre>&lt;table class="table table-striped"&gt; ... &lt;/table&gt;</pre>
+
+                <h5 class="sectitle text-primary">Responsive Table</h5>
+                <p>Wrap any <code>&lt;table&gt;</code> element in <code>.table-responsive</code> to make them responsive and scroll horizontally when viewed in smaller screens.</p>
+                <pre>&lt;div class="table-responsive"&gt;
+    &lt;table class="table"&gt; ... &lt;/table&gt;
+&lt;/div&gt;</pre>
+                <br />
+                <div class="alert alert-info">To view other styles for table visit: <a href="http://getbootstrap.com/css/#tables">http://getbootstrap.com/css/#tables</a></div>
+
+
+                <br />
+                <h4 id="wysiwyg" class="sectitle">WYSIWYG</h4>
+                <p>This template uses 2 kinds of text editor, the <a href="http://jhollingworth.github.io/bootstrap-wysihtml5/">WYSIHTML5</a> and <a href="http://ckeditor.com/">CKEditor</a>.</p>
+
+                <h5 class="sectitle text-primary">HTML5 WYSIWYG Editor</h5>
+                <p>Open source rich text editor based on HTML5 and the progressive-enhancement approach. Uses a sophisticated security concept and aims to generate fully valid HTML5 markup by preventing unmaintainable tag soups and inline styles.</p>
+                <p>The CSS</p>
+                <pre>&lt;link rel="stylesheet" href="css/bootstrap-wysihtml5.css" /&gt;</pre>
+                <p>The Javascript</p>
+                <pre>&lt;script src="js/bootstrap-wysihtml5.js"&gt;&lt;/script&gt;</pre>
+                <p>Usage</p>
+                <pre>jQuery('#wysiwyg').wysihtml5({color: true,html:true});</pre>
+                <p>Markup</p>
+                <pre>&lt;textarea id="wysiwyg" rows="10"&gt;&lt;/textarea&gt;</pre>
+
+                <br />
+                <h5 class="sectitle text-primary">CKEditor</h5>
+                <p>CKEditor is a ready-for-use HTML text editor designed to simplify web content creation. It's a WYSIWYG editor that brings common word processor features directly to your web pages.</p>
+                <br />
+                <p><a href="http://ckeditor.com/" class="btn btn-primary">Visit Their Website</a></p>
+                <br />
+                <p>The Javasript</p>
+                <pre>&lt;script src="js/ckeditor/ckeditor.js"&gt;&lt;/script&gt;
+&lt;script src="js/ckeditor/adapters/jquery.js"&gt;&lt;/script&gt;</pre>
+                <p>Usage</p>
+                <pre>jQuery('#ckeditor').ckeditor();</pre>
+                <p>Markup</p>
+                <pre>&lt;textarea id="ckeditor" rows="10"&gt;&lt;/textarea&gt;</pre>
+
+                <br />
+                <h4 id="codeeditor" class="sectitle">Code Editor</h4>
+                <p>This template uses CodeMirror for the text editor. You can view more examples and documentation at their website <a href="http://codemirror.net/">here</a></p>
+
+
+                <br />
+                <h3 id="angular" class="sectitle">Using AngularJS Version</h3>
+                <p>By using this version, we assume that you already familiar using NodeJS. If you haven't used this before, be sure to read <a href="http://nodejs.org/">NodeJS</a> documentation to guide you on how to get started and also for the installation guide.<p>
+                <p>The angular version of this template is located in folder <strong>angular</strong>. This angular version are managed by <a href="http://bower.io/">Bower</a> (Dependency Manager) and <a href="http://gruntjs.com/">GruntJS</a> (Task Runner).
+                If you haven't used Bower and Grunt before, be sure to check out the <a href="http://bower.io/#getting-started">Bower Getting Started</a> and <a href="http://gruntjs.com/getting-started">Grunt Getting Started</a> guide as it explains how to use the two.</p>
+
+                <br>
+                <h5>Install Dependencies</h5>
+                <p>By running commands down below, we assume that you already install Bower and Grunt in your machine. Open the terminal and go inside the angular/ folder. The command below will download and install all dependencies of this template to bower_components/ folder.</p>
+                <br>
+                <pre>$ bower install</pre>
+                <p>After installing all dependencies, run the following command below for grunt task plugins</p>
+                <pre>$ npm install</pre>
+                <p>After running the commands above, you can now run and view it in the browser by running the command below:</p>
+                <pre>grunt serve</pre>
+
+
+                <br />
+                <h3 id="credits" class="sectitle">Credits</h3>
+                <p>I've used the following images, icons or other files as listed.</p>
+
+                <ul>
+                    <li><a href="http://getbootstrap.com/">Bootstrap</a></li>
+                    <li><a href="http://fortawesome.github.io/Font-Awesome/">Font Awesome Icons</a> by Font Awesome</li>
+                    <li><a href="http://jquery.com/">jQuery</a> by John Resig</li>
+                    <li><a href="http://jqueryui.com/">jQuery UI</a></li>
+                    <li><a href="http://touchpunch.furf.com/">Touch Punch</a> by David Furfero</li>
+                    <li><a href="http://arshaw.com/fullcalendar/">Full Calendar</a> by Adam Shaw</li>
+                    <li><a href="http://code.google.com/p/flot/">Flot Charts</a></li>
+                    <li><a href="http://boedesign.com/blog/2009/07/11/growl-for-jquery-gritter/">Gritter for jQuery (Growl)</a> by Jordan Boesch</li>
+                    <li><a href="http://www.fontsquirrel.com/fonts/lato">Lato Font</a> by SIL</li>
+                    <li><a href="http://jdewit.github.com/bootstrap-timepicker ">Bootstrap Time Picker</a> by <a href="http://twitter.com/joris_dewit">Joris de Wit</a></li>
+                    <li><a href="http://github.com/VinceG/twitter-bootstrap-wizard">Bootstrap Wizard</a> by Vincent Gabriel & Jason Gill</li>
+                    <li><a href="http://jhollingworth.github.io/bootstrap-wysihtml5/">Bootstrap WYSIWYG</a> by James Hollingworth</li>
+                    <li><a href="http://ivaynberg.github.io/select2/">Select 2</a> by ivaynberg</li>
+                    <li><a href="http://www.eyecon.ro/colorpicker/">Color Picker</a> by Stefan Petre</li>
+                    <li><a href="http://www.dropzonejs.com/">Dropzone</a> by Matias Meno</li>
+                    <li><a href="http://hpneo.github.com/gmaps/">GMaps</a> by Gustavo Leon</li>
+                    <li><a href="http://imsky.github.io/holder/">Holder JS</a> by Ivan Malopinsky</li>
+                    <li><a href="http://jvectormap.com/">jVector Map</a> by Kirill Lebedev</li>
+                    <li><a href="https://github.com/carhartl/jquery-cookie">jQuery Cookie</a> by Klaus Hartl</li>
+                    <li><a href="http://datatables.net">jQuery Data Tables</a> by Allan Jardine</li>
+                    <li><a href="http://digitalbush.com">Masked Input</a> by Josh Bush</li>
+                    <li><a href="http://www.no-margin-for-errors.com">prettyPhoto</a> by Stephane Caron</li>
+                    <li><a href="http://omnipotent.net/jquery.sparkline/">jQuery Sparkline</a></li>
+                    <li><a href="https://github.com/jzaefferer/jquery-validation">jQuery Form Validation</a> by Jorn Zaefferer</li>
+                    <li><a href="http://modernizr.com/">Modernizr</a></li>
+                    <li><a href="http://www.oesmith.co.uk/morris.js/">Morris Charts</a> by Olly Smith</li>
+                </ul>
+
+
+                <br />
+                <h3 id="changelog" class="sectitle">Changelog</h3>
+
+                <h5 class="sectitle">Version 2.0</h4>
+                <ul>
+                  <li>Added: LESS Files (compiled using Grunt)</li>
+                  <li>Added: AngularJS Version (http://themepixels.com/demo/webpage/chain-angular)</li>
+                  <li>Added: Bower Dependency Manager for AngularJS Version</li>
+                  <li>Added: Grunt Task Runner for Angular JS Version</li>
+                </ul>
+
+                <br>
+
+                <h5 class="sectitle">Version 1.0</h4>
+                <ul>
+                    <li>Initial Release</li>
+                </ul>
+
+                <br /><br />
+
+                <p>Once again, thank you so much for purchasing this theme. As I said at the beginning, I'd be glad to help you if you have any questions relating to this theme. No guarantees, but I'll do my best to assist. If you have a more general question relating to the themes on ThemeForest, you might consider visiting the forums and asking your question in the "Item Discussion" section.</p>
+
+                <p class="text-primary">ThemePixels</p>
+
+            </div><!-- content -->
+
+        </div><!-- col-md-9 -->
+    </div><!-- row -->
+  </div><!-- mainwrapper -->
+
+</section>
+
+
+
+<script src="../template/js/jquery-1.10.2.min.js"></script>
+<script src="../template/js/jquery-migrate-1.2.1.min.js"></script>
+<script src="../template/js/bootstrap.min.js"></script>
+<script src="assets/prettify.js"></script>
+<script src="assets/custom.js"></script>
+
+</body>
+</html>

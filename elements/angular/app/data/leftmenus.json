@@ -1,0 +1,162 @@
+[
+  {
+    "state": "dashboard",
+    "icon": "home",
+    "label": "Dashboard"
+  },
+  {
+    "state": "messages",
+    "icon": "envelope-o",
+    "label": "Messages",
+    "badge": "5"
+  },
+  {
+    "state":  "elem",
+    "icon": "suitcase",
+    "label": "UI Elements",
+    "children": [
+      {
+        "state": "elem.alerts",
+        "label": "Alerts & Notifications"
+      },
+      {
+        "state": "elem.buttons",
+        "label": "Buttons"
+      },
+      {
+        "state": "elem.extras",
+        "label": "Extras"
+      },
+      {
+        "state": "elem.graphs",
+        "label": "Graphs & Charts"
+      },
+      {
+        "state": "elem.icons",
+        "label": "Icons"
+      },
+      {
+        "state": "elem.modals",
+        "label": "Modals"
+      },
+      {
+        "state": "elem.widgets",
+        "label": "Panels & Widgets"
+      },
+      {
+        "state": "elem.sliders",
+        "label": "Sliders"
+      },
+      {
+        "state": "elem.tabs-accordions",
+        "label": "Tabs & Accordions"
+      },
+      {
+        "state": "elem.typography",
+        "label": "Typography"
+      }
+    ]
+  },
+  {
+    "state": "forms",
+    "icon": "edit",
+    "label": "Forms",
+    "children": [
+      {
+        "state": "forms.code-editor",
+        "label": "Code Editor"
+      },
+      {
+        "state": "forms.general-forms",
+        "label": "General Forms"
+      },
+      {
+        "state": "forms.layouts",
+        "label": "Layouts"
+      },
+      {
+        "state": "forms.text-editor",
+        "label": "Text Editor"
+      },
+      {
+        "state": "forms.validation",
+        "label": "Validations"
+      },
+      {
+        "state": "forms.wizards",
+        "label": "Wizards"
+      }
+    ]
+  },
+  {
+    "state": "tables",
+    "icon": "bars",
+    "label": "Tables",
+    "children": [
+      {
+        "state": "tables.basic-tables",
+        "label": "Basic Tables"
+      },
+      {
+        "state": "tables.data-tables",
+        "label": "Data Tables"
+      }
+    ]
+  },
+  {
+    "state": "maps",
+    "icon": "map-marker",
+    "label": "Maps"
+  },
+  {
+    "state": "pages",
+    "icon": "file-text",
+    "label": "Pages",
+    "children": [
+      {
+        "state": "pages.notfound",
+        "label": "404 Page"
+      },
+      {
+        "state": "pages",
+        "label": "Blank Page"
+      },
+      {
+        "state": "pages.calendar",
+        "label": "Calendar"
+      },
+      {
+        "state": "pages.invoice",
+        "label": "Invoice"
+      },
+      {
+        "state": "pages.locked",
+        "label": "Locked Screen"
+      },
+      {
+        "state": "pages.media-manager",
+        "label": "Media Manager"
+      },
+      {
+        "state": "pages.people-directory",
+        "label": "People Directory"
+      },
+      {
+        "state": "pages.profile",
+        "label": "Profile"
+      },
+      {
+        "state": "pages.search-results",
+        "label": "Search Results"
+      },
+      {
+        "state": "pages.signin",
+        "label": "Sign In"
+      },
+      {
+        "state": "pages.signup",
+        "label": "Sign Up"
+      }
+    ]
+  }
+]

@@ -1,0 +1,34 @@
+
+// Scaffolding
+
+body {
+  font-size: @font-size-base;
+  color: @text-color;
+  background-color: @body-bg;
+
+  @media screen {
+    @media (max-width: 1023px) {
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    @media (max-width: 768px) {
+      position: relative;
+    }
+  }
+}
+
+
+
+a {
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

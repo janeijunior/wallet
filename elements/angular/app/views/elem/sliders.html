@@ -1,0 +1,73 @@
+<div class="pageheader" page-header></div>
+
+<div class="contentpanel">
+
+  <chain-panel title="jQuery UI Slider" description="The jQuery UI Slider plugin makes selected elements into sliders. There are various options such as multiple handles and ranges. The handle can be moved with the mouse or the arrow keys.">
+    <div class="row">
+      <div class="col-md-6">
+        <h5 class="lg-title mb10">Basic Slider</h5>
+        <p class="mb20">The basic slider is horizontal and has a single handle that can be moved with the mouse or by using the arrow keys.</p>
+        <div ng-slider options="slideOptions" class="mb20"></div>
+        <div ng-slider options="slide1Options" class="slider-primary mb20"></div>
+        <div ng-slider options="slide2Options" class="slider-success mb20"></div>
+        <div ng-slider options="slide3Options" class="slider-warning mb20"></div>
+        <div ng-slider options="slide4Options" class="slider-danger mb20"></div>
+        <div ng-slider options="slide5Options" class="slider-info mb20"></div>
+      </div><!-- col-md-6 -->
+
+      <div class="col-md-6">
+        <h5 class="lg-title mb10">Range Slider</h5>
+        <p class="mb20">Set the range option to true to capture a range of values with two drag handles. The space between the handles is filled with a different background color to indicate those values are selected.</p>
+        <div ng-slider options="range1Options" class="slider-primary mb20"></div>
+        <div ng-slider options="range2Options" class="slider-success mb20"></div>
+        <div ng-slider options="range3Options" class="slider-danger mb20"></div>
+        <div ng-slider options="range4Options" class="slider-warning mb20"></div>
+        <div ng-slider options="range5Options" class="slider-info mb20"></div>
+      </div><!-- col-md-6 -->
+    </div><!-- row -->
+
+    <br /><br />
+
+    <div class="row">
+      <div class="col-md-6">
+        <h5 class="lg-title mb10">Range With Fixed Maximum</h5>
+        <p class="mb20">Fix the maximum value of the range slider so that the user can only select a minimum. Set the <code>range</code> option to <code>max</code>.</p>
+        <div ng-slider options="maxOptions" class="mb20"></div>
+      </div><!-- col-md-6 -->
+      <div class="col-md-6">
+        <h5 class="lg-title mb10">Range With Fixed Minimum</h5>
+        <p class="mb20">Fix the minimum value of the range slider so that the user can only select a maximum. Set the <code>range</code> option to <code>min</code>.</p>
+        <div ng-slider options="minOptions" class="mb20"></div>
+      </div><!-- col-md-6 -->
+    </div><!-- row -->
+
+    <br /><br />
+
+    <div class="row">
+      <div class="col-md-6">
+        <h5 class="lg-title mb10">Vertical Slider</h5>
+        <p class="mb20">Change the <code>orientation</code> of the slider to <code>vertical</code>. Assign a height value via <code>.height()</code> or by setting the height through CSS, and set the orientation option to <code>vertical</code></p>
+
+        <div ng-slider options="vSlide1Options" class="mr20 height200"></div>
+        <div ng-slider options="vSlide2Options" class="slider-primary mr20 height200"></div>
+        <div ng-slider options="vSlide3Options" class="slider-success mr20 height200"></div>
+        <div ng-slider options="vSlide4Options" class="slider-warning mr20 height200"></div>
+        <div ng-slider options="vSlide5Options" class="slider-danger mr20 height200"></div>
+        <div ng-slider options="vSlide6Options" class="slider-info mr20 height200"></div>
+
+      </div><!-- col-md-6 -->
+      <div class="col-md-6">
+        <h5 class="lg-title mb10">Vertical Range Slider</h5>
+        <p class="mb20">Change the <code>orientation</code> of the range slider to <code>vertical</code>. Assign a height value via <code>.height()</code> or by setting the height through CSS, and set the orientation option to <code>vertical</code></p>
+
+        <div ng-slider options="vRange1Options" class="slider-primary mr20 height200"></div>
+        <div ng-slider options="vRange2Options" class="slider-success mr20 height200"></div>
+        <div ng-slider options="vRange3Options" class="slider-danger mr20 height200"></div>
+        <div ng-slider options="vRange4Options" class="slider-warning mr20 height200"></div>
+        <div ng-slider options="vRange5Options" class="slider-info mr20 height200"></div>
+        
+      </div><!-- col-md-6 -->
+    </div><!-- row -->
+  </chain-panel>
+
+</div><!-- contentpanel -->

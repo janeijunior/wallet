@@ -1,0 +1,41 @@
+<div class="pageheader" page-header></div>
+
+<div class="contentpanel">
+  <div class="row">
+    <div class="col-sm-6">
+      <chain-panel title="Optional Sizes" description="Modals have two optional sizes, available via modifier classes to be placed on a .modal-dialog">
+        <button class="btn btn-dark btn-sm mr5" ng-click="open('lg')">Large Modal</button>
+        <button class="btn btn-dark btn-sm" ng-click="open('sm')">Small Modal</button>
+      </chain-panel>
+    </div><!-- col-sm-6 -->
+
+    <div class="col-sm-6">
+      <chain-panel title="Static Background" description="Let's you specify static for a backdrop which doesn't close the modal on click by adding data attributes data-backdrop='static' to a modal.">
+        <button class="btn btn-dark btn-sm" ng-click="open('','static')">Launch Modal</button>
+      </chain-panel>
+    </div><!-- col-sm-6-->
+  </div><!-- row -->
+
+  <div class="row">
+    <div class="col-sm-6">
+      <chain-panel title="Panel As Modal" description="Easily add panel inside of a modal box.">
+        <button class="btn btn-dark btn-sm mr5" ng-click="modalPanel()">Launch Modal</button>
+      </chain-panel>
+    </div><!-- col-sm-6 -->
+
+    <div class="col-sm-6">
+      <chain-panel title="Tabs In Modal" description="A dynamic tab functionality inside a modal.">
+        <button class="btn btn-dark btn-sm mr5" ng-click="modalTab()">Launch Modal</a>
+      </chain-panel>
+    </div><!-- col-sm-6 -->
+  </div><!-- row -->
+
+  <div class="row">
+    <div class="col-sm-6">
+      <chain-panel title="Accordion In Modal" description="A collapsible components inside a modal">
+        <button class="btn btn-dark btn-sm mr5" ng-click="modalAccordion()">Launch Modal</button>
+      </chain-panel>
+    </div><!-- col-sm-6 -->
+  </div><!-- row -->
+
+</div><!-- contentpanel -->

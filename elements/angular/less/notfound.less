@@ -1,0 +1,65 @@
+
+.notfoundpanel {
+  text-align: center;
+  width: 600px;
+  margin: 80px auto 0;
+  position: relative;
+
+  h1 {
+    font-size: 180px;
+    font-weight: 200;
+    color: #000;
+    margin: 0 0 10px 0;
+    line-height: 180px;
+
+    @media screen and (max-width: 360px) {
+      font-size: 150px;
+      line-height: 150px;
+    }
+  }
+
+  h3 {
+    color: #333;
+    margin: 0 0 10px 0;
+
+    @media screen {
+      @media (max-width: 480px) { font-size: 18px; }
+      @media (max-width: 360px) { font-size: 16px; }
+    }
+  }
+
+  p {
+    font-size: 14px !important;
+    @media screen and (max-width: 360px) { font-size: @font-size-base !important; }
+  }
+
+  form {
+    width: 350px;
+    margin: 20px auto 0 auto;
+  }
+
+  .form-control {
+    width: 250px;
+    float: left;
+
+    @media screen and (max-width: 360px) {
+      width: 200px;
+      float: none;
+      margin: auto;
+    }
+  }
+
+  .btn {
+    padding: 9px 20px 10px 20px;
+
+    @media screen and (max-width: 360px) {
+      margin-top: 5px;
+      width: 250px;
+    }
+  }
+
+  @media screen {
+    @media (max-width: 480px) { width: auto; }
+    @media (max-width: 360px) { margin: 20px; }
+  }
+}

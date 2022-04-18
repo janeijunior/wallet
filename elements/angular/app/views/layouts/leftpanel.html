@@ -1,0 +1,28 @@
+<div class="media profile-left">
+  <a class="pull-left profile-thumb" ui-sref="profile">
+    <img class="img-circle" ng-src="images/photos/profile.png" alt="">
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading">Elen Adarna</h4>
+    <small class="text-muted">Beach Lover</small>
+  </div>
+</div><!-- media -->
+
+<h5 class="leftpanel-title">Navigation</h5>
+
+<!-- START: LEFT MENU -->
+<ul class="nav nav-pills nav-stacked">
+  <li ng-repeat="leftmenu in leftmenus" ng-class="{parent: leftmenu.children, active: $state.includes('{{leftmenu.state}}')}">
+    <a ng-click="leftmenu.children ? showSubMenu($event) : showPage(leftmenu.state)">
+      <span ng-if="leftmenu.badge" class="pull-right badge">{{leftmenu.badge}}</span>
+      <i class="fa fa-{{leftmenu.icon}}"></i> <span>{{leftmenu.label}}</span>
+    </a>
+    <ul class="children" ng-if="leftmenu.children">
+      <li ng-if="leftmenu.state == 'pages'"><a>Not yet available...</a></li>
+      <li ng-repeat="submenu in leftmenu.children" ui-sref-active="active" ng-if="leftmenu.state != 'pages'">
+        <a ui-sref="{{submenu.state}}"><span>{{submenu.label}}</span></a>
+      </li>
+    </ul>
+  </li>
+</ul>
+<!-- END: LEFT MENU -->

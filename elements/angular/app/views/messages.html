@@ -1,0 +1,144 @@
+<div class="pageheader" page-header></div>
+
+<div class="contentpanel">
+  <div class="row">
+    <div class="col-sm-3 col-md-3 col-lg-2">
+      <a ui-sref="messages.view" class="btn btn-success btn-block btn-create-msg">Create Message</a>
+      <br />
+      <ul class="nav nav-pills nav-stacked nav-msg">
+        <li class="active">
+          <a ng-click="setFolder('folder','inbox',$event)">
+            <span ng-if="newMsgCount('folder','inbox')" class="badge pull-right">{{newMsgCount('folder','inbox')}}</span>
+            <i class="glyphicon glyphicon-inbox"></i> Inbox
+          </a>
+        </li>
+        <li>
+          <a ng-click="setFolder('starred',true,$event)">
+            <span ng-if="newMsgCount('starred', true)" class="badge pull-right">{{newMsgCount('starred', true)}}</span>
+            <i class="glyphicon glyphicon-star"></i> Starred
+          </a>
+        </li>
+        <li>
+          <a ng-click="setFolder('folder','sent',$event)">
+            <span ng-if="newMsgCount('folder', 'sent')" class="badge pull-right">{{newMsgCount('folder', 'sent')}}</span>
+            <i class="glyphicon glyphicon-send"></i> Sent Mail
+          </a>
+        </li>
+        <li>
+          <a ng-click="setFolder('folder','draft',$event)">
+            <span ng-if="newMsgCount('folder', 'draft')" class="badge pull-right">{{newMsgCount('folder', 'draft')}}</span>
+            <i class="glyphicon glyphicon-pencil"></i> Draft
+          </a>
+        </li>
+        <li>
+          <a ng-click="setFolder('folder','trash',$event)">
+            <span ng-if="newMsgCount('folder', 'trash')" class="badge pull-right">{{newMsgCount('folder', 'trash')}}</span>
+            <i class="glyphicon glyphicon-trash"></i> Trash
+          </a>
+        </li>
+      </ul>
+
+      <br />
+      <h5 class="sm-title">Tags</h5>
+      <ul class="nav nav-pills nav-stacked nav-msg">
+        <li>
+          <a ng-click="setFolder('tag','promotion',$event)">
+            <span ng-if="newMsgCount('tag', 'promotion')" class="badge pull-right">{{newMsgCount('tag', 'promotion')}}</span>
+            <i class="fa fa-tag"></i> Promotions
+          </a>
+        </li>
+        <li>
+          <a ng-click="setFolder('tag','update',$event)">
+            <span ng-if="newMsgCount('tag', 'update')" class="badge pull-right">{{newMsgCount('tag', 'update')}}</span>
+            <i class="fa fa-tag"></i> Updates
+            </a>
+        </li>
+        <li>
+          <a ng-click="setFolder('tag','social',$event)">
+            <span ng-if="newMsgCount('tag', 'social')" class="badge pull-right">{{newMsgCount('tag', 'social')}}</span>
+            <i class="fa fa-tag"></i> Social
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-sm-9 col-md-9 col-lg-10" ui-view>
+
+      <div class="msg-header">
+        <div class="pull-right">
+          Showing 1 - 10 of 100 messages
+          <button class="btn btn-white btn-navi btn-navi-left ml5" type="button"><i class="fa fa-chevron-left"></i></button>
+          <button class="btn btn-white btn-navi btn-navi-right" type="button"><i class="fa fa-chevron-right"></i></button>
+
+        </div>
+        <div class="pull-left">
+          <button class="btn btn-white" tooltip="Archive" ng-disabled="!checkedBoxes"><i class="fa fa-hdd-o"></i></button>
+          <button class="btn btn-white" tooltip="Report Spam" ng-disabled="!checkedBoxes"><i class="fa fa-exclamation-circle"></i></button>
+          <button class="btn btn-white" tooltip="Delete" ng-disabled="!checkedBoxes" ng-click="deleteSelectedRows()"><i class="fa fa-trash-o"></i></button>
+
+          <div class="btn-group">
+            <button data-toggle="dropdown" class="btn btn-white dropdown-toggle" tooltip="Move to Folder" tooltip-append-to-body="true" ng-disabled="!checkedBoxes">
+              <i class="fa fa-folder"></i>
+            </button>
+            <ul class="dropdown-menu pull-right">
+              <li><a href="#"><i class="fa fa-folder mr5"></i> Conference</a></li>
+              <li><a href="#"><i class="fa fa-folder mr5"></i> Newsletter</a></li>
+              <li><a href="#"><i class="fa fa-folder mr5"></i> Invitations</a></li>
+              <li><a href="#"><i class="fa fa-folder mr5"></i> Promotions</a></li>
+            </ul>
+          </div>
+
+          <div class="btn-group">
+            <button data-toggle="dropdown" class="btn btn-white dropdown-toggle" tooltip="Label" ng-disabled="!checkedBoxes">
+              <i class="fa fa-tag"></i>
+            </button>
+            <ul class="dropdown-menu pull-right">
+              <li><a href="#"><i class="fa fa-tag mr5"></i> Web</a></li>
+              <li><a href="#"><i class="fa fa-tag mr5"></i> Photo</a></li>
+              <li><a href="#"><i class="fa fa-tag mr5"></i> Video</a></li>
+            </ul>
+          </div>
+
+        </div><!-- pull-right -->
+      </div><!-- msg-header -->
+
+      <ul class="media-list msg-list">
+        <li class="media" ng-class="{unread: msg.unread, highlighted: ckbox[$index]}" ng-repeat="msg in messages | filter: folderBtn">
+          <div class="pull-left mt20">
+            <label class="tpx-checkbox tpx-checkbox-primary tpx-checkbox-xs tpx-checkbox-inverse pull-left">
+              <input type="checkbox" ng-model="ckbox[$index]" ng-change="setChecked(msg,$index)">
+              <span></span>
+            </label>
+          </div>
+          <a class="pull-left" href="#">
+            <img class="media-object img-circle img-online" ng-src="{{msg.userpic}}" alt="...">
+          </a>
+          <div class="media-body" ui-sref="messages.view({ msgId: msg.id })">
+            <div class="pull-right media-option">
+              <i class="fa fa-paperclip mr5"></i>
+              <small>{{msg.date}}</small>
+              <a href=""><i class="fa fa-star"></i></a>
+              <div class="btn-group">
+                <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                  <i class="fa fa-cog"></i>
+                </a>
+                <ul class="dropdown-menu pull-right" role="menu">
+                  <li><a>Mark as Unread</a></li>
+                  <li><a>Reply</a></li>
+                  <li><a>Forward</a></li>
+                  <li><a>Archive</a></li>
+                  <li><a>Move to Folder</a></li>
+                  <li><a>Delete</a></li>
+                  <li class="divider"></li>
+                  <li><a>Report as Spam</a></li>
+                </ul>
+              </div>
+            </div>
+            <h4 class="sender">{{msg.sender}}</h4>
+            <p><a><strong class="subject">{{msg.subject}}</strong> {{msg.summary}}</a></p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div><!-- contentpanel -->

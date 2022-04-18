@@ -1,0 +1,204 @@
+<div class="pageheader" page-header></div>
+
+<div class="contentpanel">
+
+  <div class="row">
+    <div class="col-md-6">
+      <form action="form-validation.html" validate="validateOption1">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">Basic Form Validation</h4>
+            <p>Please provide your name, email address (won't be published) and a comment.</p>
+          </div><!-- panel-heading -->
+          <div class="panel-body">
+            <div class="row">
+              <div class="form-group">
+                <label class="col-sm-3 control-label">Name <span class="asterisk">*</span></label>
+                <div class="col-sm-9">
+                  <input type="text" name="name" class="form-control" placeholder="Type your name..." required />
+                </div>
+              </div><!-- form-group -->
+
+              <div class="form-group">
+                <label class="col-sm-3 control-label">Email <span class="asterisk">*</span></label>
+                <div class="col-sm-9">
+                  <input type="email" name="email" class="form-control" placeholder="Type your email..." required />
+                </div>
+              </div><!-- form-group -->
+
+              <div class="form-group">
+                <label class="col-sm-3 control-label">URL</label>
+                <div class="col-sm-9">
+                  <input type="url" name="url" class="form-control" />
+                </div>
+              </div><!-- form-group -->
+
+              <div class="form-group">
+                <label class="col-sm-3 control-label">Comment <span class="asterisk">*</span></label>
+                <div class="col-sm-9">
+                  <textarea rows="5" class="form-control" placeholder="Type your comment..." required></textarea>
+                </div>
+              </div><!-- form-group -->
+            </div><!-- row -->
+          </div><!-- panel-body -->
+          <div class="panel-footer">
+            <div class="row">
+              <div class="col-sm-9 col-sm-offset-3">
+                <button class="btn btn-primary mr5">Submit</button>
+                <button type="reset" class="btn btn-dark">Reset</button>
+              </div>
+            </div>
+          </div><!-- panel-footer -->
+        </div><!-- panel -->
+      </form>
+
+    </div><!-- col-md-6 -->
+
+    <div class="col-md-6">
+      <form id="basicForm2" action="form-validation.html" validate="validateOption2">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">Error Message In One Container</h4>
+            <p>Please provide your name, email address (won't be published) and a comment.</p>
+          </div><!-- panel-heading -->
+          <div class="panel-body">
+            <div class="errorForm"></div>
+            <div class="row">
+              <div class="form-group">
+                <label class="col-sm-3 control-label">Name <span class="asterisk">*</span></label>
+                <div class="col-sm-9">
+                  <input type="text" name="name" class="form-control" title="Your name is required!" placeholder="Type your name..." required />
+                </div>
+              </div><!-- form-group -->
+
+              <div class="form-group">
+                <label class="col-sm-3 control-label">Email <span class="asterisk">*</span></label>
+                <div class="col-sm-9">
+                  <input type="email" name="email" class="form-control" title="Your email address is required!" placeholder="Type your email..." required />
+                </div>
+              </div><!-- form-group -->
+
+              <div class="form-group">
+                <label class="col-sm-3 control-label">URL</label>
+                <div class="col-sm-9">
+                  <input type="url" name="url" title="Please enter a valid url!" class="form-control" />
+                </div>
+              </div><!-- form-group -->
+
+              <div class="form-group">
+                <label class="col-sm-3 control-label">Comment <span class="asterisk">*</span></label>
+                <div class="col-sm-9">
+                  <textarea rows="5" class="form-control" name="comment" title="Please type a comment at least 6 characters long!" placeholder="Type your comment..." required></textarea>
+                </div>
+              </div><!-- form-group -->
+            </div><!-- row -->
+          </div><!-- panel-body -->
+          <div class="panel-footer">
+            <div class="row">
+              <div class="col-sm-9 col-sm-offset-3">
+                <button class="btn btn-primary mr5">Submit</button>
+                <button type="reset" class="btn btn-dark">Reset</button>
+              </div>
+            </div>
+          </div><!-- panel-footer -->
+        </div><!-- panel -->
+      </form>
+
+    </div><!-- col-md-6 -->
+  </div><!--row -->
+
+  <div class="row">
+    <div class="col-md-6">
+      <form id="basicForm3" action="form-validation.html" validate="validateOption3">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">With Checkboxes and Radio Buttons</h4>
+            <p>Validating a form with a radio and checkbox buttons.</p>
+          </div><!-- panel-heading -->
+          <div class="panel-body">
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Gender <span class="asterisk">*</span></label>
+              <div class="col-sm-9">
+                <div>
+                  <input type="radio" id="male" value="m" name="gender" required />
+                  <label for="male">Male</label>
+                </div><!-- rdio -->
+                <div>
+                  <input type="radio" value="f" id="female" name="gender">
+                  <label for="female">Female</label>
+                </div><!-- rdio -->
+                <label id="genderError" for="gender" class="error"></label>
+              </div>
+            </div><!-- form-group -->
+
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Interest <span class="asterisk">*</span></label>
+              <div class="col-sm-9">
+                <div class="ckbox ckbox-primary">
+                  <input type="checkbox" id="int_website" value="m" name="int[]" required />
+                  <label for="int_website">Website</label>
+                </div><!-- rdio -->
+
+                <div class="ckbox ckbox-primary">
+                  <input type="checkbox" value="f" id="int_software" name="int[]" />
+                  <label for="int_software">Software</label>
+                </div><!-- rdio -->
+
+                <div class="ckbox ckbox-primary">
+                  <input type="checkbox" value="f" id="int_mobile" name="int[]" />
+                  <label for="int_mobile">Mobile</label>
+                </div><!-- rdio -->
+                <label id="intError" for="int[]" class="error"></label>
+              </div>
+            </div><!-- form-group -->
+          </div><!-- panel-body -->
+          <div class="panel-footer">
+            <div class="row">
+              <div class="col-sm-9 col-sm-offset-3">
+                <button class="btn btn-primary mr5">Submit</button>
+                <button type="reset" class="btn btn-dark">Reset</button>
+              </div>
+            </div>
+          </div><!-- panel-footer -->
+        </div><!-- panel -->
+      </form>
+
+    </div><!-- col-md-6 -->
+
+    <div class="col-md-6">
+      <form id="basicForm4" action="form-validation.html" validate="validateOption4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">Validation With Select Boxes</h4>
+            <p>Validating a form using select boxes with single or multiple selection.</p>
+          </div><!-- panel-heading -->
+          <div class="panel-body">
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Fruits</label>
+              <div class="col-sm-9">
+                <select ui-select2="select2Option" ng-model="select2" data-placeholder="Choose One" class="width100p" required>
+                  <option value=""></option>
+                  <option value="apple">Apple</option>
+                  <option value="orange">Orange</option>
+                  <option value="grapes">Grapes</option>
+                  <option value="strawberry">Strawberry</option>
+                </select>
+                <label class="error" for="fruits"></label>
+              </div>
+            </div><!-- form-group -->
+          </div><!-- panel-body -->
+
+          <div class="panel-footer">
+            <div class="row">
+              <div class="col-sm-9 col-sm-offset-3">
+                <button type="submit" class="btn btn-primary mr5">Submit</button>
+                <button type="reset" class="btn btn-dark">Reset</button>
+              </div>
+            </div>
+          </div><!-- panel-footer -->
+        </div><!-- panel -->
+      </form>
+    </div><!-- col-md-6 -->
+  </div><!-- row-->
+
+</div><!-- contentpanel -->

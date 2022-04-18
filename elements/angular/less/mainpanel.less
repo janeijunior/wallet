@@ -1,0 +1,138 @@
+
+.mainpanel {
+  margin-left: @leftpanel-width;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+.pageheader {
+  padding: @padding-base;
+  border-bottom: 1px solid #eeeeee;
+  height: 90px;
+  .box-shadow(0 2px 3px, rgba(0,0,0,0.03));
+
+  .media {
+    padding: 0;
+    clear: both;
+  }
+
+  .pageicon {
+    width: @pageicon-size;
+    height: @pageicon-size;
+    background-color: @brand-dark;
+    display: inline-block;
+    color: #fff;
+    font-size: 32px;
+    padding-top: 1px;
+    padding-left: 10px;
+    .border-radius();
+
+    .fa-envelope-o {
+      font-size: 31px;
+    }
+
+    .fa-bar-chart-o {
+      font-size: 28px;
+    }
+
+    .fa-flag {
+      font-size: 30px;
+    }
+
+    .fa-laptop {
+      font-size: 28px;
+    }
+
+    .fa-navicon {
+      font-size: 28px;
+      margin-left: 3px;
+    }
+
+    .fa-code {
+      font-size: 28px;
+    }
+
+    .fa-pencil {
+      margin-left: 3px;
+    }
+
+    .fa-th-list {
+      font-size: 28px;
+      margin-left: 1px;
+    }
+
+    .fa-map-marker {
+      margin-left: 5px;
+    }
+
+    .fa-calendar {
+      font-size: 32px;
+    }
+
+    .fa-user {
+      font-size: 28px;
+      margin-left: 4px;
+    }
+  }
+
+  .breadcrumb {
+    margin: 0;
+    padding: 0;
+    background: none;
+    font-size: 11px;
+    color: #999;
+    line-height: 18px;
+
+    li a {
+      color: #333;
+
+      i {
+        color: #999;
+        font-size: 10px;
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: @theme-color;
+      }
+    }
+
+    @media screen and (max-width: 320px) {
+      margin-top: 5px;
+    }
+  }
+
+  h4 {
+    margin: -2px 0 0;
+    font-size: 28px;
+    font-weight: 500;
+    color: #2f363d;
+    line-height: normal;
+
+    @media screen and (max-width: 360px) {
+      font-size: 24px;
+    }
+
+    @media screen and (max-width: 320px) {
+      font-size: 20px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: 10px;
+    height: 70px;
+  }
+}
+
+.contentpanel {
+  position: relative;
+  padding: 20px;
+
+  @media screen and (max-width: 480px) {
+    padding: 10px;
+  }
+}

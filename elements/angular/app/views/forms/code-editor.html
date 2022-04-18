@@ -1,0 +1,77 @@
+<div class="pageheader" page-header></div>
+
+<div class="contentpanel">
+
+  This template uses <a href="http://codemirror.net/" target="_blank">CodeMirror</a> as code editor to be used in this template. To know more about CodeMirror, click the buttons below
+
+  <br /><br />
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h5 class="panel-title">XML/HTML Mode</h5>
+      <p>The XML mode supports two configuration parameters <code>htmlMode</code> and <code>alignCDATA</code>. To learn more visit <a target="_blank" href="http://codemirror.net/mode/xml/index.html">here</a>. To view more languages visit <a href="http://codemirror.net/mode/index.html" target="_blank">here</a></p>
+    </div><!-- panel-heading -->
+    <div class="panel-body nopadding">
+
+      <div ui-codemirror ui-codemirror-opts="editorOptions">&lt;html style="color: green"&gt;
+  &lt;!-- this is a comment --&gt;
+  &lt;head&gt;
+    &lt;title&gt;HTML Example&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    The indentation tries to be &lt;em&gt;somewhat &amp;quot;do what
+    I mean&amp;quot;&lt;/em&gt;... but might not match your style.
+  &lt;/body&gt;
+&lt;/html&gt;</div>
+
+    </div><!-- panel-body -->
+  </div><!-- panel -->
+
+  <div class="panel panel-default panel-alt">
+    <div class="panel-heading">
+      <h4 class="panel-title">Code Editor Theme</h4>
+      <p>The code editor comes with different themes such as below. You can view more theme demos from the CodeMirror site by going <a href="http://codemirror.net/demo/theme.html" target="_blank">here</a></p>
+    </div><!-- panel-heading -->
+    <div class="panel-body nopadding">
+      <div ui-codemirror ui-codemirror-opts="editor2Options">function findSequence(goal) {
+  function find(start, history) {
+    if (start == goal)
+      return history;
+    else if (start > goal)
+      return null;
+    else
+      return find(start + 5, "(" + history + " + 5)") ||
+      find(start * 3, "(" + history + " * 3)");
+  }
+  return find(1, "1");
+}
+      </div>
+    </div><!-- panel-body -->
+  </div><!-- panel -->
+
+  <div class="panel panel-default panel-alt">
+    <div class="panel-heading">
+      <h4 class="panel-title">Comment/Uncomment Of Code</h4>
+      <p>Select a piece of code and click one of the links below to toggle comment to the selected text. </p>
+      <div class="mb15"></div>
+      <button class="btn btn-primary btn-sm mr5" ng-click="commentSelection('line')">Line Comment Selected</button>
+      <button class="btn btn-primary btn-sm mr5" ng-click="commentSelection('block')">Block Comment Selected</button>
+      <button class="btn btn-primary btn-sm" ng-click="uncommentSelection()">Uncommment Selected</button>
+    </div><!-- panel-heading -->
+    <div class="panel-body nopadding">
+      <div ui-codemirror="{onLoad: codemirrorLoaded}" ui-codemirror-opts="editor3Options">function findSequence(goal) {
+  function find(start, history) {
+    if (start == goal)
+      return history;
+    else if (start > goal)
+      return null;
+    else
+      return find(start + 5, "(" + history + " + 5)") ||
+      find(start * 3, "(" + history + " * 3)");
+  }
+  return find(1, "1");
+}</div>
+    </div><!-- panel-body -->
+  </div><!-- panel -->
+
+</div><!-- contentpanel -->

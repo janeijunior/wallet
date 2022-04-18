@@ -1,0 +1,89 @@
+<div class="header-left">
+  <a ui-sref="dashboard" class="logo">
+    <img ng-src="images/logo.png" alt="" />
+  </a>
+  <div class="pull-right">
+    <a class="menu-collapse" ng-click="menuCollapse()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div><!-- header-left -->
+
+<div class="header-right">
+
+  <div class="pull-right">
+
+    <!-- START: SEARCH BAR -->
+    <form class="form form-search" action="search-results.html">
+      <input type="search" class="form-control" placeholder="Search" />
+    </form>
+    <!-- END: SEARCH BAR -->
+
+    <!-- START: NOTIFICATION -->
+    <div class="btn-group btn-group-list btn-group-notification">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+        <i class="fa fa-bell-o"></i>
+        <span class="badge">{{notiCount}}</span>
+      </button>
+      <div class="dropdown-menu pull-right">
+        <a href="" class="link-right"><i class="fa fa-search"></i></a>
+        <h5>Notification</h5>
+        <ul class="media-list dropdown-list">
+          <li class="media" ng-repeat="noti in notification">
+            <img class="img-circle pull-left noti-thumb" ng-src="{{noti.userpic}}" alt="">
+            <div class="media-body">
+              <strong>{{noti.fullname}}</strong> {{noti.description}}
+              <small class="date"><i class="fa fa-{{noti.icon}}"></i> {{noti.date}}</small>
+            </div>
+          </li>
+        </ul>
+        <div class="dropdown-footer text-center">
+          <a href="" class="link">See All Notifications</a>
+        </div>
+      </div><!-- dropdown-menu -->
+    </div><!-- btn-group -->
+    <!-- END: NOTIFICATION -->
+
+    <!-- START: NEW MESSAGES -->
+    <div class="btn-group btn-group-list btn-group-messages">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+        <i class="fa fa-envelope-o"></i>
+        <span class="badge">2</span>
+      </button>
+      <div class="dropdown-menu pull-right">
+        <a href="" class="link-right"><i class="fa fa-plus"></i></a>
+        <h5>New Messages</h5>
+        <ul class="media-list dropdown-list">
+          <li class="media" ng-repeat="msg in messages | filter:{folder: 'inbox'} | limitTo:5">
+            <span ng-if="msg.unread" class="badge badge-success">New</span>
+            <img class="img-circle pull-left noti-thumb" ng-src="{{msg.userpic}}" alt="">
+            <div class="media-body">
+              <strong>{{msg.sender}}</strong>
+              <p>{{msg.subject}}</p>
+              <small class="date"><i class="fa fa-clock-o"></i> {{msg.date}}</small>
+            </div>
+          </li>
+        </ul>
+        <div class="dropdown-footer text-center">
+          <a href="" class="link">See All Messages</a>
+        </div>
+      </div><!-- dropdown-menu -->
+    </div><!-- btn-group -->
+    <!-- END: NEW MESSAGES -->
+
+    <div class="btn-group btn-group-option">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <ul class="dropdown-menu pull-right" role="menu">
+        <li><a href="#"><i class="glyphicon glyphicon-user"></i> My Profile</a></li>
+        <li><a href="#"><i class="glyphicon glyphicon-star"></i> Activity Log</a></li>
+        <li><a href="#"><i class="glyphicon glyphicon-cog"></i> Account Settings</a></li>
+        <li><a href="#"><i class="glyphicon glyphicon-question-sign"></i> Help</a></li>
+        <li class="divider"></li>
+        <li><a href="#"><i class="glyphicon glyphicon-log-out"></i>Sign Out</a></li>
+      </ul>
+    </div><!-- btn-group -->
+
+  </div><!-- pull-right -->
+</div><!-- header-right -->
