@@ -17,4 +17,6 @@ application/logs/*
 /vendor/
 
 #application
-application/uploads/*
+*/application/uploads/*
+!application/uploads/*
+*/uploads/*
