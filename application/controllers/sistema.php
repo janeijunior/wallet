@@ -23,10 +23,10 @@ class Sistema extends CI_Controller {
             redirect('sistema/login');
         }
 
-        $this->data['ordens'] = $this->sistema_model->getOsAbertas();
-        $this->data['produtos'] = $this->sistema_model->getProdutosMinimo();
-        $this->data['os'] = $this->sistema_model->getOsEstatisticas();
-        $this->data['estatisticas_financeiro'] = $this->sistema_model->getEstatisticasFinanceiro();
+       // $this->data['ordens'] = $this->sistema_model->getOsAbertas();
+       // $this->data['produtos'] = $this->sistema_model->getProdutosMinimo();
+       // $this->data['os'] = $this->sistema_model->getOsEstatisticas();
+       // $this->data['estatisticas_financeiro'] = $this->sistema_model->getEstatisticasFinanceiro();
         $this->data['menuPainel'] = 'Painel';
         $this->data['view'] = 'sistema/painel';
         $this->load->view('tema/topo',  $this->data);
@@ -68,15 +68,15 @@ class Sistema extends CI_Controller {
             redirect('sistema/login');
         }
 
-        $termo = $this->input->get('termo');
-
-        $data['results'] = $this->sistema_model->pesquisar($termo);
-        $this->data['produtos'] = $data['results']['produtos'];
-        $this->data['servicos'] = $data['results']['servicos'];
-        $this->data['os'] = $data['results']['os'];
-        $this->data['clientes'] = $data['results']['clientes'];
-        $this->data['view'] = 'sistema/pesquisa';
-        $this->load->view('tema/topo',  $this->data);
+        //$termo = $this->input->get('termo');
+//
+        //$data['results'] = $this->sistema_model->pesquisar($termo);
+        //$this->data['produtos'] = $data['results']['produtos'];
+        //$this->data['servicos'] = $data['results']['servicos'];
+        //$this->data['os'] = $data['results']['os'];
+        //$this->data['clientes'] = $data['results']['clientes'];
+        //$this->data['view'] = 'sistema/pesquisa';
+        //$this->load->view('tema/topo',  $this->data);
 
     }
 
