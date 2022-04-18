@@ -5,9 +5,8 @@
  * An open source application development framework for PHP 5.1.6 or newer
  *
  * @package		CodeIgniter
- * @author		EllisLab Dev Team
- * @copyright		Copyright (c) 2008 - 2014, EllisLab, Inc.
- * @copyright		Copyright (c) 2014 - 2015, British Columbia Institute of Technology (http://bcit.ca/)
+ * @author		ExpressionEngine Dev Team
+ * @copyright	Copyright (c) 2008 - 2011, EllisLab, Inc.
  * @license		http://codeigniter.com/user_guide/license.html
  * @link		http://codeigniter.com
  * @since		Version 1.0
@@ -20,7 +19,7 @@
  * SQLSRV Forge Class
  *
  * @category	Database
- * @author		EllisLab Dev Team
+ * @author		ExpressionEngine Dev Team
  * @link		http://codeigniter.com/user_guide/database/
  */
 class CI_DB_sqlsrv_forge extends CI_DB_forge {
@@ -61,8 +60,7 @@ class CI_DB_sqlsrv_forge extends CI_DB_forge {
 	 */
 	function _drop_table($table)
 	{
-		return "IF (EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND  TABLE_NAME = '"
-			.$table."')) DROP TABLE [dbo].[".$table."]";
+		return "DROP TABLE ".$this->db->_escape_identifiers($table);
 	}
 
 	// --------------------------------------------------------------------
@@ -80,12 +78,14 @@ class CI_DB_sqlsrv_forge extends CI_DB_forge {
 	 */
 	function _create_table($table, $fields, $primary_keys, $keys, $if_not_exists)
 	{
-		$sql = '';
+		$sql = 'CREATE TABLE ';
+
 		if ($if_not_exists === TRUE)
 		{
-			$sql = "IF (NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND  TABLE_NAME = ";
+			$sql .= 'IF NOT EXISTS ';
 		}
-		$sql .= $this->db->_escape_identifiers($table).")) CREATE TABLE ".$this->db->_escape_identifiers($table)." (";
+
+		$sql .= $this->db->_escape_identifiers($table)." (";
 		$current_field_count = 0;
 
 		foreach ($fields as $field=>$attributes)
@@ -131,7 +131,7 @@ class CI_DB_sqlsrv_forge extends CI_DB_forge {
 
 				if (array_key_exists('AUTO_INCREMENT', $attributes) && $attributes['AUTO_INCREMENT'] === TRUE)
 				{
-					$sql .= ' IDENTITY(1,1)';
+					$sql .= ' AUTO_INCREMENT';
 				}
 			}
 
@@ -237,10 +237,12 @@ class CI_DB_sqlsrv_forge extends CI_DB_forge {
 	 */
 	function _rename_table($table_name, $new_table_name)
 	{
-		return 'EXEC sp_rename '.$this->db->_protect_identifiers($table_name).", ".$this->db->_protect_identifiers($new_table_name);
+		// I think this syntax will work, but can find little documentation on renaming tables in MSSQL
+		$sql = 'ALTER TABLE '.$this->db->_protect_identifiers($table_name)." RENAME TO ".$this->db->_protect_identifiers($new_table_name);
+		return $sql;
 	}
 
 }
 
-/* End of file sqlsrv_forge.php */
-/* Location: ./system/database/drivers/sqlsrv/sqlsrv_forge.php */
+/* End of file mssql_forge.php */
+/* Location: ./system/database/drivers/mssql/mssql_forge.php */

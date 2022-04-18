@@ -2,12 +2,11 @@
 /**
  * CodeIgniter
  *
- * An open source application development framework for PHP 5.1.6 or newer
+ * An open source application development framework for PHP 4.3.2 or newer
  *
  * @package		CodeIgniter
- * @author		EllisLab Dev Team
- * @copyright		Copyright (c) 2006 - 2014 EllisLab, Inc.
- * @copyright		Copyright (c) 2014 - 2015, British Columbia Institute of Technology (http://bcit.ca/)
+ * @author		ExpressionEngine Dev Team
+ * @copyright	Copyright (c) 2006 - 2012 EllisLab, Inc.
  * @license		http://codeigniter.com/user_guide/license.html
  * @link		http://codeigniter.com
  * @since		Version 2.0
@@ -22,9 +21,10 @@
  * @package		CodeIgniter
  * @subpackage	Libraries
  * @category	Core
- * @author		EllisLab Dev Team
+ * @author		ExpressionEngine Dev Team
  * @link
  */
+
 class CI_Cache_dummy extends CI_Driver {
 
 	/**
@@ -120,7 +120,10 @@ class CI_Cache_dummy extends CI_Driver {
 		return TRUE;
 	}
 
+	// ------------------------------------------------------------------------
+
 }
+// End Class
 
 /* End of file Cache_dummy.php */
 /* Location: ./system/libraries/Cache/drivers/Cache_dummy.php */

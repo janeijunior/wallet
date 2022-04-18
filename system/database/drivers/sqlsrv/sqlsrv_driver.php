@@ -5,9 +5,8 @@
  * An open source application development framework for PHP 5.1.6 or newer
  *
  * @package		CodeIgniter
- * @author		EllisLab Dev Team
- * @copyright		Copyright (c) 2008 - 2014, EllisLab, Inc.
- * @copyright		Copyright (c) 2014 - 2015, British Columbia Institute of Technology (http://bcit.ca/)
+ * @author		ExpressionEngine Dev Team
+ * @copyright	Copyright (c) 2008 - 2011, EllisLab, Inc.
  * @license		http://codeigniter.com/user_guide/license.html
  * @link		http://codeigniter.com
  * @since		Version 1.0
@@ -26,7 +25,7 @@
  * @package		CodeIgniter
  * @subpackage	Drivers
  * @category	Database
- * @author		EllisLab Dev Team
+ * @author		ExpressionEngine Dev Team
  * @link		http://codeigniter.com/user_guide/database/
  */
 class CI_DB_sqlsrv_driver extends CI_DB {
@@ -67,8 +66,8 @@ class CI_DB_sqlsrv_driver extends CI_DB {
 			'CharacterSet'		=> $character_set,
 			'ReturnDatesAsStrings' => 1
 		);
-
-		// If the username and password are both empty, assume this is a
+		
+		// If the username and password are both empty, assume this is a 
 		// 'Windows Authentication Mode' connection.
 		if(empty($connection['UID']) && empty($connection['PWD'])) {
 			unset($connection['UID'], $connection['PWD']);
@@ -337,20 +336,16 @@ class CI_DB_sqlsrv_driver extends CI_DB {
 	function count_all($table = '')
 	{
 		if ($table == '')
-		{
-			return 0;
-		}
-
-		$query = $this->query($this->_count_string . $this->_protect_identifiers('numrows') . " FROM " . $this->_protect_identifiers($table, TRUE, NULL, FALSE));
-
+			return '0';
+	
+		$query = $this->query("SELECT COUNT(*) AS numrows FROM " . $this->dbprefix . $table);
+		
 		if ($query->num_rows() == 0)
-		{
-			return 0;
-		}
+			return '0';
 
 		$row = $query->row();
 		$this->_reset_select();
-		return (int) $row->numrows;
+		return $row->numrows;
 	}
 
 	// --------------------------------------------------------------------
@@ -398,7 +393,7 @@ class CI_DB_sqlsrv_driver extends CI_DB {
 	 */
 	function _field_data($table)
 	{
-		return "SELECT TOP 1 * FROM " . $this->_escape_table($table);
+		return "SELECT TOP 1 * FROM " . $this->_escape_table($table);	
 	}
 
 	// --------------------------------------------------------------------
@@ -444,7 +439,7 @@ class CI_DB_sqlsrv_driver extends CI_DB {
 	function _escape_table($table)
 	{
 		return $table;
-	}
+	}	
 
 
 	/**
@@ -497,7 +492,7 @@ class CI_DB_sqlsrv_driver extends CI_DB {
 	 * @return	string
 	 */
 	function _insert($table, $keys, $values)
-	{
+	{	
 		return "INSERT INTO ".$this->_escape_table($table)." (".implode(', ', $keys).") VALUES (".implode(', ', $values).")";
 	}
 
@@ -522,10 +517,10 @@ class CI_DB_sqlsrv_driver extends CI_DB {
 		{
 			$valstr[] = $key." = ".$val;
 		}
-
+	
 		return "UPDATE ".$this->_escape_table($table)." SET ".implode(', ', $valstr)." WHERE ".implode(" ", $where);
 	}
-
+	
 	// --------------------------------------------------------------------
 
 	/**
@@ -541,7 +536,7 @@ class CI_DB_sqlsrv_driver extends CI_DB {
 	 */
 	function _truncate($table)
 	{
-		return "TRUNCATE TABLE ".$table;
+		return "TRUNCATE ".$table;
 	}
 
 	// --------------------------------------------------------------------
@@ -578,8 +573,8 @@ class CI_DB_sqlsrv_driver extends CI_DB {
 	function _limit($sql, $limit, $offset)
 	{
 		$i = $limit + $offset;
-
-		return preg_replace('/(^\SELECT (DISTINCT)?)/i','\\1 TOP '.$i.' ', $sql);
+	
+		return preg_replace('/(^\SELECT (DISTINCT)?)/i','\\1 TOP '.$i.' ', $sql);		
 	}
 
 	// --------------------------------------------------------------------
@@ -600,5 +595,5 @@ class CI_DB_sqlsrv_driver extends CI_DB {
 
 
 
-/* End of file sqlsrv_driver.php */
-/* Location: ./system/database/drivers/sqlsrv/sqlsrv_driver.php */
+/* End of file mssql_driver.php */
+/* Location: ./system/database/drivers/mssql/mssql_driver.php */

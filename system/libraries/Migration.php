@@ -1,4 +1,4 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
 /**
  * CodeIgniter
  *
@@ -6,8 +6,7 @@
  *
  * @package		CodeIgniter
  * @author		EllisLab Dev Team
- * @copyright		Copyright (c) 2006 - 2014, EllisLab, Inc.
- * @copyright		Copyright (c) 2014 - 2015, British Columbia Institute of Technology (http://bcit.ca/)
+ * @copyright	Copyright (c) 2006 - 2012, EllisLab, Inc.
  * @license		http://codeigniter.com/user_guide/license.html
  * @link		http://codeigniter.com
  * @since		Version 1.0
@@ -221,7 +220,7 @@ class CI_Migration {
 	{
 		if ( ! $migrations = $this->find_migrations())
 		{
-			$this->_error_string = $this->lang->line('migration_none_found');
+			$this->_error_string = $this->line->lang('migration_none_found');
 			return false;
 		}
 
@@ -323,7 +322,6 @@ class CI_Migration {
 	{
 		return get_instance()->$var;
 	}
-
 }
 
 /* End of file Migration.php */
