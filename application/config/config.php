@@ -1,5 +1,21 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+/**
+ * App current version
+ */
+$config['app_version'] = '0.0.1';
+
+/**
+ * Nome do sistema
+ */
+$config['app_name'] = 'Wallet';
+
+/**
+ * Descrição do sistema
+ */
+$config['app_subname'] = 'wallet';
+
+
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
