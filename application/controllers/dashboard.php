@@ -20,7 +20,7 @@ class Dashboard extends CI_Controller {
 
         $this->load->helper(array('form', 'codegen_helper'));
         $this->load->model('dashboard_model', '', TRUE);
-        $this->data['menuDashboard'] = 'Acessorios';
+        $this->data['menuDashboard'] = 'Dashboard';
     }
 
     function index(){
