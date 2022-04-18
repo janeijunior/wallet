@@ -1,111 +1,318 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<title><?php echo $this->config->item('app_name'); ?></title>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.min.css" />
-<link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap-responsive.min.css" />
-<link rel="stylesheet" href="<?php echo base_url();?>assets/css/matrix-style.css" />
-<link rel="stylesheet" href="<?php echo base_url();?>assets/css/matrix-media.css" />
-<link href="<?php echo base_url();?>assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-<link rel="stylesheet" href="<?php echo base_url();?>assets/css/fullcalendar.css" /> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
-<script type="text/javascript"  src="<?php echo base_url();?>assets/js/jquery-1.10.2.min.js"></script>
+    <title><?php echo $this->config->item('app_name'); ?> v<?php echo $this->config->item('app_version'); ?></title>
 
+    <link href="<?php echo base_url(); ?>elements/template/css/style.default.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>elements/template/css/select2.css" rel="stylesheet" />
+    <link href="<?php echo base_url(); ?>elements/template/css/style.datatables.css" rel="stylesheet">
+    <script type="text/javascript" src="<?php echo base_url(); ?>elements/template/js/jquery-1.11.1.min.js"></script>
+
+    <link href="//cdn.datatables.net/responsive/1.0.1/css/dataTables.responsive.css" rel="stylesheet">
+
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
 </head>
+
 <body>
 
-<!--Header-part-->
-<div id="header">
-  <h1><a href=""><?php echo $this->config->item('app_name'); ?></a></h1>
-</div>
-<!--close-Header-part--> 
+    <header>
+        <div class="headerwrapper">
+            <div class="header-left">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="" />
+                </a>
+                <div class="pull-right">
+                    <a href="" class="menu-collapse">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </div>
+            </div><!-- header-left -->
 
-<!--top-Header-menu-->
-<div id="user-nav" class="navbar navbar-inverse">
-  <ul class="nav">
-   
-    <li class=""><a title="" href="<?php echo base_url();?>index.php/sistema/minhaConta"><i class="icon icon-star"></i> <span class="text">Minha Conta</span></a></li>
-    <li class=""><a title="" href="<?php echo base_url();?>index.php/sistema/sair"><i class="icon icon-share-alt"></i> <span class="text">Sair do Sistema</span></a></li>
-    <li class="pull-right"><a href="https://github.com/janeijunior/wallet" target="_blank"><i class="icon icon-asterisk"></i> <span class="text">Versão: <?php echo $this->config->item('app_version'); ?></span></a></li>
-    
-  </ul>
+            <div class="header-right">
 
-</div>
-
-<!--start-top-serch-->
-<div id="search">
-  <form action="<?php echo base_url()?>index.php/sistema/pesquisar">
-    <input type="text" name="termo" placeholder="Pesquisar..."/>
-    <button type="submit"  class="tip-bottom" title="Pesquisar"><i class="icon-search icon-white"></i></button>
-    
-  </form>
-</div>
-<!--close-top-serch--> 
-
-<!--sidebar-menu-->
-
-<div id="sidebar"> <a href="#" class="visible-phone"><i class="icon icon-list"></i> Menu</a>
-  <ul>
+                <div class="pull-right">
 
 
-    <li class="<?php if(isset($menuPainel)){echo 'active';};?>"><a href="<?php echo base_url()?>"><i class="icon icon-home"></i> <span>Dashboard</span></a></li>
-    
-    <?php if($this->permission->checkPermission($this->session->userdata('permissao'),'vCliente')){ ?>
-        <li class="<?php if(isset($menuTest)){echo 'active';};?>"><a href="<?php echo base_url()?>index.php/teste"><i class="icon icon-group"></i> <span>teste</span></a></li>
-    <?php } ?>
-   
-    
-  </ul>
-</div>
-<div id="content">
-  <div id="content-header">
-    <div id="breadcrumb"> <a href="<?php echo base_url()?>" title="Dashboard" class="tip-bottom"><i class="icon-home"></i> Dashboard</a> <?php if($this->uri->segment(1) != null){?><a href="<?php echo base_url().'index.php/'.$this->uri->segment(1)?>" class="tip-bottom" title="<?php echo ucfirst($this->uri->segment(1));?>"><?php echo ucfirst($this->uri->segment(1));?></a> <?php if($this->uri->segment(2) != null){?><a href="<?php echo base_url().'index.php/'.$this->uri->segment(1).'/'.$this->uri->segment(2).'/'.$this->uri->segment(3) ?>" class="current tip-bottom" title="<?php echo ucfirst($this->uri->segment(2)); ?>"><?php echo ucfirst($this->uri->segment(2));} ?></a> <?php }?></div>
-  </div>
-  <div class="container-fluid">
-    <div class="row-fluid">
-      <div class="span12">
-          <?php if($this->session->flashdata('error') != null){?>
-                            <div class="alert alert-danger">
-                              <button type="button" class="close" data-dismiss="alert">&times;</button>
-                              <?php echo $this->session->flashdata('error');?>
-                           </div>
-                      <?php }?>
 
-                      <?php if($this->session->flashdata('success') != null){?>
-                            <div class="alert alert-success">
-                              <button type="button" class="close" data-dismiss="alert">&times;</button>
-                              <?php echo $this->session->flashdata('success');?>
-                           </div>
-                      <?php }?>
-                          
-                      <?php if(isset($view)){echo $this->load->view($view);}?>
+                    <form class="form form-search" action="search-results.html">
+                        <input type="search" class="form-control" placeholder="Search" />
+                    </form>
+
+                    <div class="btn-group btn-group-list btn-group-notification">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-bell-o"></i>
+                            <span class="badge"></span>
+                        </button>
+                        <div class="dropdown-menu pull-right">
+                            <a href="" class="link-right"><i class="fa fa-search"></i></a>
+                            <h5>Notification</h5>
+                            <ul class="media-list dropdown-list">
+                                <li class="media">
+                                    <img class="img-circle pull-left noti-thumb" src="images/photos/user1.png" alt="">
+                                    <div class="media-body">
+                                        <strong>Nusja Nawancali</strong> likes a photo of you
+                                        <small class="date"><i class="fa fa-thumbs-up"></i> 15 minutes ago</small>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <img class="img-circle pull-left noti-thumb" src="images/photos/user2.png" alt="">
+                                    <div class="media-body">
+                                        <strong>Weno Carasbong</strong> shared a photo of you in your <strong>Mobile Uploads</strong> album.
+                                        <small class="date"><i class="fa fa-calendar"></i> July 04, 2014</small>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <img class="img-circle pull-left noti-thumb" src="images/photos/user3.png" alt="">
+                                    <div class="media-body">
+                                        <strong>Venro Leonga</strong> likes a photo of you
+                                        <small class="date"><i class="fa fa-thumbs-up"></i> July 03, 2014</small>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <img class="img-circle pull-left noti-thumb" src="images/photos/user4.png" alt="">
+                                    <div class="media-body">
+                                        <strong>Nanterey Reslaba</strong> shared a photo of you in your <strong>Mobile Uploads</strong> album.
+                                        <small class="date"><i class="fa fa-calendar"></i> July 03, 2014</small>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <img class="img-circle pull-left noti-thumb" src="images/photos/user1.png" alt="">
+                                    <div class="media-body">
+                                        <strong>Nusja Nawancali</strong> shared a photo of you in your <strong>Mobile Uploads</strong> album.
+                                        <small class="date"><i class="fa fa-calendar"></i> July 02, 2014</small>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="dropdown-footer text-center">
+                                <a href="" class="link">See All Notifications</a>
+                            </div>
+                        </div><!-- dropdown-menu -->
+                    </div><!-- btn-group -->
+
+                    <div class="btn-group btn-group-list btn-group-messages">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-envelope-o"></i>
+                            <span class="badge"></span>
+                        </button>
+                        <div class="dropdown-menu pull-right">
+                            <a href="" class="link-right"><i class="fa fa-plus"></i></a>
+                            <h5>New Messages</h5>
+                            <ul class="media-list dropdown-list">
+                                <li class="media">
+                                    <span class="badge badge-success">New</span>
+                                    <img class="img-circle pull-left noti-thumb" src="images/photos/user1.png" alt="">
+                                    <div class="media-body">
+                                        <strong>Nusja Nawancali</strong>
+                                        <p>Hi! How are you?...</p>
+                                        <small class="date"><i class="fa fa-clock-o"></i> 15 minutes ago</small>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <span class="badge badge-success">New</span>
+                                    <img class="img-circle pull-left noti-thumb" src="images/photos/user2.png" alt="">
+                                    <div class="media-body">
+                                        <strong>Weno Carasbong</strong>
+                                        <p>Lorem ipsum dolor sit amet...</p>
+                                        <small class="date"><i class="fa fa-clock-o"></i> July 04, 2014</small>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <img class="img-circle pull-left noti-thumb" src="images/photos/user3.png" alt="">
+                                    <div class="media-body">
+                                        <strong>Venro Leonga</strong>
+                                        <p>Do you have the time to listen to me...</p>
+                                        <small class="date"><i class="fa fa-clock-o"></i> July 03, 2014</small>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <img class="img-circle pull-left noti-thumb" src="images/photos/user4.png" alt="">
+                                    <div class="media-body">
+                                        <strong>Nanterey Reslaba</strong>
+                                        <p>It might seem crazy what I'm about to say...</p>
+                                        <small class="date"><i class="fa fa-clock-o"></i> July 03, 2014</small>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <img class="img-circle pull-left noti-thumb" src="images/photos/user1.png" alt="">
+                                    <div class="media-body">
+                                        <strong>Nusja Nawancali</strong>
+                                        <p>Hey I just met you and this is crazy...</p>
+                                        <small class="date"><i class="fa fa-clock-o"></i> July 02, 2014</small>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="dropdown-footer text-center">
+                                <a href="" class="link">See All Messages</a>
+                            </div>
+                        </div><!-- dropdown-menu -->
+                    </div><!-- btn-group -->
+
+                    <div class="btn-group btn-group-option">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <ul class="dropdown-menu pull-right" role="menu">
+                            <li><a href="<?php echo base_url(); ?>index.php/sistema/minhaConta"><i class="glyphicon glyphicon-user"></i> My Profile</a></li>
+                            <li><a href="#"><i class="glyphicon glyphicon-star"></i> Activity Log</a></li>
+                            <li><a href="#"><i class="glyphicon glyphicon-cog"></i> Account Settings</a></li>
+                            <li><a href="#"><i class="glyphicon glyphicon-question-sign"></i> Help</a></li>
+                            <li class="divider"></li>
+                            <li><a href="<?php echo base_url(); ?>index.php/sistema/sair"><i class="glyphicon glyphicon-log-out"></i>Sign Out</a></li>
+                        </ul>
+                    </div><!-- btn-group -->
+
+                </div><!-- pull-right -->
+
+            </div><!-- header-right -->
+
+        </div><!-- headerwrapper -->
+    </header>
+
+    <section>
+        <div class="mainwrapper">
+            <div class="leftpanel">
+                <div class="media profile-left">
+                    <a class="pull-left profile-thumb" href="profile.html">
+                        <img class="img-circle" src="<?php if ($this->session->userdata('url_logo') == null) {
+                                                            $no_img = 'http://10.0.0.113/dev_source/assets/uploads/b26a1da5963669b44710a6fb66a70b39.png';
+                                                            $url_img = '';
+                                                        } else {
+                                                            $url_img = $this->session->userdata('url_logo');
+                                                            $no_img = '';
+                                                        } ?> <?php echo $url_img; ?><?php echo $no_img; ?>" class="user-image" alt="User Image">
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading"><?php echo $this->session->userdata('nome'); ?></h4>
+                        <!--<small class="text-muted"><?php echo $this->session->userdata('permissao'); ?></small>-->
 
 
-      </div>
-    </div>
-  </div>
-</div>
-<!--Footer-part-->
-<div class="row-fluid">
-  <div id="footer" class="span12"> <a href="https://github.com/janeijunior/wallet" target="_blank"><?php echo date('Y'); ?> &copy; Wallet - Janei Araujo </a></div>
-</div>
-<!--end-Footer-part-->
 
 
-<script src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script> 
-<script src="<?php echo base_url();?>assets/js/matrix.js"></script> 
+
+
+
+
+
+
+                    </div>
+                </div><!-- media -->
+
+                <h5 class="leftpanel-title">Navigation</h5>
+                <ul class="nav nav-pills nav-stacked">
+
+                    <li class="<?php if (isset($menuPainel)) {
+                                    echo 'active';
+                                }; ?>"><a href="<?php echo base_url() ?>index.php/sistema/"><i class="fa fa-fw fa-home"></i> <span> Dashboard</span></a></li>
+
+
+                    <li><a href="messages.html"><span class="pull-right badge">5</span><i class="fa fa-envelope-o"></i> <span>Messages</span></a></li>
+
+
+
+                </ul>
+
+            </div><!-- leftpanel -->
+
+            <div class="mainpanel">
+                <div class="pageheader">
+                    <div class="media">
+
+                        <div class="media-body">
+                            <ol class="breadcrumb">
+                                <li><a href="<?php echo base_url() ?>index.php/dashboard">
+                                        <em class="fa fa-home"></em>
+                                    </a></li>
+
+                                <li class="active"><a href="<?php echo base_url() ?>" title="Dashboard" class="tip-bottom"><i class="icon-home"></i></a> <?php if ($this->uri->segment(1) != null) {
+                                                                                                                                                        ?><a href="<?php echo base_url() . 'index.php/' . $this->uri->segment(1) ?>" class="tip-bottom" title="<?php echo ucfirst($this->uri->segment(1)); ?>"><?php echo ucfirst($this->uri->segment(1)); ?></a> <?php if ($this->uri->segment(2) != null) {
+                                                                                                                                                                                                                                        ?>/ <a href="<?php echo base_url() . 'index.php/' . $this->uri->segment(1) . '>' . $this->uri->segment(2) . '/' . $this->uri->segment(3) ?>" class="current tip-bottom" title="<?php echo ucfirst($this->uri->segment(2)); ?>"><?php echo ucfirst($this->uri->segment(2));
+                                                                                                                                                                                                                                                        } ?></a> <?php
+                                                                                                                                                        } ?></li>
+
+                            </ol>
+                        </div>
+                    </div><!-- media -->
+                </div><!-- pageheader -->
+
+                <div class="contentpanel">
+
+
+
+                    <?php if ($this->session->flashdata('error') != null) { ?>
+                        <div class="alert alert-danger">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <?php echo $this->session->flashdata('error'); ?>
+                        </div>
+                    <?php } ?>
+
+                    <?php if ($this->session->flashdata('success') != null) { ?>
+                        <div class="alert alert-success">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <?php echo $this->session->flashdata('success'); ?>
+                        </div>
+                    <?php } ?>
+
+
+                    <div class="row">
+                        <?php if (isset($view)) {
+                            echo $this->load->view($view);
+                        } ?>
+                    </div><!-- row -->
+
+                </div><!-- contentpanel -->
+            </div>
+        </div><!-- mainwrapper -->
+    </section>
+
+
+    <script src="<?php echo base_url(); ?>elements/template/js/jquery-1.11.1.min.js"></script>
+    <script src="<?php echo base_url(); ?>elements/template/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="<?php echo base_url(); ?>elements/template/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url(); ?>elements/template/js/modernizr.min.js"></script>
+    <script src="<?php echo base_url(); ?>elements/template/js/pace.min.js"></script>
+    <script src="<?php echo base_url(); ?>elements/template/js/retina.min.js"></script>
+    <script src="<?php echo base_url(); ?>elements/template/js/jquery.cookies.js"></script>
+
+    <script src="<?php echo base_url(); ?>elements/template/js/custom.js"></script>
+
+
+    <script src="<?php echo base_url(); ?>elements/template/js/jquery.dataTables.min.js"></script>
+    <script src="//cdn.datatables.net/plug-ins/725b2a2115b/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+    <script src="//cdn.datatables.net/responsive/1.0.1/js/dataTables.responsive.js"></script>
+    <script src="<?php echo base_url(); ?>elements/template/js/select2.min.js"></script>
+
+
+    <script>
+        jQuery(document).ready(function() {
+
+            jQuery('#basicTable').DataTable({
+                responsive: true
+            });
+
+            var shTable = jQuery('#shTable').DataTable({
+                "fnDrawCallback": function(oSettings) {
+                    jQuery('#shTable_paginate ul').addClass('pagination-active-dark');
+                },
+                responsive: true
+            });
+
+
+        });
+    </script>
+
 
 
 </body>
+
 </html>
-
-
-
-
-
-
-
