@@ -133,7 +133,7 @@ class Sistema extends CI_Controller {
                     echo json_encode($json);
                 }
                 else{
-                    redirect(base_url().'index.php/cargos');
+                    redirect(base_url().'index.php/dashboard');
                 }
 
 
