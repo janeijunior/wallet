@@ -1,6 +1,7 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Sistema extends CI_Controller {
+class Sistema extends CI_Controller
+{
 
     /******************************************
      * Created by PhpStorm.                   *
@@ -12,41 +13,42 @@ class Sistema extends CI_Controller {
      * Copyright © 2018 All rights reserved.  *
      ******************************************/
 
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
-        $this->load->model('sistema_model','',TRUE);
+        $this->load->model('sistema_model', '', TRUE);
         $this->load->helper(array('audit_helper'));
     }
 
-    public function index() {
-        if((!$this->session->userdata('session_id')) || (!$this->session->userdata('logado'))){
+    public function index()
+    {
+        if ((!$this->session->userdata('session_id')) || (!$this->session->userdata('logado'))) {
             redirect('sistema/login');
         }
 
-       // $this->data['ordens'] = $this->sistema_model->getOsAbertas();
-       // $this->data['produtos'] = $this->sistema_model->getProdutosMinimo();
-       // $this->data['os'] = $this->sistema_model->getOsEstatisticas();
-       // $this->data['estatisticas_financeiro'] = $this->sistema_model->getEstatisticasFinanceiro();
+        // $this->data['ordens'] = $this->sistema_model->getOsAbertas();
+        // $this->data['produtos'] = $this->sistema_model->getProdutosMinimo();
+        // $this->data['os'] = $this->sistema_model->getOsEstatisticas();
+        // $this->data['estatisticas_financeiro'] = $this->sistema_model->getEstatisticasFinanceiro();
         $this->data['menuPainel'] = 'Painel';
         $this->data['view'] = 'sistema/painel';
         $this->load->view('tema/topo',  $this->data);
-
     }
 
-    public function minhaContaOriginal() {
-        if((!$this->session->userdata('session_id')) || (!$this->session->userdata('logado'))){
+    public function minhaContaOriginal()
+    {
+        if ((!$this->session->userdata('session_id')) || (!$this->session->userdata('logado'))) {
             redirect('sistema/login');
         }
 
         $this->data['usuario'] = $this->sistema_model->getById($this->session->userdata('id'));
         $this->data['view'] = 'sistema/minhaConta';
         $this->load->view('tema/topo',  $this->data);
-
     }
 
     public function alterarSenha()
     {
-        if((!$this->session->userdata('session_id')) || (!$this->session->userdata('logado'))){
+        if ((!$this->session->userdata('session_id')) || (!$this->session->userdata('logado'))) {
             redirect('sistema/login');
         }
 
@@ -59,17 +61,17 @@ class Sistema extends CI_Controller {
         } else {
             $this->session->set_flashdata('error', 'Ocorreu um erro ao tentar alterar a senha!');
             redirect(base_url() . 'index.php/sistema/minhaConta');
-
         }
     }
 
-    public function pesquisar() {
-        if((!$this->session->userdata('session_id')) || (!$this->session->userdata('logado'))){
+    public function pesquisar()
+    {
+        if ((!$this->session->userdata('session_id')) || (!$this->session->userdata('logado'))) {
             redirect('sistema/login');
         }
 
         //$termo = $this->input->get('termo');
-//
+        //
         //$data['results'] = $this->sistema_model->pesquisar($termo);
         //$this->data['produtos'] = $data['results']['produtos'];
         //$this->data['servicos'] = $data['results']['servicos'];
@@ -80,89 +82,147 @@ class Sistema extends CI_Controller {
 
     }
 
-    public function login(){
 
-        $this->load->view('sistema/login');
 
+    public function terms()
+    {
+
+        $this->load->view('sistema/terms');
     }
 
-    public function sair(){
+    function signup()
+    {
+
+        $this->load->library('form_validation');
+
+        $this->data['custom_error'] = '';
+
+        if ($this->form_validation->run('signup') == false) {
+            $this->data['custom_error'] = (validation_errors() ? '<div class="alert alert-danger">' . validation_errors() . '</div>' : false);
+        } else {
+
+            $this->load->library('encrypt');
+            $permissoes_id = 3;
+            $situacao = 1;
+            $data = array(
+
+
+                'nome' =>  $this->input->post('nome'),
+                'sobrenome' =>  $this->input->post('sobrenome'),
+                'cpf' =>  $this->input->post('cpf'),
+                'codigo' =>  $this->input->post('codigo'),
+
+                'email' =>  $this->input->post('email'),
+                'senha'  => $this->encrypt->sha1($this->input->post('senha')),
+                'telefone' =>  $this->input->post('telefone'),
+                'dateinsert' => date('Y-m-d H:i:s'),
+                'permissoes_id' => $permissoes_id,
+                'terms' => $this->input->post('terms'),
+                'situacao' => $situacao,
+
+            );
+
+
+
+            if ($this->usuarios_model->addUsuario('usuarios', $data) == TRUE) {
+
+
+                $this->session->set_flashdata('success', 'Cadastrado realizado com sucesso!');
+                redirect(base_url() . 'index.php/sistema/signup');
+                sleep(2);
+                redirect(base_url() . 'index.php/sistema/login');
+            } else {
+                $this->data['custom_error'] = '<div class="form_error"><p>Ocorreu um erro.</p></div>';
+            }
+        }
+
+
+
+
+        $this->data['view'] = 'sistema/signup';
+        $this->load->view('sistema/signup', $this->data);
+    }
+
+
+
+
+    public function login()
+    {
+
+        $this->load->view('sistema/login');
+    }
+
+    public function sair()
+    {
         log_info('Efetuou logout no sistema');
         $this->session->sess_destroy();
         redirect('sistema/login');
     }
 
-    public function verificarLogin(){
+    public function verificarLogin()
+    {
 
         $this->load->library('form_validation');
-        $this->form_validation->set_rules('email','Email','valid_email|required|xss_clean|trim');
-        $this->form_validation->set_rules('senha','Senha','required|xss_clean|trim');
+        $this->form_validation->set_rules('email', 'Email', 'valid_email|required|xss_clean|trim');
+        $this->form_validation->set_rules('senha', 'Senha', 'required|xss_clean|trim');
         $ajax = $this->input->get('ajax');
         if ($this->form_validation->run() == false) {
 
-            if($ajax == true){
+            if ($ajax == true) {
                 $json = array('result' => false);
                 echo json_encode($json);
-            }
-            else{
-                $this->session->set_flashdata('error','Os dados de acesso estão incorretos.');
+            } else {
+                $this->session->set_flashdata('error', 'Os dados de acesso estão incorretos.');
                 redirect($this->login);
             }
-        }
-        else {
+        } else {
             $email = $this->input->post('email');
             $senha = $this->input->post('senha');
 
             $this->load->library('encrypt');
             $senha = $this->encrypt->sha1($senha);
 
-            $this->db->where('email',$email);
-            $this->db->where('senha',$senha);
-            $this->db->where('situacao',1);
+            $this->db->where('email', $email);
+            $this->db->where('senha', $senha);
+            $this->db->where('situacao', 1);
             $this->db->limit(1);
             $usuario = $this->db->get('usuarios')->row();
-            if(count($usuario) > 0){
-                $dados = array('nome' => $usuario->nome, 'url_logo' => $usuario->url_logo, 'url_ass' => $usuario->url_ass,  'id' => $usuario->idUsuarios,'permissao' => $usuario->permissoes_id , 'logado' => TRUE);
+            if (count($usuario) > 0) {
+                $dados = array('nome' => $usuario->nome, 'url_logo' => $usuario->url_logo, 'url_ass' => $usuario->url_ass,  'id' => $usuario->idUsuarios, 'permissao' => $usuario->permissoes_id, 'logado' => TRUE);
 
                 $this->session->set_userdata($dados);
                 log_info('Efetuou login no sistema');
 
 
-                if($ajax == true){
+                if ($ajax == true) {
                     $json = array('result' => true);
                     echo json_encode($json);
+                } else {
+                    redirect(base_url() . 'index.php/dashboard');
                 }
-                else{
-                    redirect(base_url().'index.php/dashboard');
-                }
+            } else {
 
 
-            }
-            else{
-
-
-                if($ajax == true){
+                if ($ajax == true) {
                     $json = array('result' => false);
                     echo json_encode($json);
-                }
-                else{
-                    $this->session->set_flashdata('error','Os dados de acesso estão incorretos.');
+                } else {
+                    $this->session->set_flashdata('error', 'Os dados de acesso estão incorretos.');
                     redirect($this->login);
                 }
             }
-
         }
-
     }
 
-    public function backup(){
+    public function backup()
+    {
 
-        if((!$this->session->userdata('session_id')) || (!$this->session->userdata('logado'))){
+        if ((!$this->session->userdata('session_id')) || (!$this->session->userdata('logado'))) {
             redirect('sistema/login');
         }
 
-        if(!$this->permission->checkPermission($this->session->userdata('permissao'),'cBackup')){
-            $this->session->set_flashdata('error','Você não tem permissão para efetuar backup.');
+        if (!$this->permission->checkPermission($this->session->userdata('permissao'), 'cBackup')) {
+            $this->session->set_flashdata('error', 'Você não tem permissão para efetuar backup.');
             redirect(base_url());
         }
 
@@ -171,46 +231,48 @@ class Sistema extends CI_Controller {
         $this->load->dbutil();
         $prefs = array(
             'format'      => 'zip',
-            'filename'    => 'backup'.date('d-m-Y').'.sql'
+            'filename'    => 'backup' . date('d-m-Y') . '.sql'
         );
 
-        $backup =& $this->dbutil->backup($prefs);
+        $backup = &$this->dbutil->backup($prefs);
 
         $this->load->helper('file');
         log_info('Efetuou backup do sistema');
 
-        write_file(base_url().'backup/backup.zip', $backup);
+        write_file(base_url() . 'backup/backup.zip', $backup);
 
         $this->load->helper('download');
-        force_download('backup'.date('d-m-Y H:m:s').'.zip', $backup);
+        force_download('backup' . date('d-m-Y H:m:s') . '.zip', $backup);
     }
 
-    public function emitente(){
+    public function emitente()
+    {
 
-        if((!$this->session->userdata('session_id')) || (!$this->session->userdata('logado'))){
+        if ((!$this->session->userdata('session_id')) || (!$this->session->userdata('logado'))) {
             redirect('sistema/login');
         }
 
-        if(!$this->permission->checkPermission($this->session->userdata('permissao'),'cEmitente')){
-            $this->session->set_flashdata('error','Você não tem permissão para configurar emitente.');
+        if (!$this->permission->checkPermission($this->session->userdata('permissao'), 'cEmitente')) {
+            $this->session->set_flashdata('error', 'Você não tem permissão para configurar emitente.');
             redirect(base_url());
         }
 
         $data['menuConfiguracoes'] = 'Configuracoes';
         $data['dados'] = $this->sistema_model->getEmitente();
         $data['view'] = 'sistema/emitente';
-        $this->load->view('tema/topo',$data);
+        $this->load->view('tema/topo', $data);
         $this->load->view('tema/rodape');
     }
 
-    function do_upload(){
+    function do_upload()
+    {
 
-        if((!$this->session->userdata('session_id')) || (!$this->session->userdata('logado'))){
+        if ((!$this->session->userdata('session_id')) || (!$this->session->userdata('logado'))) {
             redirect('sistema/login');
         }
 
-        if(!$this->permission->checkPermission($this->session->userdata('permissao'),'cEmitente')){
-            $this->session->set_flashdata('error','Você não tem permissão para configurar emitente.');
+        if (!$this->permission->checkPermission($this->session->userdata('permissao'), 'cEmitente')) {
+            $this->session->set_flashdata('error', 'Você não tem permissão para configurar emitente.');
             redirect(base_url());
         }
 
@@ -240,42 +302,40 @@ class Sistema extends CI_Controller {
             $file_info = array($this->upload->data());
             return $file_info[0]['file_name'];
         }
-
     }
 
-    public function cadastrarEmitente() {
+    public function cadastrarEmitente()
+    {
 
-        if((!$this->session->userdata('session_id')) || (!$this->session->userdata('logado'))){
+        if ((!$this->session->userdata('session_id')) || (!$this->session->userdata('logado'))) {
             redirect('index.php/sistema/login');
         }
 
-        if(!$this->permission->checkPermission($this->session->userdata('permissao'),'cEmitente')){
-            $this->session->set_flashdata('error','Você não tem permissão para configurar emitente.');
+        if (!$this->permission->checkPermission($this->session->userdata('permissao'), 'cEmitente')) {
+            $this->session->set_flashdata('error', 'Você não tem permissão para configurar emitente.');
             redirect(base_url());
         }
 
         $this->load->library('form_validation');
-        $this->form_validation->set_rules('nome','Razão Social','required|xss_clean|trim');
-        $this->form_validation->set_rules('cnpj','CNPJ','required|xss_clean|trim');
-        $this->form_validation->set_rules('ie','IE','required|xss_clean|trim');
-        $this->form_validation->set_rules('logradouro','Logradouro','required|xss_clean|trim');
-        $this->form_validation->set_rules('numero','Número','required|xss_clean|trim');
-        $this->form_validation->set_rules('bairro','Bairro','required|xss_clean|trim');
-        $this->form_validation->set_rules('cidade','Cidade','required|xss_clean|trim');
-        $this->form_validation->set_rules('uf','UF','required|xss_clean|trim');
-        $this->form_validation->set_rules('telefone','Telefone','required|xss_clean|trim');
-        $this->form_validation->set_rules('email','E-mail','required|xss_clean|trim');
+        $this->form_validation->set_rules('nome', 'Razão Social', 'required|xss_clean|trim');
+        $this->form_validation->set_rules('cnpj', 'CNPJ', 'required|xss_clean|trim');
+        $this->form_validation->set_rules('ie', 'IE', 'required|xss_clean|trim');
+        $this->form_validation->set_rules('logradouro', 'Logradouro', 'required|xss_clean|trim');
+        $this->form_validation->set_rules('numero', 'Número', 'required|xss_clean|trim');
+        $this->form_validation->set_rules('bairro', 'Bairro', 'required|xss_clean|trim');
+        $this->form_validation->set_rules('cidade', 'Cidade', 'required|xss_clean|trim');
+        $this->form_validation->set_rules('uf', 'UF', 'required|xss_clean|trim');
+        $this->form_validation->set_rules('telefone', 'Telefone', 'required|xss_clean|trim');
+        $this->form_validation->set_rules('email', 'E-mail', 'required|xss_clean|trim');
 
 
 
 
         if ($this->form_validation->run() == false) {
 
-            $this->session->set_flashdata('error','Campos obrigatórios não foram preenchidos.');
-            redirect(base_url().'index.php/sistema/emitente');
-
-        }
-        else {
+            $this->session->set_flashdata('error', 'Campos obrigatórios não foram preenchidos.');
+            redirect(base_url() . 'index.php/sistema/emitente');
+        } else {
 
             $nome = $this->input->post('nome');
             $cnpj = $this->input->post('cnpj');
@@ -288,56 +348,53 @@ class Sistema extends CI_Controller {
             $telefone = $this->input->post('telefone');
             $email = $this->input->post('email');
             $image = $this->do_upload();
-            $logo = base_url().'assets/uploads/'.$image;
+            $logo = base_url() . 'assets/uploads/' . $image;
 
 
-            $retorno = $this->sistema_model->addEmitente($nome, $cnpj, $ie, $logradouro, $numero, $bairro, $cidade, $uf,$telefone,$email, $logo);
-            if($retorno){
+            $retorno = $this->sistema_model->addEmitente($nome, $cnpj, $ie, $logradouro, $numero, $bairro, $cidade, $uf, $telefone, $email, $logo);
+            if ($retorno) {
 
-                $this->session->set_flashdata('success','As informações foram inseridas com sucesso.');
-                redirect(base_url().'index.php/sistema/emitente');
+                $this->session->set_flashdata('success', 'As informações foram inseridas com sucesso.');
+                redirect(base_url() . 'index.php/sistema/emitente');
+            } else {
+                $this->session->set_flashdata('error', 'Ocorreu um erro ao tentar inserir as informações.');
+                redirect(base_url() . 'index.php/sistema/emitente');
             }
-            else{
-                $this->session->set_flashdata('error','Ocorreu um erro ao tentar inserir as informações.');
-                redirect(base_url().'index.php/sistema/emitente');
-            }
-
         }
     }
 
-    public function editarEmitente() {
+    public function editarEmitente()
+    {
 
-        if((!$this->session->userdata('session_id')) || (!$this->session->userdata('logado'))){
+        if ((!$this->session->userdata('session_id')) || (!$this->session->userdata('logado'))) {
             redirect('index.php/sistema/login');
         }
 
-        if(!$this->permission->checkPermission($this->session->userdata('permissao'),'cEmitente')){
-            $this->session->set_flashdata('error','Você não tem permissão para configurar emitente.');
+        if (!$this->permission->checkPermission($this->session->userdata('permissao'), 'cEmitente')) {
+            $this->session->set_flashdata('error', 'Você não tem permissão para configurar emitente.');
             redirect(base_url());
         }
 
         $this->load->library('form_validation');
-        $this->form_validation->set_rules('nome','Razão Social','required|xss_clean|trim');
-        $this->form_validation->set_rules('cnpj','CNPJ','required|xss_clean|trim');
-        $this->form_validation->set_rules('ie','IE','required|xss_clean|trim');
-        $this->form_validation->set_rules('logradouro','Logradouro','required|xss_clean|trim');
-        $this->form_validation->set_rules('numero','Número','required|xss_clean|trim');
-        $this->form_validation->set_rules('bairro','Bairro','required|xss_clean|trim');
-        $this->form_validation->set_rules('cidade','Cidade','required|xss_clean|trim');
-        $this->form_validation->set_rules('uf','UF','required|xss_clean|trim');
-        $this->form_validation->set_rules('telefone','Telefone','required|xss_clean|trim');
-        $this->form_validation->set_rules('email','E-mail','required|xss_clean|trim');
+        $this->form_validation->set_rules('nome', 'Razão Social', 'required|xss_clean|trim');
+        $this->form_validation->set_rules('cnpj', 'CNPJ', 'required|xss_clean|trim');
+        $this->form_validation->set_rules('ie', 'IE', 'required|xss_clean|trim');
+        $this->form_validation->set_rules('logradouro', 'Logradouro', 'required|xss_clean|trim');
+        $this->form_validation->set_rules('numero', 'Número', 'required|xss_clean|trim');
+        $this->form_validation->set_rules('bairro', 'Bairro', 'required|xss_clean|trim');
+        $this->form_validation->set_rules('cidade', 'Cidade', 'required|xss_clean|trim');
+        $this->form_validation->set_rules('uf', 'UF', 'required|xss_clean|trim');
+        $this->form_validation->set_rules('telefone', 'Telefone', 'required|xss_clean|trim');
+        $this->form_validation->set_rules('email', 'E-mail', 'required|xss_clean|trim');
 
 
 
 
         if ($this->form_validation->run() == false) {
 
-            $this->session->set_flashdata('error','Campos obrigatórios não foram preenchidos.');
-            redirect(base_url().'index.php/sistema/emitente');
-
-        }
-        else {
+            $this->session->set_flashdata('error', 'Campos obrigatórios não foram preenchidos.');
+            redirect(base_url() . 'index.php/sistema/emitente');
+        } else {
 
             $nome = $this->input->post('nome');
             $cnpj = $this->input->post('cnpj');
@@ -355,107 +412,94 @@ class Sistema extends CI_Controller {
             $id = $this->input->post('id');
 
 
-            $retorno = $this->sistema_model->editEmitente($id, $nome, $cnpj, $ie, $logradouro, $numero, $bairro, $cidade, $uf,$telefone,$email, $userupdate, $dateupdate);
-            if($retorno){
+            $retorno = $this->sistema_model->editEmitente($id, $nome, $cnpj, $ie, $logradouro, $numero, $bairro, $cidade, $uf, $telefone, $email, $userupdate, $dateupdate);
+            if ($retorno) {
 
-                $this->session->set_flashdata('success','As informações foram alteradas com sucesso.');
-                redirect(base_url().'index.php/sistema/emitente');
+                $this->session->set_flashdata('success', 'As informações foram alteradas com sucesso.');
+                redirect(base_url() . 'index.php/sistema/emitente');
+            } else {
+                $this->session->set_flashdata('error', 'Ocorreu um erro ao tentar alterar as informações.');
+                redirect(base_url() . 'index.php/sistema/emitente');
             }
-            else{
-                $this->session->set_flashdata('error','Ocorreu um erro ao tentar alterar as informações.');
-                redirect(base_url().'index.php/sistema/emitente');
-            }
-
-
-
-
-
-
-
-
-
-
         }
     }
 
 
-    public function editarLogo(){
+    public function editarLogo()
+    {
 
-        if((!$this->session->userdata('session_id')) || (!$this->session->userdata('logado'))){
+        if ((!$this->session->userdata('session_id')) || (!$this->session->userdata('logado'))) {
             redirect('index.php/sistema/login');
         }
 
-        if(!$this->permission->checkPermission($this->session->userdata('permissao'),'cEmitente')){
-            $this->session->set_flashdata('error','Você não tem permissão para configurar emitente.');
+        if (!$this->permission->checkPermission($this->session->userdata('permissao'), 'cEmitente')) {
+            $this->session->set_flashdata('error', 'Você não tem permissão para configurar emitente.');
             redirect(base_url());
         }
 
         $id = $this->input->post('id');
-        if($id == null || !is_numeric($id)){
-            $this->session->set_flashdata('error','Ocorreu um erro ao tentar alterar a logomarca.');
-            redirect(base_url().'index.php/sistema/emitente');
+        if ($id == null || !is_numeric($id)) {
+            $this->session->set_flashdata('error', 'Ocorreu um erro ao tentar alterar a logomarca.');
+            redirect(base_url() . 'index.php/sistema/emitente');
         }
         $this->load->helper('file');
-        delete_files(FCPATH .'assets/uploads/');
+        delete_files(FCPATH . 'assets/uploads/');
 
         $image = $this->do_upload();
-        $logo = base_url().'assets/uploads/'.$image;
+        $logo = base_url() . 'assets/uploads/' . $image;
 
         $retorno = $this->sistema_model->editLogo($id, $logo);
-        if($retorno){
+        if ($retorno) {
 
-            $this->session->set_flashdata('success','As informações foram alteradas com sucesso.');
-            redirect(base_url().'index.php/sistema/emitente');
+            $this->session->set_flashdata('success', 'As informações foram alteradas com sucesso.');
+            redirect(base_url() . 'index.php/sistema/emitente');
+        } else {
+            $this->session->set_flashdata('error', 'Ocorreu um erro ao tentar alterar as informações.');
+            redirect(base_url() . 'index.php/sistema/emitente');
         }
-        else{
-            $this->session->set_flashdata('error','Ocorreu um erro ao tentar alterar as informações.');
-            redirect(base_url().'index.php/sistema/emitente');
-        }
-
     }
 
-    public function minhaConta() {
-        if((!$this->session->userdata('session_id')) || (!$this->session->userdata('logado'))){
+    public function minhaConta()
+    {
+        if ((!$this->session->userdata('session_id')) || (!$this->session->userdata('logado'))) {
             redirect('sistema/login');
         }
 
         $this->data['usuario'] = $this->sistema_model->getById($this->session->userdata('id'));
         $this->data['view'] = 'sistema/minhaConta';
         $this->load->view('tema/topo',  $this->data);
-
     }
 
-    public function editarUsuario() {
+    public function editarUsuario()
+    {
 
-        if((!$this->session->userdata('session_id')) || (!$this->session->userdata('logado'))){
+        if ((!$this->session->userdata('session_id')) || (!$this->session->userdata('logado'))) {
             redirect('index.php/sistema/login');
         }
 
 
         $this->load->library('form_validation');
-        $this->form_validation->set_rules('nome','required|xss_clean|trim');
-        $this->form_validation->set_rules('rg','required|xss_clean|trim');
-        $this->form_validation->set_rules('cpf','required|xss_clean|trim');
-        $this->form_validation->set_rules('telefone','required|xss_clean|trim');
-        $this->form_validation->set_rules('celular','required|xss_clean|trim');
-        $this->form_validation->set_rules('numero','required|xss_clean|trim');
-        $this->form_validation->set_rules('rua','required|xss_clean|trim');
-        $this->form_validation->set_rules('bairro','required|xss_clean|trim');
-        $this->form_validation->set_rules('cidade','required|xss_clean|trim');
-        $this->form_validation->set_rules('estado','required|xss_clean|trim');
-        $this->form_validation->set_rules('nascido_em','required|xss_clean|trim');
+        $this->form_validation->set_rules('nome', 'required|xss_clean|trim');
+        $this->form_validation->set_rules('rg', 'required|xss_clean|trim');
+        $this->form_validation->set_rules('cpf', 'required|xss_clean|trim');
+        $this->form_validation->set_rules('telefone', 'required|xss_clean|trim');
+        $this->form_validation->set_rules('celular', 'required|xss_clean|trim');
+        $this->form_validation->set_rules('numero', 'required|xss_clean|trim');
+        $this->form_validation->set_rules('rua', 'required|xss_clean|trim');
+        $this->form_validation->set_rules('bairro', 'required|xss_clean|trim');
+        $this->form_validation->set_rules('cidade', 'required|xss_clean|trim');
+        $this->form_validation->set_rules('estado', 'required|xss_clean|trim');
+        $this->form_validation->set_rules('nascido_em', 'required|xss_clean|trim');
 
 
         if ($this->form_validation->run() == false) {
 
-            $this->session->set_flashdata('error','Campos obrigatórios não foram preenchidos.');
-            redirect(base_url().'index.php/sistema/minhaConta');
-
-        }
-        else {
+            $this->session->set_flashdata('error', 'Campos obrigatórios não foram preenchidos.');
+            redirect(base_url() . 'index.php/sistema/minhaConta');
+        } else {
 
             $nome = $this->input->post('nome');
-            $rg= $this->input->post('rg');
+            $rg = $this->input->post('rg');
             $cpf = $this->input->post('cpf');
             $telefone = $this->input->post('telefone');
             $celular = $this->input->post('celular');
@@ -469,77 +513,72 @@ class Sistema extends CI_Controller {
 
 
             $retorno = $this->sistema_model->editUsuario($id, $nome, $rg, $cpf, $telefone, $celular, $numero, $rua, $bairro, $cidade, $estado, $nascido_em);
-            if($retorno){
+            if ($retorno) {
 
-                $this->session->set_flashdata('success','As informações foram alteradas com sucesso.');
-                redirect(base_url().'index.php/sistema/minhaConta');
+                $this->session->set_flashdata('success', 'As informações foram alteradas com sucesso.');
+                redirect(base_url() . 'index.php/sistema/minhaConta');
+            } else {
+                $this->session->set_flashdata('error', 'Ocorreu um erro ao tentar alterar as informações.');
+                redirect(base_url() . 'index.php/sistema/minhaConta');
             }
-            else{
-                $this->session->set_flashdata('error','Ocorreu um erro ao tentar alterar as informações.');
-                redirect(base_url().'index.php/sistema/minhaConta');
-            }
-
         }
     }
 
-    public function editarImgperfil(){
+    public function editarImgperfil()
+    {
 
-        if((!$this->session->userdata('session_id')) || (!$this->session->userdata('logado'))){
+        if ((!$this->session->userdata('session_id')) || (!$this->session->userdata('logado'))) {
             redirect('index.php/sistema/login');
         }
 
         $id = $this->input->post('id');
-        if($id == null || !is_numeric($id)){
-            $this->session->set_flashdata('error','Ocorreu um erro ao tentar alterar a Assinatura.');
-            redirect(base_url().'index.php/sistema/minhaConta');
+        if ($id == null || !is_numeric($id)) {
+            $this->session->set_flashdata('error', 'Ocorreu um erro ao tentar alterar a Assinatura.');
+            redirect(base_url() . 'index.php/sistema/minhaConta');
         }
         $this->load->helper('file');
 
 
         $image = $this->do_upload();
-        $logo = base_url().'assets/uploads/'.$image;
+        $logo = base_url() . 'assets/uploads/' . $image;
 
         $retorno = $this->sistema_model->editImguser($id, $logo);
-        if($retorno){
+        if ($retorno) {
 
-            $this->session->set_flashdata('success','As informações foram alteradas com sucesso.');
-            redirect(base_url().'index.php/sistema/minhaConta');
+            $this->session->set_flashdata('success', 'As informações foram alteradas com sucesso.');
+            redirect(base_url() . 'index.php/sistema/minhaConta');
+        } else {
+            $this->session->set_flashdata('error', 'Ocorreu um erro ao tentar alterar as informações.');
+            redirect(base_url() . 'index.php/sistema/minhaConta');
         }
-        else{
-            $this->session->set_flashdata('error','Ocorreu um erro ao tentar alterar as informações.');
-            redirect(base_url().'index.php/sistema/minhaConta');
-        }
-
     }
 
-    public function editarAssinatura(){
+    public function editarAssinatura()
+    {
 
-        if((!$this->session->userdata('session_id')) || (!$this->session->userdata('logado'))){
+        if ((!$this->session->userdata('session_id')) || (!$this->session->userdata('logado'))) {
             redirect('index.php/sistema/login');
         }
 
         $id = $this->input->post('id');
-        if($id == null || !is_numeric($id)){
-            $this->session->set_flashdata('error','Ocorreu um erro ao tentar alterar a Assinatura.');
-            redirect(base_url().'index.php/sistema/minhaConta');
+        if ($id == null || !is_numeric($id)) {
+            $this->session->set_flashdata('error', 'Ocorreu um erro ao tentar alterar a Assinatura.');
+            redirect(base_url() . 'index.php/sistema/minhaConta');
         }
         $this->load->helper('file');
 
 
         $image = $this->do_upload();
-        $logo = base_url().'assets/uploads/'.$image;
+        $logo = base_url() . 'assets/uploads/' . $image;
 
         $retorno = $this->sistema_model->editAss($id, $logo);
-        if($retorno){
+        if ($retorno) {
 
-            $this->session->set_flashdata('success','As informações foram alteradas com sucesso.');
-            redirect(base_url().'index.php/sistema/minhaConta');
+            $this->session->set_flashdata('success', 'As informações foram alteradas com sucesso.');
+            redirect(base_url() . 'index.php/sistema/minhaConta');
+        } else {
+            $this->session->set_flashdata('error', 'Ocorreu um erro ao tentar alterar as informações.');
+            redirect(base_url() . 'index.php/sistema/minhaConta');
         }
-        else{
-            $this->session->set_flashdata('error','Ocorreu um erro ao tentar alterar as informações.');
-            redirect(base_url().'index.php/sistema/minhaConta');
-        }
-
     }
-
 }
