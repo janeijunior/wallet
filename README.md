@@ -83,9 +83,8 @@ mysqldump -h localhost -u NOME_USUARIO -p --force wallet < wallet.sql
 
 ### Adicionando novos campos ao banco de dados
 
-INSERT INTO `usuarios` (`idUsuarios`, `nome`, `userinsert`, `userupdate`, `dateinsert`, `dateupdate`, `rg`, `cpf`, `rua`, `numero`, `bairro`, `cidade`, `estado`, `email`, `senha`, `telefone`, `celular`, `situacao`, `id_regiao`, `sexo`, `url_ass`, `permissoes_id`, `dashboard`, `nascido_em`, `id_emitente`, `url_logo`) VALUES
-(1, 'admin', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'RJ-25.502.560', '600.021.520-87', 'Rua Acima', '12', 'Alvorada', 'Teste', 'MG', 'admin@admin.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', '0000-0000', '', 1, 0, '0', 'http://127.0.0.1/wallet/assets/uploads/96cb070acb1704b51271ee7596a2c44a.jpg', 1, 0, '0000-00-00', 0, 'http://127.0.0.1/wallet/assets/uploads/7403a0fd9bb774385f44b59e4239071a.jpg'),
-
+INSERT INTO `usuarios` (`idUsuarios`, `nome`, `sobrenome`, `cpf`, `email`, `senha`, `telefone`, `situacao`, `url_logo`, `permissoes_id`, `id_emitente`, `codigo`, `terms`, `controle`, `endereco`, `endnumero`, `endcomplemento`, `bairro`, `cidade`, `estado`, `cep`, `celular`, `refban`, `data`, `lktipo`, `lkvendedor`, `obs`, `web`, `numcartao`, `validade`, `nomeimp`, `lkcartao`, `codseg`, `cgc`, `limitecred`, `atendbloq`, `contato`, `insc`, `atividade`, `fax`, `tagfisica`, `refcom`, `identidade`, `nascimento`, `filiacao`, `profissao`, `rettrib`, `cgi`, `lkclim`, `bloqvendacr`, `lkuserinc`, `envio`, `userinsert`, `userupdate`, `dateinsert`, `dateupdate`) VALUES
+(1, 'Janei', 'Araujo', '', 'jaraujo.php@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', '21968710758', 1, 'http://127.0.0.1/wallet/assets/uploads/aed159303317c0d9fce735a07739d0bc.jpeg', 3, 0, '4444', 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 3, '2022-04-19 13:18:00', '2022-04-19 13:18:00');
 
 ### Configurar o Apache (Servidor http)
 
@@ -127,7 +126,7 @@ Seu servidor apache deverá responder com o website, se tudo ocorreu perfeitamen
 
 ### Acesso
 ````
-User: admin@admin.com
+User: jaraujo.php@gmail.com
 Pass: 123456
 ````
 
