@@ -13,8 +13,8 @@
                 <hr>
                 <div class="clearfix mt20">
                     <div class="pull-left">
-                        <h5 class="md-title nomargin">Yesterday</h5>
-                        <h4 class="nomargin">$29,009.17</h4>
+                        <h5 class="md-title nomargin"></h5>
+                        <h4 class="nomargin"></h4>
                     </div>
                     <div class="pull-right">
                         <h5 class="md-title nomargin"></h5>
@@ -39,8 +39,8 @@
                 <hr>
                 <div class="clearfix mt20">
                     <div class="pull-left">
-                        <h5 class="md-title nomargin">Yesterday</h5>
-                        <h4 class="nomargin">10,009</h4>
+                        <h5 class="md-title nomargin"></h5>
+                        <h4 class="nomargin"></h4>
                     </div>
                     <div class="pull-right">
                         <h5 class="md-title nomargin"></h5>
