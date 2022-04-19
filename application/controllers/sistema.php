@@ -84,6 +84,11 @@ class Sistema extends CI_Controller
 
 
 
+    public function terms()
+    {
+
+        $this->load->view('sistema/terms');
+    }
 
     function signup()
     {
