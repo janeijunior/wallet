@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 18-Abr-2022 às 15:19
+-- Generation Time: 19-Abr-2022 às 18:21
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -19,6 +19,39 @@ SET time_zone = "+00:00";
 --
 -- Database: `wallet`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `bkp_usuarios`
+--
+
+CREATE TABLE `bkp_usuarios` (
+  `idUsuarios` int(11) NOT NULL,
+  `nome` varchar(80) NOT NULL,
+  `sobrenome` varchar(20) NOT NULL,
+  `userinsert` int(11) NOT NULL,
+  `userupdate` int(11) NOT NULL,
+  `dateinsert` datetime NOT NULL,
+  `dateupdate` datetime NOT NULL,
+  `cpf` varchar(20) NOT NULL,
+  `email` varchar(80) NOT NULL,
+  `senha` varchar(45) NOT NULL,
+  `telefone` varchar(20) NOT NULL,
+  `situacao` tinyint(1) NOT NULL,
+  `url_logo` varchar(255) NOT NULL,
+  `permissoes_id` int(11) NOT NULL,
+  `id_emitente` int(11) NOT NULL,
+  `codigo` varchar(20) NOT NULL,
+  `terms` tinyint(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `bkp_usuarios`
+--
+
+INSERT INTO `bkp_usuarios` (`idUsuarios`, `nome`, `sobrenome`, `userinsert`, `userupdate`, `dateinsert`, `dateupdate`, `cpf`, `email`, `senha`, `telefone`, `situacao`, `url_logo`, `permissoes_id`, `id_emitente`, `codigo`, `terms`) VALUES
+(3, 'Janei', 'Araujo', 0, 0, '2022-01-31 20:31:03', '0000-00-00 00:00:00', '16514784669', 'jaraujo.php@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', '21968710758', 1, 'http://127.0.0.1/wallet/assets/uploads/aed159303317c0d9fce735a07739d0bc.jpeg', 3, 0, '4444', 1);
 
 -- --------------------------------------------------------
 
@@ -39,8 +72,11 @@ CREATE TABLE `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('a43becb73f0ed24985d4fd800db1f038', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.82 Safari/537.36', 1645047131, ''),
-('b4cf5d27c8f343ca976f0c36513873e7', '192.168.1.2', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.82 Safari/537.36', 1645048517, 'a:5:{s:9:\"user_data\";s:0:\"\";s:4:\"nome\";s:5:\"Janei\";s:2:\"id\";s:1:\"3\";s:9:\"permissao\";s:1:\"3\";s:6:\"logado\";b:1;}');
+('001b894f52b33087eeb109a5adb2e47b', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88 Safari/537.36', 1650382084, ''),
+('66eaccef2fcecbb592abceb83e6907b4', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88 Safari/537.36', 1650382084, ''),
+('98d7d21885fe8352cec625cf45bf08bd', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88 Safari/537.36', 1650382084, ''),
+('9acbbfd787d365e2038eb982b56001fd', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88 Safari/537.36', 1650385152, 'a:7:{s:9:\"user_data\";s:0:\"\";s:4:\"nome\";s:5:\"Janei\";s:8:\"url_logo\";s:76:\"http://127.0.0.1/wallet/assets/uploads/aed159303317c0d9fce735a07739d0bc.jpeg\";s:7:\"url_ass\";N;s:2:\"id\";s:1:\"1\";s:9:\"permissao\";s:1:\"3\";s:6:\"logado\";b:1;}'),
+('f658b4fa542fdc6b8d41cfbf4e33b9a8', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88 Safari/537.36', 1650382084, '');
 
 -- --------------------------------------------------------
 
@@ -148,7 +184,26 @@ INSERT INTO `logs` (`idLogs`, `usuario`, `tarefa`, `data`, `hora`, `ip`) VALUES
 (63, 'Janei', 'Efetuou login no sistema', '2022-02-15', '21:45:17', '192.168.1.2'),
 (64, 'Janei', 'Efetuou login no sistema', '2022-02-15', '21:47:14', '192.168.1.2'),
 (65, 'Janei', 'Efetuou login no sistema', '2022-02-16', '04:20:34', '192.168.1.2'),
-(66, 'Janei', 'Efetuou login no sistema', '2022-02-16', '22:32:14', '192.168.1.2');
+(66, 'Janei', 'Efetuou login no sistema', '2022-02-16', '22:32:14', '192.168.1.2'),
+(67, 'Janei', 'Efetuou login no sistema', '2022-04-18', '16:29:40', '127.0.0.1'),
+(68, 'Janei', 'Efetuou login no sistema', '2022-04-18', '16:42:24', '127.0.0.1'),
+(69, 'Janei', 'Efetuou login no sistema', '2022-04-18', '16:59:40', '127.0.0.1'),
+(70, 'Janei', 'Efetuou login no sistema', '2022-04-18', '17:01:24', '127.0.0.1'),
+(71, 'Janei', 'Efetuou login no sistema', '2022-04-18', '18:11:49', '127.0.0.1'),
+(72, 'Janei', 'Efetuou logout no sistema', '2022-04-18', '18:28:03', '127.0.0.1'),
+(73, 'Janei', 'Efetuou login no sistema', '2022-04-18', '18:28:06', '127.0.0.1'),
+(74, 'Janei', 'Efetuou login no sistema', '2022-04-18', '18:43:00', '127.0.0.1'),
+(75, 'Janei', 'Efetuou logout no sistema', '2022-04-18', '18:59:22', '127.0.0.1'),
+(76, 'Janei', 'Efetuou login no sistema', '2022-04-18', '18:59:24', '127.0.0.1'),
+(77, 'Janei', 'Efetuou logout no sistema', '2022-04-18', '19:16:35', '127.0.0.1'),
+(78, 'Janei', 'Efetuou login no sistema', '2022-04-18', '19:23:13', '127.0.0.1'),
+(79, 'Janei', 'Efetuou login no sistema', '2022-04-18', '19:26:24', '127.0.0.1'),
+(80, 'Janei', 'Efetuou logout no sistema', '2022-04-18', '19:34:11', '127.0.0.1'),
+(81, 'Janei', 'Efetuou login no sistema', '2022-04-18', '19:34:15', '127.0.0.1'),
+(82, 'Janei', 'Efetuou login no sistema', '2022-04-18', '21:46:52', '127.0.0.1'),
+(83, 'Janei', 'Efetuou login no sistema', '2022-04-19', '17:28:09', '127.0.0.1'),
+(84, 'Janei', 'Efetuou logout no sistema', '2022-04-19', '18:19:12', '127.0.0.1'),
+(85, 'Janei', 'Efetuou login no sistema', '2022-04-19', '18:20:37', '127.0.0.1');
 
 -- --------------------------------------------------------
 
@@ -184,32 +239,77 @@ CREATE TABLE `usuarios` (
   `idUsuarios` int(11) NOT NULL,
   `nome` varchar(80) NOT NULL,
   `sobrenome` varchar(20) NOT NULL,
-  `userinsert` int(11) NOT NULL,
-  `userupdate` int(11) NOT NULL,
-  `dateinsert` datetime NOT NULL,
-  `dateupdate` datetime NOT NULL,
   `cpf` varchar(20) NOT NULL,
   `email` varchar(80) NOT NULL,
   `senha` varchar(45) NOT NULL,
   `telefone` varchar(20) NOT NULL,
   `situacao` tinyint(1) NOT NULL,
-  `url_ass` varchar(255) NOT NULL,
+  `url_logo` varchar(255) NOT NULL,
   `permissoes_id` int(11) NOT NULL,
   `id_emitente` int(11) NOT NULL,
   `codigo` varchar(20) NOT NULL,
-  `terms` tinyint(4) NOT NULL
+  `terms` tinyint(4) NOT NULL,
+  `controle` int(11) NOT NULL,
+  `endereco` varchar(40) DEFAULT NULL,
+  `endnumero` varchar(20) DEFAULT NULL,
+  `endcomplemento` varchar(60) DEFAULT NULL,
+  `bairro` varchar(20) DEFAULT NULL,
+  `cidade` varchar(30) DEFAULT NULL,
+  `estado` varchar(2) DEFAULT NULL,
+  `cep` varchar(9) DEFAULT NULL,
+  `celular` varchar(14) DEFAULT NULL,
+  `refban` varchar(30) DEFAULT NULL,
+  `data` date DEFAULT NULL,
+  `lktipo` int(11) DEFAULT NULL,
+  `lkvendedor` int(11) DEFAULT NULL,
+  `obs` longtext,
+  `web` varchar(80) DEFAULT NULL,
+  `numcartao` varchar(17) DEFAULT NULL,
+  `validade` varchar(7) DEFAULT NULL,
+  `nomeimp` varchar(40) DEFAULT NULL,
+  `lkcartao` int(11) DEFAULT NULL,
+  `codseg` varchar(4) DEFAULT NULL,
+  `cgc` varchar(18) DEFAULT NULL,
+  `limitecred` decimal(19,2) DEFAULT NULL,
+  `atendbloq` tinyint(4) DEFAULT NULL,
+  `contato` varchar(40) DEFAULT NULL,
+  `insc` varchar(20) DEFAULT NULL,
+  `atividade` varchar(40) DEFAULT NULL,
+  `fax` varchar(20) DEFAULT NULL,
+  `tagfisica` tinyint(4) DEFAULT NULL,
+  `refcom` varchar(30) DEFAULT NULL,
+  `identidade` varchar(20) DEFAULT NULL,
+  `nascimento` date DEFAULT NULL,
+  `filiacao` varchar(60) DEFAULT NULL,
+  `profissao` varchar(30) DEFAULT NULL,
+  `rettrib` smallint(6) DEFAULT NULL,
+  `cgi` tinyint(4) DEFAULT NULL,
+  `lkclim` int(11) DEFAULT NULL,
+  `bloqvendacr` tinyint(4) DEFAULT NULL,
+  `lkuserinc` int(11) DEFAULT NULL,
+  `envio` smallint(6) DEFAULT NULL,
+  `userinsert` int(11) NOT NULL,
+  `userupdate` int(11) NOT NULL,
+  `dateinsert` datetime NOT NULL,
+  `dateupdate` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`idUsuarios`, `nome`, `sobrenome`, `userinsert`, `userupdate`, `dateinsert`, `dateupdate`, `cpf`, `email`, `senha`, `telefone`, `situacao`, `url_ass`, `permissoes_id`, `id_emitente`, `codigo`, `terms`) VALUES
-(3, 'Janei', 'Araujo', 0, 0, '2022-01-31 20:31:03', '0000-00-00 00:00:00', '16514784669', 'jaraujo.php@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', '21968710758', 1, '', 3, 0, '4444', 1);
+INSERT INTO `usuarios` (`idUsuarios`, `nome`, `sobrenome`, `cpf`, `email`, `senha`, `telefone`, `situacao`, `url_logo`, `permissoes_id`, `id_emitente`, `codigo`, `terms`, `controle`, `endereco`, `endnumero`, `endcomplemento`, `bairro`, `cidade`, `estado`, `cep`, `celular`, `refban`, `data`, `lktipo`, `lkvendedor`, `obs`, `web`, `numcartao`, `validade`, `nomeimp`, `lkcartao`, `codseg`, `cgc`, `limitecred`, `atendbloq`, `contato`, `insc`, `atividade`, `fax`, `tagfisica`, `refcom`, `identidade`, `nascimento`, `filiacao`, `profissao`, `rettrib`, `cgi`, `lkclim`, `bloqvendacr`, `lkuserinc`, `envio`, `userinsert`, `userupdate`, `dateinsert`, `dateupdate`) VALUES
+(1, 'Janei', 'Araujo', '', 'jaraujo.php@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', '21968710758', 1, 'http://127.0.0.1/wallet/assets/uploads/aed159303317c0d9fce735a07739d0bc.jpeg', 3, 0, '4444', 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 3, '2022-04-19 13:18:00', '2022-04-19 13:18:00');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `bkp_usuarios`
+--
+ALTER TABLE `bkp_usuarios`
+  ADD PRIMARY KEY (`idUsuarios`);
 
 --
 -- Indexes for table `ci_sessions`
@@ -237,15 +337,14 @@ ALTER TABLE `permissoes`
   ADD PRIMARY KEY (`idPermissao`);
 
 --
--- Indexes for table `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`idUsuarios`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `bkp_usuarios`
+--
+ALTER TABLE `bkp_usuarios`
+  MODIFY `idUsuarios` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `emitente`
 --
@@ -255,17 +354,12 @@ ALTER TABLE `emitente`
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `idLogs` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+  MODIFY `idLogs` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 --
 -- AUTO_INCREMENT for table `permissoes`
 --
 ALTER TABLE `permissoes`
   MODIFY `idPermissao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `usuarios`
---
-ALTER TABLE `usuarios`
-  MODIFY `idUsuarios` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
