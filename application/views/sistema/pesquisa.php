@@ -26,7 +26,7 @@
                
                 <table class="table table-bordered ">
                     <thead>
-                        <tr style="backgroud-color: #2D335B">
+                        <tr >
                             <th>#</th>
                             <th>Nome</th>
                             <th>Preço</th>
@@ -139,7 +139,7 @@
 
                 <table class="table table-bordered ">
                     <thead>
-                        <tr style="backgroud-color: #2D335B">
+                        <tr >
                             <th>#</th>
                             <th>Nome</th>
                             <th>Preço</th>
@@ -191,7 +191,7 @@
 
                 <table class="table table-bordered ">
                     <thead>
-                        <tr style="backgroud-color: #2D335B">
+                        <tr >
                             <th>#</th>
                             <th>Data Inicial</th>
                             <th>Defeito</th>
