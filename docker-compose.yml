@@ -1,0 +1,38 @@
+version: '2'
+services:
+  
+  web:
+    container_name: www_web
+    build: build/nginx
+    restart: always
+    ports:
+      - '80:80'
+    depends_on:
+      - db
+    links:
+      - 'db:database'
+    volumes:
+      - './app:/var/www/html/app:cached'
+      - './logs:/var/log/nginx'
+  db:
+    container_name: mysql_ims
+    image: 'mysql:5.7'
+    entrypoint:
+      - /entrypoint.sh
+      - '--character-set-server=utf8'
+      - '--collation-server=utf8_general_ci'
+      - '--sql-mode=NO_AUTO_CREATE_USER'
+    command: '--default-authentication-plugin=mysql_native_password --disable-partition-engine-check'
+    restart: always
+    volumes:
+      - './mysql-dump/wallet.sql:/docker-entrypoint-initdb.d/wallet.sql'
+    expose:
+      - '1306'
+    ports:
+      - '1306:3306'
+    environment:
+      - MYSQL_ROOT_PASSWORD=
+      - MYSQL_DATABASE=wallet
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=
+      - MYSQL_ROOT_HOST=%
