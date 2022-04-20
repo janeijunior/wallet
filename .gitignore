@@ -20,3 +20,7 @@ application/logs/*
 */application/uploads/*
 !application/uploads/*
 */uploads/*
+*/application/logs/*
+*/assets/uploads
+/html
+/logs
