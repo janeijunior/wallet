@@ -30,7 +30,7 @@ $config['app_subname'] = 'wallet';
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://127.0.0.1/wallet/';
+$config['base_url']	= 'http://localhost/wallet/app/';
 
 /*
 |--------------------------------------------------------------------------

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 19-Abr-2022 às 18:21
+-- Generation Time: 19-Abr-2022 às 20:38
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `wallet`
 --
+CREATE DATABASE IF NOT EXISTS `wallet` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
+USE `wallet`;
 
 -- --------------------------------------------------------
 
@@ -26,6 +28,7 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `bkp_usuarios`
 --
 
+DROP TABLE IF EXISTS `bkp_usuarios`;
 CREATE TABLE `bkp_usuarios` (
   `idUsuarios` int(11) NOT NULL,
   `nome` varchar(80) NOT NULL,
@@ -59,6 +62,7 @@ INSERT INTO `bkp_usuarios` (`idUsuarios`, `nome`, `sobrenome`, `userinsert`, `us
 -- Estrutura da tabela `ci_sessions`
 --
 
+DROP TABLE IF EXISTS `ci_sessions`;
 CREATE TABLE `ci_sessions` (
   `session_id` varchar(40) COLLATE utf8_bin NOT NULL DEFAULT '0',
   `ip_address` varchar(45) COLLATE utf8_bin NOT NULL DEFAULT '0',
@@ -73,9 +77,9 @@ CREATE TABLE `ci_sessions` (
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
 ('001b894f52b33087eeb109a5adb2e47b', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88 Safari/537.36', 1650382084, ''),
+('186a6616b05b6a880a935db0884f72da', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88 Safari/537.36', 1650386658, ''),
 ('66eaccef2fcecbb592abceb83e6907b4', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88 Safari/537.36', 1650382084, ''),
 ('98d7d21885fe8352cec625cf45bf08bd', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88 Safari/537.36', 1650382084, ''),
-('9acbbfd787d365e2038eb982b56001fd', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88 Safari/537.36', 1650385152, 'a:7:{s:9:\"user_data\";s:0:\"\";s:4:\"nome\";s:5:\"Janei\";s:8:\"url_logo\";s:76:\"http://127.0.0.1/wallet/assets/uploads/aed159303317c0d9fce735a07739d0bc.jpeg\";s:7:\"url_ass\";N;s:2:\"id\";s:1:\"1\";s:9:\"permissao\";s:1:\"3\";s:6:\"logado\";b:1;}'),
 ('f658b4fa542fdc6b8d41cfbf4e33b9a8', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88 Safari/537.36', 1650382084, '');
 
 -- --------------------------------------------------------
@@ -84,6 +88,7 @@ INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activ
 -- Estrutura da tabela `emitente`
 --
 
+DROP TABLE IF EXISTS `emitente`;
 CREATE TABLE `emitente` (
   `id` int(11) NOT NULL,
   `nome` varchar(255) COLLATE utf8_bin DEFAULT NULL,
@@ -105,6 +110,7 @@ CREATE TABLE `emitente` (
 -- Estrutura da tabela `logs`
 --
 
+DROP TABLE IF EXISTS `logs`;
 CREATE TABLE `logs` (
   `idLogs` int(11) NOT NULL,
   `usuario` varchar(80) DEFAULT NULL,
@@ -203,7 +209,10 @@ INSERT INTO `logs` (`idLogs`, `usuario`, `tarefa`, `data`, `hora`, `ip`) VALUES
 (82, 'Janei', 'Efetuou login no sistema', '2022-04-18', '21:46:52', '127.0.0.1'),
 (83, 'Janei', 'Efetuou login no sistema', '2022-04-19', '17:28:09', '127.0.0.1'),
 (84, 'Janei', 'Efetuou logout no sistema', '2022-04-19', '18:19:12', '127.0.0.1'),
-(85, 'Janei', 'Efetuou login no sistema', '2022-04-19', '18:20:37', '127.0.0.1');
+(85, 'Janei', 'Efetuou login no sistema', '2022-04-19', '18:20:37', '127.0.0.1'),
+(86, 'Janei', 'Efetuou logout no sistema', '2022-04-19', '18:27:56', '127.0.0.1'),
+(87, 'Janei', 'Efetuou login no sistema', '2022-04-19', '18:44:13', '127.0.0.1'),
+(88, 'Janei', 'Efetuou logout no sistema', '2022-04-19', '18:44:17', '127.0.0.1');
 
 -- --------------------------------------------------------
 
@@ -211,6 +220,7 @@ INSERT INTO `logs` (`idLogs`, `usuario`, `tarefa`, `data`, `hora`, `ip`) VALUES
 -- Estrutura da tabela `permissoes`
 --
 
+DROP TABLE IF EXISTS `permissoes`;
 CREATE TABLE `permissoes` (
   `idPermissao` int(11) NOT NULL,
   `userinsert` int(11) NOT NULL,
@@ -235,6 +245,7 @@ INSERT INTO `permissoes` (`idPermissao`, `userinsert`, `userupdate`, `dateinsert
 -- Estrutura da tabela `usuarios`
 --
 
+DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE `usuarios` (
   `idUsuarios` int(11) NOT NULL,
   `nome` varchar(80) NOT NULL,
@@ -354,7 +365,7 @@ ALTER TABLE `emitente`
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `idLogs` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+  MODIFY `idLogs` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
 --
 -- AUTO_INCREMENT for table `permissoes`
 --
