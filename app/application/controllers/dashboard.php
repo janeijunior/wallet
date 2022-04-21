@@ -29,7 +29,7 @@ class Dashboard extends CI_Controller {
 
     function gerenciar(){
 
-        if(!$this->permission->checkPermission($this->session->userdata('permissao'),'vDashboard')){
+        if(!$this->permission->checkPermission($this->session->userdata('permissao'),'aCliente')){
             $this->session->set_flashdata('error','Você não tem permissão para visualizar dashboard.');
             redirect(base_url());
         }
@@ -37,8 +37,6 @@ class Dashboard extends CI_Controller {
 
         $this->data['view'] = 'dashboard/dashboard';
         $this->load->view('tema/topo',$this->data);
-
-
     }
 
 
