@@ -2,30 +2,25 @@ version: '3'
 services:
   web-wallet:
     container_name: web-wallet
-    #image: nginx:latest
-    build: build/php56-apache-mysql
+    build: build/php
     mem_limit: 512m
     restart: always
     volumes:
       - "./app:/var/www/html/wallet/app"
       - "./logs:/var/log"
-    #environment:
-    #  # NGINX-PROXY ENVIRONMENT VARIABLES: UPDATE ME
-    #  - VIRTUAL_HOST=wallet.com.br 
-    #  - VIRTUAL_PORT=80
-    #  - LETSENCRYPT_HOST=wallet.com.br 
-    #  - LETSENCRYPT_EMAIL=admin@wallet.com.br
-    #  # /END NGINX-PROXY ENVIRONMENT VARIABLES
+      - "./conf/php/php.ini:/etc/php5/apache2/php.ini"
+      - "./conf/apache/sites-available:/etc/apache2/sites-available/"
+      - "./logs:/var/log/apache2/"
     ports:
      - 80:80
      - 443:443
     links:
-        - db-wallet
+         - db-wallet
     expose:
       - 80
       - 443
     networks:
-      - mysql-compose-network
+      - wallet-compose-network
 
   db-wallet:
     container_name: db-wallet
@@ -44,14 +39,14 @@ services:
     expose:
       - 3306
     environment:
-      MYSQL_ROOT_PASSWORD: 'wallet'
+      MYSQL_ROOT_PASSWORD: bTyPl7Zd6EJD0OTv
       MYSQL_DATABASE: 'wallet'
       MYSQL_USER: 'wallet'
-      MYSQL_PASSWORD: 'wallet'
+      MYSQL_PASSWORD: bTyPl7Zd6EJD0OTv
       MYSQL_ROOT_HOST: '%'
     networks:
-      - mysql-compose-network
+      - wallet-compose-network
 
 networks: 
-  mysql-compose-network:
+  wallet-compose-network:
     driver: bridge
