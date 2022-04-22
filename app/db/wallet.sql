@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 20-Abr-2022 às 22:08
+-- Generation Time: 23-Abr-2022 às 00:41
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -21,6 +21,30 @@ SET time_zone = "+00:00";
 --
 CREATE DATABASE IF NOT EXISTS `wallet` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
 USE `wallet`;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `bkp_ci_sessions`
+--
+
+DROP TABLE IF EXISTS `bkp_ci_sessions`;
+CREATE TABLE `bkp_ci_sessions` (
+  `session_id` varchar(40) COLLATE utf8_bin NOT NULL DEFAULT '0',
+  `ip_address` varchar(45) COLLATE utf8_bin NOT NULL DEFAULT '0',
+  `user_agent` varchar(120) COLLATE utf8_bin NOT NULL,
+  `last_activity` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `user_data` text COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Extraindo dados da tabela `bkp_ci_sessions`
+--
+
+INSERT INTO `bkp_ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
+('13f154cbac9edf1c44d475a747453798', '127.0.0.1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Mobi', 1650646000, 'a:7:{s:9:\"user_data\";s:0:\"\";s:4:\"nome\";s:5:\"Janei\";s:8:\"url_logo\";s:80:\"http://127.0.0.1/wallet/app/assets/uploads/9edd745cd009a067d0e0b4a50d0e11d7.jpeg\";s:7:\"url_ass\";N;s:2:\"id\";s:1:\"1\";s:9:\"permissao\";s:1:\"3\";s:6:\"logado\";b:1;}'),
+('2ac497dda9ffca82145b31ea3f46fb18', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', 1650651663, 'a:7:{s:9:\"user_data\";s:0:\"\";s:4:\"nome\";s:5:\"Janei\";s:8:\"url_logo\";s:80:\"http://127.0.0.1/wallet/app/assets/uploads/9edd745cd009a067d0e0b4a50d0e11d7.jpeg\";s:7:\"url_ass\";N;s:2:\"id\";s:1:\"1\";s:9:\"permissao\";s:1:\"3\";s:6:\"logado\";b:1;}'),
+('f68f72107947cd2e0321b4f371e366f8', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', 1650645920, 'a:7:{s:9:\"user_data\";s:0:\"\";s:4:\"nome\";s:5:\"Janei\";s:8:\"url_logo\";s:80:\"http://127.0.0.1/wallet/app/assets/uploads/9edd745cd009a067d0e0b4a50d0e11d7.jpeg\";s:7:\"url_ass\";N;s:2:\"id\";s:1:\"1\";s:9:\"permissao\";s:1:\"3\";s:6:\"logado\";b:1;}');
 
 -- --------------------------------------------------------
 
@@ -76,15 +100,7 @@ CREATE TABLE `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('001b894f52b33087eeb109a5adb2e47b', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88 Safari/537.36', 1650382084, ''),
-('185c1e31f37c0197d29066dfabf13b5a', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', 1650425608, ''),
-('186a6616b05b6a880a935db0884f72da', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88 Safari/537.36', 1650386658, ''),
-('66eaccef2fcecbb592abceb83e6907b4', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88 Safari/537.36', 1650382084, ''),
-('98d7d21885fe8352cec625cf45bf08bd', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88 Safari/537.36', 1650382084, ''),
-('c219b61231f9850e3e0666f48c80c0fa', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', 1650483425, 'a:8:{s:9:\"user_data\";s:0:\"\";s:4:\"nome\";s:5:\"Janei\";s:8:\"url_logo\";s:80:\"http://127.0.0.1/wallet/app/assets/uploads/9edd745cd009a067d0e0b4a50d0e11d7.jpeg\";s:7:\"url_ass\";N;s:2:\"id\";s:1:\"1\";s:9:\"permissao\";s:1:\"3\";s:6:\"logado\";b:1;s:15:\"flash:old:error\";s:52:\"Você não tem permissão para visualizar dashboard.\";}'),
-('c602a1a81be6bb89c85b68be520e739d', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', 1650485225, 'a:8:{s:9:\"user_data\";s:0:\"\";s:4:\"nome\";s:5:\"Janei\";s:8:\"url_logo\";s:80:\"http://127.0.0.1/wallet/app/assets/uploads/9edd745cd009a067d0e0b4a50d0e11d7.jpeg\";s:7:\"url_ass\";N;s:2:\"id\";s:1:\"1\";s:9:\"permissao\";s:1:\"3\";s:6:\"logado\";b:1;s:15:\"flash:old:error\";s:52:\"Você não tem permissão para visualizar dashboard.\";}'),
-('f504b60e31a5eacb5d0aa4f40d3f8dad', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', 1650425564, ''),
-('f658b4fa542fdc6b8d41cfbf4e33b9a8', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88 Safari/537.36', 1650382084, '');
+('d7f87cf83317f3cae6088a9411806b96', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', 1650667024, '');
 
 -- --------------------------------------------------------
 
@@ -222,7 +238,106 @@ INSERT INTO `logs` (`idLogs`, `usuario`, `tarefa`, `data`, `hora`, `ip`) VALUES
 (91, 'Janei', 'Efetuou login no sistema', '2022-04-20', '21:36:41', '127.0.0.1'),
 (92, 'Janei', 'Efetuou logout no sistema', '2022-04-20', '21:37:05', '127.0.0.1'),
 (93, 'Janei', 'Efetuou login no sistema', '2022-04-20', '21:37:07', '127.0.0.1'),
-(94, 'Janei', 'Efetuou login no sistema', '2022-04-20', '22:07:07', '127.0.0.1');
+(94, 'Janei', 'Efetuou login no sistema', '2022-04-20', '22:07:07', '127.0.0.1'),
+(95, 'Janei', 'Efetuou login no sistema', '2022-04-21', '17:06:06', '127.0.0.1'),
+(96, 'Janei', 'Efetuou logout no sistema', '2022-04-21', '17:06:11', '127.0.0.1'),
+(97, 'Janei', 'Efetuou login no sistema', '2022-04-21', '19:49:03', '127.0.0.1'),
+(98, 'Janei', 'Efetuou login no sistema', '2022-04-21', '20:02:25', '127.0.0.1'),
+(99, 'Janei', 'Efetuou logout no sistema', '2022-04-21', '20:02:28', '127.0.0.1'),
+(100, 'Janei', 'Efetuou login no sistema', '2022-04-21', '20:11:49', '127.0.0.1'),
+(101, 'Janei', 'Efetuou login no sistema', '2022-04-21', '20:19:22', '127.0.0.1'),
+(102, 'Janei', 'Efetuou logout no sistema', '2022-04-21', '20:42:21', '127.0.0.1'),
+(103, 'Janei', 'Efetuou login no sistema', '2022-04-21', '20:42:23', '127.0.0.1'),
+(104, 'Janei', 'Efetuou logout no sistema', '2022-04-21', '20:42:44', '127.0.0.1'),
+(105, 'Janei', 'Efetuou login no sistema', '2022-04-21', '20:42:46', '127.0.0.1'),
+(106, 'Janei', 'Efetuou logout no sistema', '2022-04-21', '20:43:19', '127.0.0.1'),
+(107, 'Janei', 'Efetuou login no sistema', '2022-04-21', '20:43:21', '127.0.0.1'),
+(108, 'Janei', 'Efetuou login no sistema', '2022-04-21', '21:18:30', '127.0.0.1'),
+(109, 'Janei', 'Efetuou login no sistema', '2022-04-21', '21:20:51', '127.0.0.1'),
+(110, 'Janei', 'Efetuou login no sistema', '2022-04-21', '21:24:02', '127.0.0.1'),
+(111, 'Janei', 'Efetuou login no sistema', '2022-04-21', '21:28:46', '127.0.0.1'),
+(112, 'Janei', 'Efetuou login no sistema', '2022-04-22', '13:56:42', '127.0.0.1'),
+(113, 'Janei', 'Efetuou logout no sistema', '2022-04-22', '14:29:48', '127.0.0.1'),
+(114, 'Janei', 'Efetuou login no sistema', '2022-04-22', '14:29:50', '127.0.0.1'),
+(115, 'Janei', 'Efetuou login no sistema', '2022-04-22', '16:23:05', '127.0.0.1'),
+(116, 'Janei', 'Efetuou logout no sistema', '2022-04-22', '16:37:53', '127.0.0.1'),
+(117, 'Janei', 'Efetuou login no sistema', '2022-04-22', '16:38:00', '127.0.0.1'),
+(118, 'Janei', 'Efetuou logout no sistema', '2022-04-22', '16:40:51', '127.0.0.1'),
+(119, 'Janei', 'Efetuou login no sistema', '2022-04-22', '16:40:54', '127.0.0.1'),
+(120, 'Janei', 'Efetuou logout no sistema', '2022-04-22', '16:55:39', '127.0.0.1'),
+(121, 'Janei', 'Efetuou login no sistema', '2022-04-22', '16:55:42', '127.0.0.1'),
+(122, 'Janei', 'Efetuou logout no sistema', '2022-04-22', '16:56:01', '127.0.0.1'),
+(123, 'Janei', 'Efetuou login no sistema', '2022-04-22', '16:56:04', '127.0.0.1'),
+(124, 'Janei', 'Efetuou login no sistema', '2022-04-22', '18:11:30', '127.0.0.1'),
+(125, 'Janei', 'Efetuou logout no sistema', '2022-04-22', '18:15:45', '127.0.0.1'),
+(126, 'Janei', 'Efetuou login no sistema', '2022-04-22', '18:15:49', '127.0.0.1'),
+(127, 'Janei', 'Efetuou logout no sistema', '2022-04-22', '18:18:38', '127.0.0.1'),
+(128, 'Janei', 'Efetuou login no sistema', '2022-04-22', '18:18:41', '127.0.0.1'),
+(129, 'Janei', 'Efetuou logout no sistema', '2022-04-22', '18:45:20', '127.0.0.1'),
+(130, 'Janei', 'Efetuou login no sistema', '2022-04-22', '18:45:23', '127.0.0.1'),
+(131, 'Janei', 'Efetuou login no sistema', '2022-04-22', '18:46:26', '127.0.0.1'),
+(132, 'Janei', 'Efetuou logout no sistema', '2022-04-22', '18:46:40', '127.0.0.1'),
+(133, 'Janei', 'Efetuou login no sistema', '2022-04-22', '18:46:43', '127.0.0.1'),
+(134, 'Janei', 'Efetuou login no sistema', '2022-04-22', '18:46:52', '127.0.0.1'),
+(135, 'Janei', 'Efetuou logout no sistema', '2022-04-22', '18:48:00', '127.0.0.1'),
+(136, 'Janei', 'Efetuou login no sistema', '2022-04-22', '18:48:03', '127.0.0.1'),
+(137, 'Janei', 'Efetuou login no sistema', '2022-04-22', '20:49:00', '127.0.0.1'),
+(138, 'Janei', 'Efetuou logout no sistema', '2022-04-22', '20:59:50', '127.0.0.1'),
+(139, 'Janei', 'Efetuou login no sistema', '2022-04-22', '20:59:53', '127.0.0.1'),
+(140, 'Janei', 'Efetuou logout no sistema', '2022-04-22', '21:02:36', '127.0.0.1'),
+(141, 'Janei', 'Efetuou login no sistema', '2022-04-22', '21:02:39', '127.0.0.1'),
+(142, 'Janei', 'Efetuou logout no sistema', '2022-04-22', '21:03:45', '127.0.0.1'),
+(143, 'Janei', 'Efetuou login no sistema', '2022-04-22', '21:04:16', '127.0.0.1'),
+(144, 'Janei', 'Efetuou logout no sistema', '2022-04-22', '21:34:45', '127.0.0.1'),
+(145, 'Janei', 'Efetuou login no sistema', '2022-04-22', '21:34:47', '127.0.0.1'),
+(146, 'Janei', 'Efetuou logout no sistema', '2022-04-22', '21:42:16', '127.0.0.1'),
+(147, 'Janei', 'Efetuou login no sistema', '2022-04-22', '21:42:18', '127.0.0.1'),
+(148, 'Janei', 'Efetuou logout no sistema', '2022-04-22', '21:49:28', '127.0.0.1'),
+(149, 'Janei', 'Efetuou login no sistema', '2022-04-22', '21:49:30', '127.0.0.1'),
+(150, 'Janei', 'Efetuou logout no sistema', '2022-04-22', '21:53:35', '127.0.0.1'),
+(151, 'Janei', 'Efetuou login no sistema', '2022-04-22', '21:53:37', '127.0.0.1'),
+(152, 'Janei', 'Efetuou logout no sistema', '2022-04-22', '22:11:07', '127.0.0.1'),
+(153, 'Janei', 'Efetuou login no sistema', '2022-04-22', '22:11:10', '127.0.0.1'),
+(154, 'Janei', 'Efetuou logout no sistema', '2022-04-22', '22:19:16', '127.0.0.1'),
+(155, 'Janei', 'Efetuou login no sistema', '2022-04-22', '22:19:18', '127.0.0.1'),
+(156, 'Janei', 'Efetuou login no sistema', '2022-04-22', '22:21:41', '127.0.0.1'),
+(157, 'Janei', 'Efetuou logout no sistema', '2022-04-22', '22:28:45', '127.0.0.1'),
+(158, 'Janei', 'Efetuou login no sistema', '2022-04-22', '22:28:48', '127.0.0.1'),
+(159, 'Janei', 'Efetuou logout no sistema', '2022-04-22', '22:35:33', '127.0.0.1'),
+(160, 'Janei', 'Efetuou login no sistema', '2022-04-22', '22:35:35', '127.0.0.1'),
+(161, 'Janei', 'Efetuou login no sistema', '2022-04-22', '22:42:09', '127.0.0.1'),
+(162, 'Janei', 'Efetuou logout no sistema', '2022-04-22', '22:42:20', '127.0.0.1'),
+(163, 'Janei', 'Efetuou login no sistema', '2022-04-22', '22:42:24', '127.0.0.1'),
+(164, 'Janei', 'Efetuou logout no sistema', '2022-04-22', '23:01:56', '127.0.0.1'),
+(165, 'Janei', 'Efetuou login no sistema', '2022-04-22', '23:02:00', '127.0.0.1'),
+(166, 'Janei', 'Efetuou login no sistema', '2022-04-22', '23:26:00', '127.0.0.1'),
+(167, 'Janei', 'Efetuou logout no sistema', '2022-04-22', '23:26:09', '127.0.0.1'),
+(168, 'Janei', 'Efetuou login no sistema', '2022-04-22', '23:26:11', '127.0.0.1'),
+(169, 'Janei', 'Efetuou logout no sistema', '2022-04-22', '23:26:24', '127.0.0.1'),
+(170, 'Janei', 'Efetuou login no sistema', '2022-04-22', '23:26:31', '127.0.0.1'),
+(171, 'Janei', 'Efetuou login no sistema', '2022-04-22', '23:30:38', '127.0.0.1'),
+(172, 'Janei', 'Efetuou login no sistema', '2022-04-22', '23:31:14', '127.0.0.1'),
+(173, 'Janei', 'Efetuou login no sistema', '2022-04-22', '23:33:46', '127.0.0.1'),
+(174, 'Janei', 'Efetuou logout no sistema', '2022-04-22', '23:35:20', '127.0.0.1'),
+(175, 'Janei', 'Efetuou login no sistema', '2022-04-22', '23:35:23', '127.0.0.1'),
+(176, 'Janei', 'Efetuou logout no sistema', '2022-04-22', '23:35:34', '127.0.0.1'),
+(177, 'Janei', 'Efetuou login no sistema', '2022-04-22', '23:36:43', '127.0.0.1'),
+(178, 'Janei', 'Efetuou logout no sistema', '2022-04-22', '23:36:48', '127.0.0.1'),
+(179, 'Janei', 'Efetuou login no sistema', '2022-04-22', '23:37:24', '127.0.0.1'),
+(180, 'Janei', 'Efetuou logout no sistema', '2022-04-22', '23:43:50', '127.0.0.1'),
+(181, 'Janei', 'Efetuou login no sistema', '2022-04-22', '23:44:20', '127.0.0.1'),
+(182, 'Janei', 'Efetuou logout no sistema', '2022-04-22', '23:44:28', '127.0.0.1'),
+(183, 'Janei', 'Efetuou login no sistema', '2022-04-22', '23:44:32', '127.0.0.1'),
+(184, 'Janei', 'Efetuou logout no sistema', '2022-04-22', '23:44:36', '127.0.0.1'),
+(185, 'Janei', 'Efetuou login no sistema', '2022-04-22', '23:44:39', '127.0.0.1'),
+(186, 'Janei', 'Efetuou logout no sistema', '2022-04-22', '23:44:53', '127.0.0.1'),
+(187, 'Janei', 'Efetuou login no sistema', '2022-04-22', '23:44:55', '127.0.0.1'),
+(188, 'Janei', 'Efetuou logout no sistema', '2022-04-22', '23:45:06', '127.0.0.1'),
+(189, 'Janei', 'Efetuou login no sistema', '2022-04-22', '23:45:18', '127.0.0.1'),
+(190, 'Janei', 'Efetuou logout no sistema', '2022-04-22', '23:56:06', '127.0.0.1'),
+(191, 'Janei', 'Efetuou login no sistema', '2022-04-22', '23:56:09', '127.0.0.1'),
+(192, 'Janei', 'Efetuou login no sistema', '2022-04-23', '00:36:25', '127.0.0.1'),
+(193, 'Janei', 'Efetuou logout no sistema', '2022-04-23', '00:37:04', '127.0.0.1');
 
 -- --------------------------------------------------------
 
@@ -258,6 +373,7 @@ INSERT INTO `permissoes` (`idPermissao`, `userinsert`, `userupdate`, `dateinsert
 DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE `usuarios` (
   `idUsuarios` int(11) NOT NULL,
+  `username` varchar(30) NOT NULL,
   `nome` varchar(80) NOT NULL,
   `sobrenome` varchar(20) NOT NULL,
   `cpf` varchar(20) NOT NULL,
@@ -319,12 +435,19 @@ CREATE TABLE `usuarios` (
 -- Extraindo dados da tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`idUsuarios`, `nome`, `sobrenome`, `cpf`, `email`, `senha`, `telefone`, `situacao`, `url_logo`, `permissoes_id`, `id_emitente`, `codigo`, `terms`, `controle`, `endereco`, `endnumero`, `endcomplemento`, `bairro`, `cidade`, `estado`, `cep`, `celular`, `refban`, `data`, `lktipo`, `lkvendedor`, `obs`, `web`, `numcartao`, `validade`, `nomeimp`, `lkcartao`, `codseg`, `cgc`, `limitecred`, `atendbloq`, `contato`, `insc`, `atividade`, `fax`, `tagfisica`, `refcom`, `identidade`, `nascimento`, `filiacao`, `profissao`, `rettrib`, `cgi`, `lkclim`, `bloqvendacr`, `lkuserinc`, `envio`, `userinsert`, `userupdate`, `dateinsert`, `dateupdate`) VALUES
-(1, 'Janei', 'Araujo', '', 'jaraujo.php@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', '21968710758', 1, 'http://127.0.0.1/wallet/app/assets/uploads/9edd745cd009a067d0e0b4a50d0e11d7.jpeg', 3, 0, '4444', 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 3, '2022-04-19 13:18:00', '2022-04-19 13:18:00');
+INSERT INTO `usuarios` (`idUsuarios`, `username`, `nome`, `sobrenome`, `cpf`, `email`, `senha`, `telefone`, `situacao`, `url_logo`, `permissoes_id`, `id_emitente`, `codigo`, `terms`, `controle`, `endereco`, `endnumero`, `endcomplemento`, `bairro`, `cidade`, `estado`, `cep`, `celular`, `refban`, `data`, `lktipo`, `lkvendedor`, `obs`, `web`, `numcartao`, `validade`, `nomeimp`, `lkcartao`, `codseg`, `cgc`, `limitecred`, `atendbloq`, `contato`, `insc`, `atividade`, `fax`, `tagfisica`, `refcom`, `identidade`, `nascimento`, `filiacao`, `profissao`, `rettrib`, `cgi`, `lkclim`, `bloqvendacr`, `lkuserinc`, `envio`, `userinsert`, `userupdate`, `dateinsert`, `dateupdate`) VALUES
+(1, '', 'Janei', 'Araujo', '', 'jaraujo.php@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', '21968710758', 1, 'http://127.0.0.1/wallet/app/assets/uploads/9edd745cd009a067d0e0b4a50d0e11d7.jpeg', 3, 0, '4444', 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 3, '2022-04-19 13:18:00', '2022-04-19 13:18:00');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `bkp_ci_sessions`
+--
+ALTER TABLE `bkp_ci_sessions`
+  ADD PRIMARY KEY (`session_id`),
+  ADD KEY `last_activity_idx` (`last_activity`);
 
 --
 -- Indexes for table `bkp_usuarios`
@@ -358,6 +481,12 @@ ALTER TABLE `permissoes`
   ADD PRIMARY KEY (`idPermissao`);
 
 --
+-- Indexes for table `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`idUsuarios`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -375,12 +504,17 @@ ALTER TABLE `emitente`
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `idLogs` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
+  MODIFY `idLogs` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=194;
 --
 -- AUTO_INCREMENT for table `permissoes`
 --
 ALTER TABLE `permissoes`
   MODIFY `idPermissao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `idUsuarios` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
