@@ -45,7 +45,7 @@
                 $hora_login_db = $this->session->userdata('hora_login');
                 $date_login_db = $this->session->userdata('date_login');
                 $end_session = strtotime('+30 minute', strtotime($date_login_db));
-                $dia_hora_atual = strtotime(date("d-m-Y H:i:s"));
+                $dia_hora_atual = strtotime(date("Y-m-d H:i:s"));
                 #Achamos a diferença entre as datas.
                 $diferenca = $end_session - $dia_hora_atual;
                 #Fazemos a contagem.
@@ -56,7 +56,7 @@
                 $minuto = intval($marcador / 60);
                 $segundos = $marcador % 60;
                 // $minutes = $minutes < 10 ? "0" + $minutes : $minutes;
-                $segundos = $segundos < 10 ? "0" + $segundos : $segundos;
+                //$segundos = $segundos < 10 ? "0" + $segundos : $segundos;
                 ?>
                 <div class="pull-right">
 
