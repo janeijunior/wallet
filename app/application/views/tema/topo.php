@@ -163,12 +163,12 @@
                             <i class="fa fa-caret-down"></i>
                         </button>
                         <ul class="dropdown-menu pull-right" role="menu">
-                            <li><a href="<?php echo base_url(); ?>index.php/sistema/minhaConta"><i class="glyphicon glyphicon-user"></i> My Profile</a></li>
+                            <li><a href="<?php echo base_url(); ?>index.php/sistema/minhaConta"><i class="glyphicon glyphicon-user"></i> Perfil</a></li>
                             <li><a href="#"><i class="glyphicon glyphicon-star"></i> Activity Log</a></li>
                             <li><a href="#"><i class="glyphicon glyphicon-cog"></i> Account Settings</a></li>
-                            <li><a href="#"><i class="glyphicon glyphicon-question-sign"></i> Help</a></li>
+                            <li><a href="#"><i class="glyphicon glyphicon-question-sign"></i> Ajuda</a></li>
                             <li class="divider"></li>
-                            <li><a href="<?php echo base_url(); ?>index.php/sistema/sair"><i class="glyphicon glyphicon-log-out"></i>Sign Out</a></li>
+                            <li><a href="<?php echo base_url(); ?>index.php/sistema/sair"><i class="glyphicon glyphicon-log-out"></i>Sair</a></li>
                         </ul>
                     </div><!-- btn-group -->
 
@@ -208,16 +208,50 @@
                     </div>
                 </div><!-- media -->
 
-                <h5 class="leftpanel-title">Navigation</h5>
+                <h5 class="leftpanel-title">MENU</h5>
                 <ul class="nav nav-pills nav-stacked">
 
                     <li class="<?php if (isset($menuPainel)) {
                                     echo 'active';
-                                }; ?>"><a href="<?php echo base_url() ?>index.php/sistema/"><i class="fa fa-fw fa-home"></i> <span> Dashboard</span></a></li>
+                                }; ?>"><a href="<?php echo base_url() ?>index.php/sistema/"><i class="fa fa-fw fa-home"></i> <span> Painel Principal</span></a></li>
 
 
-                    <li><a href="messages.html"><span class="pull-right badge">5</span><i class="fa fa-envelope-o"></i> <span>Messages</span></a></li>
+                    <li class="<?php if (isset($minhaConta)) {
+                                    echo 'active';
+                                }; ?>"><a href="<?php echo base_url() ?>index.php/sistema/minhaconta"><i class="fa fa-fw fa-user"></i> <span> Perfil</span></a></li>
 
+                    <li class="<?php if (isset($menuDeposito)) {
+                                    echo 'active';
+                                }; ?>"><a href="<?php echo base_url() ?>index.php/sistema/"><i class="fa fa-fw fa-arrow-up"></i> <span> Depósitos</span></a></li>
+
+                    <li class="<?php if (isset($menuSaques)) {
+                                    echo 'active';
+                                }; ?>"><a href="<?php echo base_url() ?>index.php/sistema/"><i class="fa fa-fw fa-arrow-down"></i> <span> Saques</span></a></li>
+
+
+                    <li class="<?php if (isset($menuTransferir)) {
+                                    echo 'active';
+                                }; ?>"><a href="<?php echo base_url() ?>index.php/sistema/"><i class="fa fa-fw fa-exchange"></i> <span> Transferir</span></a></li>
+
+                    <li class="<?php if (isset($menuCarteira)) {
+                                    echo 'active';
+                                }; ?>"><a href="<?php echo base_url() ?>index.php/sistema/"><i class="fa fa-fw fa-money"></i> <span> Carteira</span></a></li>
+
+                    <li class="<?php if (isset($menuHistorico)) {
+                                    echo 'active';
+                                }; ?>"><a href="<?php echo base_url() ?>index.php/sistema/"><i class="fa fa-fw fa-history"></i> <span> Histórico</span></a></li>
+
+                    <li class="<?php if (isset($menuCashback)) {
+                                    echo 'active';
+                                }; ?>"><a href="<?php echo base_url() ?>index.php/sistema/"><i class="fa fa-fw fa-star"></i> <span> Cashback / Rewards</span></a></li>
+
+                    <li class="<?php if (isset($menuAjuda)) {
+                                    echo 'active';
+                                }; ?>"><a href="<?php echo base_url() ?>index.php/sistema/"><i class="fa fa-fw fa-question-circle"></i> <span> Ajuda</span></a></li>
+
+
+
+                    <li><a href="<?php echo base_url(); ?>index.php/sistema/sair"><i class="fa fa-fw fa-sign-out"></i> <span> Sair</span></a></li>
 
 
                 </ul>
@@ -235,10 +269,10 @@
                                     </a></li>
 
                                 <li class="active"><a href="<?php echo base_url() ?>" title="Dashboard" class="tip-bottom"><i class="icon-home"></i></a> <?php if ($this->uri->segment(1) != null) {
-                                                                                                                                                        ?><a href="<?php echo base_url() . 'index.php/' . $this->uri->segment(1) ?>" class="tip-bottom" title="<?php echo ucfirst($this->uri->segment(1)); ?>"><?php echo ucfirst($this->uri->segment(1)); ?></a> <?php if ($this->uri->segment(2) != null) {
-                                                                                                                                                                                                                                        ?>/ <a href="<?php echo base_url() . 'index.php/' . $this->uri->segment(1) . '>' . $this->uri->segment(2) . '/' . $this->uri->segment(3) ?>" class="current tip-bottom" title="<?php echo ucfirst($this->uri->segment(2)); ?>"><?php echo ucfirst($this->uri->segment(2));
-                                                                                                                                                                                                                                                        } ?></a> <?php
-                                                                                                                                                        } ?></li>
+                                                                                                                                                            ?><a href="<?php echo base_url() . 'index.php/' . $this->uri->segment(1) ?>" class="tip-bottom" title="<?php echo ucfirst($this->uri->segment(1)); ?>"><?php echo ucfirst($this->uri->segment(1)); ?></a> <?php if ($this->uri->segment(2) != null) {
+                                                                                                                                                                                                                                                                                                                                                                        ?>/ <a href="<?php echo base_url() . 'index.php/' . $this->uri->segment(1) . '>' . $this->uri->segment(2) . '/' . $this->uri->segment(3) ?>" class="current tip-bottom" title="<?php echo ucfirst($this->uri->segment(2)); ?>"><?php echo ucfirst($this->uri->segment(2));
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    } ?></a> <?php
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        } ?></li>
 
                             </ol>
                         </div>
