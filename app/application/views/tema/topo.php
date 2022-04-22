@@ -40,15 +40,35 @@
             </div><!-- header-left -->
 
             <div class="header-right">
-
+                <?php
+                #Informamos as datas e horários de início e fim no formato Y-m-d H:i:s.
+                $hora_login_db = $this->session->userdata('hora_login');
+                $date_login_db = $this->session->userdata('date_login');
+                $end_session = strtotime('+30 minute', strtotime($date_login_db));
+                $dia_hora_atual = strtotime(date("d-m-Y H:i:s"));
+                #Achamos a diferença entre as datas.
+                $diferenca = $end_session - $dia_hora_atual;
+                #Fazemos a contagem.
+                $dias = intval($diferenca / 86400);
+                $marcador = $diferenca % 86400;
+                $hora = intval($marcador / 3600);
+                $marcador = $marcador % 3600;
+                $minuto = intval($marcador / 60);
+                $segundos = $marcador % 60;
+                // $minutes = $minutes < 10 ? "0" + $minutes : $minutes;
+                $segundos = $segundos < 10 ? "0" + $segundos : $segundos;
+                ?>
                 <div class="pull-right">
-
-
 
                     <form class="form form-search" action="search-results.html">
                         <input type="search" class="form-control" placeholder="Search" />
                     </form>
-
+                    <div class="btn-group btn-group-list btn-group-messages">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-eye"></i>
+                            <span class="badge"><?php echo "$minuto:$segundos"; ?></span>
+                        </button>
+                    </div><!-- btn-group -->
                     <div class="btn-group btn-group-list btn-group-notification">
                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                             <i class="fa fa-bell-o"></i>
@@ -272,7 +292,7 @@
                                                                                                                                                             ?><a href="<?php echo base_url() . 'index.php/' . $this->uri->segment(1) ?>" class="tip-bottom" title="<?php echo ucfirst($this->uri->segment(1)); ?>"><?php echo ucfirst($this->uri->segment(1)); ?></a> <?php if ($this->uri->segment(2) != null) {
                                                                                                                                                                                                                                                                                                                                                                         ?>/ <a href="<?php echo base_url() . 'index.php/' . $this->uri->segment(1) . '>' . $this->uri->segment(2) . '/' . $this->uri->segment(3) ?>" class="current tip-bottom" title="<?php echo ucfirst($this->uri->segment(2)); ?>"><?php echo ucfirst($this->uri->segment(2));
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     } ?></a> <?php
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        } ?></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            } ?></li>
 
                             </ol>
                         </div>
