@@ -188,7 +188,7 @@ class Sistema extends CI_Controller
             $this->db->limit(1);
             $usuario = $this->db->get('usuarios')->row();
             if (count($usuario) > 0) {
-                $dados = array('nome' => $usuario->nome, 'date_login' => date('Y-m-d H:i:s'),  'hora_login' => date('H:i:s'), 'url_logo' => $usuario->url_logo, 'url_ass' => $usuario->url_ass,  'id' => $usuario->idUsuarios, 'permissao' => $usuario->permissoes_id, 'logado' => TRUE);
+                $dados = array('nome' => $usuario->nome,  'username' => $usuario->username, 'date_login' => date('Y-m-d H:i:s'),  'hora_login' => date('H:i:s'), 'url_logo' => $usuario->url_logo, 'url_ass' => $usuario->url_ass,  'id' => $usuario->idUsuarios, 'permissao' => $usuario->permissoes_id, 'logado' => TRUE);
 
                 $this->session->set_userdata($dados);
                 log_info('Efetuou login no sistema');
