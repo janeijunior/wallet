@@ -198,7 +198,7 @@
                                     </a>
                                 </h4>
                             </div>
-
+                            
                         </div><!-- panel -->
 
                         <div class="panel panel-default">
@@ -342,6 +342,120 @@
 
 </div><!-- contentpanel -->
 
+
+<!-- modal-alterarDados-->
+<div class="modal fade" id="modal-alterarDados" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <form action="<?php echo base_url(); ?>index.php/sistema/editarUsuario" id="formLogo" enctype="multipart/form-data" method="post" class="form-horizontal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><?php echo $this->config->item('app_name'); ?> - Alterar Dados Dados pessoais</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+
+                    <!-- general form elements -->
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Informações pessoais</h3>
+                        </div>
+                        <!-- /.box-header -->
+                        <!-- form start -->
+                        <div class="box-body">
+
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa  fa-user"></i></span>
+                                <input type="text" name="nome" id="disabledInput" class="form-control" placeholder="" value="<?php echo $usuario->nome; ?>">
+                                <input id="nome" type="hidden" name="id" value="<?php echo $usuario->idUsuarios; ?>" />
+                            </div>
+                            <br>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa  fa-user"></i></span>
+                                <input type="text" name="nome" id="disabledInput" class="form-control" placeholder="" value="<?php echo $usuario->username; ?>">
+                                <input id="nome" type="hidden" name="id" value="<?php echo $usuario->idUsuarios; ?>" />
+                            </div>
+                            <br>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                <input type="text" name="rg" class="form-control" placeholder="" value="<?php echo  $usuario->identidade; ?>">
+                            </div>
+                            <br>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa  fa-user"></i></span>
+                                <input type="text" name="cpf" class="form-control cpf-mask" id="cpf" placeholder="Ex.: 000.000.000-00" value="<?php echo  $usuario->cpf; ?>">
+                            </div>
+                            <br>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa  fa-fax"></i></span>
+                                <input type="text" name="telefone" id="telefone" class="form-control phone-ddd-mask" placeholder="Ex.: (00) 0000-0000" value="<?php echo  $usuario->fone1; ?>">
+                            </div>
+                            <br>
+
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa  fa-envelope"></i></span>
+                                <input type="text" name="email" id="telefone" class="form-control phone-ddd-mask" placeholder="Ex.: (00) 0000-0000" value="<?php echo  $usuario->email; ?>">
+                            </div>
+                            <br>
+                            <div class="input-group ">
+                                <span class="input-group-addon"><i class="fa  fa-user"></i></span>
+                                <select class="form-control" name="id_pessoa_sexo" id="paisid_id select-basic">
+                                    <?php foreach ($pessoa_sexo as $pessoa_sexo) {
+                                        if ($pessoa_sexo->id == $result->id_pessoa_sexo) {
+                                            $selected = 'selected';
+                                        } else {
+                                            $selected = '';
+                                        }
+                                        echo '<option value="' . $pessoa_sexo->id . '"' . $selected . '>' . $pessoa_sexo->descricao . '</option>';
+                                    } ?>
+                                </select>
+                            </div>
+                            <br>
+
+                            <div class="input-group ">
+                                <span class="input-group-addon"><i class="fa  fa-user"></i></span>
+                                <select class="form-control" name="id_pessoa_escolaridade" id="paisid_id select-basic">
+                                    <?php foreach ($pessoa_escolaridade as $pessoa_escolaridade) {
+                                        if ($pessoa_escolaridade->id == $result->id_pessoa_escolaridade) {
+                                            $selected = 'selected';
+                                        } else {
+                                            $selected = '';
+                                        }
+                                        echo '<option value="' . $pessoa_escolaridade->id . '"' . $selected . '>' . $pessoa_escolaridade->descricao . '</option>';
+                                    } ?>
+                                </select>
+                            </div>
+                            <br>
+                            <div class="input-group ">
+                                <span class="input-group-addon"><i class="fa  fa-user"></i></span>
+                                <select class="form-control" name="id_pessoa_estadocivil" id="paisid_id select-basic">
+                                    <?php foreach ($pessoa_estadocivil as $pessoa_estadocivil) {
+                                        if ($pessoa_estadocivil->id == $result->id_pessoa_estadocivil) {
+                                            $selected = 'selected';
+                                        } else {
+                                            $selected = '';
+                                        }
+                                        echo '<option value="' . $pessoa_estadocivil->id . '"' . $selected . '>' . $pessoa_estadocivil->descricao . '</option>';
+                                    } ?>
+                                </select>
+                            </div>
+                            <br>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+                    <button class="btn btn-success">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
 
 <script src="<?php echo base_url() ?>js/jquery.validate.js"></script>
 <script type="text/javascript">
