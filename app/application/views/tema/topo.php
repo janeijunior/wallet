@@ -213,7 +213,7 @@
                                                         } ?> <?php echo $url_img; ?><?php echo $no_img; ?>" class="user-image" alt="User Image">
                     </a>
                     <div class="media-body">
-                        <h4 class="media-heading"><?php echo $this->session->userdata('nome'); ?></h4>
+                        <h4 class="media-heading"><?php echo $this->session->userdata('username'); ?></h4>
                         <!--<small class="text-muted"><?php echo $this->session->userdata('permissao'); ?></small>-->
 
 
