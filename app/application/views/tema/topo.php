@@ -231,14 +231,13 @@
                 <h5 class="leftpanel-title">MENU</h5>
                 <ul class="nav nav-pills nav-stacked">
 
-                    <li class="<?php if (isset($menuPainel)) {
+                    <li class="<?php if (isset($menuDashboard)) {
                                     echo 'active';
-                                }; ?>"><a href="<?php echo base_url() ?>index.php/sistema/"><i class="fa fa-fw fa-home"></i> <span> Painel Principal</span></a></li>
+                                }; ?>"><a href="<?php echo base_url() ?>index.php/dashboard"><i class="fa fa-fw fa-home"></i> <span> Painel Principal</span></a></li>
 
-
-                    <li class="<?php if (isset($minhaConta)) {
+                    <li class="<?php if (isset($menuPerfil)) {
                                     echo 'active';
-                                }; ?>"><a href="<?php echo base_url() ?>index.php/sistema/minhaconta"><i class="fa fa-fw fa-user"></i> <span> Perfil</span></a></li>
+                                }; ?>"><a href="<?php echo base_url() ?>index.php/perfil"><i class="fa fa-fw fa-user"></i> <span> Perfil</span></a></li>
 
                     <li class="<?php if (isset($menuDeposito)) {
                                     echo 'active';
