@@ -237,7 +237,7 @@
                                                         <div class="row display-block"><button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd" tabindex="0" type="button" aria-label="Toggle password visibility"><span class="MuiIconButton-label"><i class="zmdi zmdi-delete jr-fs-lg"></i></span><span class="MuiTouchRipple-root"></span></button></div>
                                                     </td>
                                                 </tr>
-                                               
+
                                                 <tr class="MuiTableRow-root">
                                                     <td class="MuiTableCell-root MuiTableCell-body no-wrap MuiTableCell-alignLeft"><?php echo $usuario->nome; ?></td>
                                                     <td class="MuiTableCell-root MuiTableCell-body no-wrap MuiTableCell-alignCenter"><?php echo $usuario->cpf; ?></td>
@@ -315,7 +315,7 @@
                                         <div class="box-body">
 
                                             <br>
-                                            <a href="#modal-alterarSenha" data-toggle="modal" role="button" class="btn btn-primary">Anti-Phishing</a>
+                                            <a href="#modal-antiPhishing" data-toggle="modal" role="button" class="btn btn-primary">Anti-Phishing</a>
 
                                         </div>
 
@@ -523,7 +523,7 @@
 
 <!-- modal-alterarSenha-->
 <div class="modal fade" id="modal-alterarSenha" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <form id="formSenha" action="<?php echo base_url();?>index.php/perfil/alterarSenha" method="post">
+    <form id="formSenha" action="<?php echo base_url(); ?>index.php/perfil/alterarSenha" method="post">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -544,17 +544,17 @@
 
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa  fa-unlock"></i></span>
-                                <input type="password" id="oldSenha" name="oldSenha"  class="form-control" placeholder="Senha Atual">
+                                <input type="password" id="oldSenha" name="oldSenha" class="form-control" placeholder="Senha Atual">
                             </div>
                             <br>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa  fa-unlock"></i></span>
-                                <input type="password" id="novaSenha" name="novaSenha"  class="form-control" placeholder="Nova Senha">
+                                <input type="password" id="novaSenha" name="novaSenha" class="form-control" placeholder="Nova Senha">
                             </div>
                             <br>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa  fa-unlock"></i></span>
-                                <input type="password" name="confirmarSenha"   class="form-control" placeholder="Repita Nova Senha">
+                                <input type="password" name="confirmarSenha" class="form-control" placeholder="Repita Nova Senha">
                             </div>
                         </div>
                     </div>
@@ -563,6 +563,96 @@
                 <div class="modal-footer">
                     <button class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
                     <button class="btn btn-success">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- modal-AntiPhishing-->
+<div class="modal fade" id="modal-antiPhishing" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><?php echo $this->config->item('app_name'); ?> - Anti-Phishing</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="box box-danger">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Anti-Phishing</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <!-- form start -->
+
+                    <div class="box-body">
+
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa  fa-unlock"></i></span>
+
+                            <input type="text" name="oldantiPhishing" id="disabledInput" class="form-control" placeholder="" value="<?php echo $usuario->antiPhishing; ?>">
+                            <input id="nome" type="hidden" name="oldantiPhishing" value="<?php echo $usuario->antiPhishing; ?>" />
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+                <a href="#modal-alterarantiPhishing" data-toggle="modal" role="button" class="btn btn-danges">Alterar</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- modal-alterarantiPhishing-->
+<div class="modal fade" id="modal-alterarantiPhishing" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <form id="formSenha" action="<?php echo base_url(); ?>index.php/perfil/alterarAntiphishing" method="post">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><?php echo $this->config->item('app_name'); ?> - Anti-Phishing</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="box box-danger">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Anti-Phishing</h3>
+                        </div>
+                        <!-- /.box-header -->
+                        <!-- form start -->
+
+                        <div class="box-body">
+
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa  fa-unlock"></i></span>
+
+                                <input type="text" name="oldantiPhishing" id="disabledInput" class="form-control" placeholder="" value="<?php echo $usuario->antiPhishing; ?>">
+                            <input id="nome" type="hidden" name="oldantiPhishing" value="<?php echo $usuario->antiPhishing; ?>" />
+                            </div>
+                            <br>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa  fa-unlock"></i></span>
+                                <input type="password" id="novaantiPhishing" name="novaantiPhishing" class="form-control" placeholder="Nova Anti-Phishing">
+                            </div>
+                            <br>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa  fa-unlock"></i></span>
+                                <input type="password" name="confirmarantiPhishing" class="form-control" placeholder="Repita Nova Anti-Phishing">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn" data-dismiss="modal" aria-hidden="true">Voltar</button>
+                    <button class="btn btn-success">Salvar</button>
+
                 </div>
             </div>
         </div>
