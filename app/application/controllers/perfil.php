@@ -108,7 +108,7 @@ class Perfil extends CI_Controller {
         }
 
         $this->data['usuario'] = $this->sistema_model->getById($this->session->userdata('id'));
-        $this->data['view'] = 'sistema/minhaConta';
+        $this->data['view'] = 'perfil/perfil';
         $this->load->view('tema/topo',  $this->data);
     }
 
@@ -137,7 +137,7 @@ class Perfil extends CI_Controller {
         if ($this->form_validation->run() == false) {
 
             $this->session->set_flashdata('error', 'Campos obrigatórios não foram preenchidos.');
-            redirect(base_url() . 'index.php/sistema/minhaConta');
+            redirect(base_url() . 'index.php/perfil');
         } else {
 
             $nome = $this->input->post('nome');
@@ -158,10 +158,10 @@ class Perfil extends CI_Controller {
             if ($retorno) {
 
                 $this->session->set_flashdata('success', 'As informações foram alteradas com sucesso.');
-                redirect(base_url() . 'index.php/sistema/minhaConta');
+                redirect(base_url() . 'index.php/perfil');
             } else {
                 $this->session->set_flashdata('error', 'Ocorreu um erro ao tentar alterar as informações.');
-                redirect(base_url() . 'index.php/sistema/minhaConta');
+                redirect(base_url() . 'index.php/perfil');
             }
         }
     }
@@ -176,7 +176,7 @@ class Perfil extends CI_Controller {
         $id = $this->input->post('id');
         if ($id == null || !is_numeric($id)) {
             $this->session->set_flashdata('error', 'Ocorreu um erro ao tentar alterar a Assinatura.');
-            redirect(base_url() . 'index.php/sistema/minhaConta');
+            redirect(base_url() . 'index.php/perfil');
         }
         $this->load->helper('file');
 
@@ -188,10 +188,10 @@ class Perfil extends CI_Controller {
         if ($retorno) {
 
             $this->session->set_flashdata('success', 'As informações foram alteradas com sucesso.');
-            redirect(base_url() . 'index.php/sistema/minhaConta');
+            redirect(base_url() . 'index.php/perfil');
         } else {
             $this->session->set_flashdata('error', 'Ocorreu um erro ao tentar alterar as informações.');
-            redirect(base_url() . 'index.php/sistema/minhaConta');
+            redirect(base_url() . 'index.php/perfil');
         }
     }
 
@@ -205,7 +205,7 @@ class Perfil extends CI_Controller {
         $id = $this->input->post('id');
         if ($id == null || !is_numeric($id)) {
             $this->session->set_flashdata('error', 'Ocorreu um erro ao tentar alterar a Assinatura.');
-            redirect(base_url() . 'index.php/sistema/minhaConta');
+            redirect(base_url() . 'index.php/perfil');
         }
         $this->load->helper('file');
 
@@ -217,10 +217,28 @@ class Perfil extends CI_Controller {
         if ($retorno) {
 
             $this->session->set_flashdata('success', 'As informações foram alteradas com sucesso.');
-            redirect(base_url() . 'index.php/sistema/minhaConta');
+            redirect(base_url() . 'index.php/perfil');
         } else {
             $this->session->set_flashdata('error', 'Ocorreu um erro ao tentar alterar as informações.');
-            redirect(base_url() . 'index.php/sistema/minhaConta');
+            redirect(base_url() . 'index.php/perfil');
+        }
+    }
+
+    public function alterarSenha()
+    {
+        if ((!$this->session->userdata('session_id')) || (!$this->session->userdata('logado'))) {
+            redirect('sistema/login');
+        }
+
+        $oldSenha = $this->input->post('oldSenha');
+        $senha = $this->input->post('novaSenha');
+        $result = $this->perfil_model->alterarSenha($senha, $oldSenha, $this->session->userdata('id'));
+        if ($result) {
+            $this->session->set_flashdata('success', 'Senha Alterada com sucesso!');
+            redirect(base_url() . 'index.php/perfil/perfil');
+        } else {
+            $this->session->set_flashdata('error', 'Ocorreu um erro ao tentar alterar a senha!');
+            redirect(base_url() . 'index.php/perfil/perfil');
         }
     }
 
