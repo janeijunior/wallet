@@ -198,7 +198,70 @@
                                     </a>
                                 </h4>
                             </div>
-                            
+                            <div id="collapseThree" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class="media flex-nowrap mt-3 mt-lg-4 mb-2 table-responsive-material bank-table">
+                                        <table class="MuiTable-root" style="width: unset;">
+                                            <thead class="MuiTableHead-root">
+                                                <tr class="MuiTableRow-root MuiTableRow-head">
+                                                    <th class="MuiTableCell-root MuiTableCell-head no-wrap MuiTableCell-alignCenter" scope="col"><span>Titular da conta</span></th>
+                                                    <th class="MuiTableCell-root MuiTableCell-head no-wrap MuiTableCell-alignCenter" scope="col"><span>CPF/CNPJ</span></th>
+                                                    <th class="MuiTableCell-root MuiTableCell-head no-wrap MuiTableCell-alignCenter" scope="col"><span>Banco</span></th>
+                                                    <th class="MuiTableCell-root MuiTableCell-head no-wrap MuiTableCell-alignCenter" scope="col"><span>Tipo de Conta</span></th>
+                                                    <th class="MuiTableCell-root MuiTableCell-head no-wrap MuiTableCell-alignCenter" scope="col"><span>Agência</span></th>
+                                                    <th class="MuiTableCell-root MuiTableCell-head no-wrap MuiTableCell-alignCenter" scope="col"><span>Conta</span></th>
+                                                    <th class="MuiTableCell-root MuiTableCell-head no-wrap MuiTableCell-alignCenter" scope="col"><span>Chave PIX</span></th>
+                                                    <th class="MuiTableCell-root MuiTableCell-head no-wrap MuiTableCell-alignCenter" scope="col"><span>Chave Tipo</span></th>
+                                                    <th class="MuiTableCell-root MuiTableCell-head no-wrap MuiTableCell-alignCenter" scope="col"><span>Validação</span></th>
+                                                    <th class="MuiTableCell-root MuiTableCell-head no-wrap MuiTableCell-alignCenter" scope="col"><span>Descrição</span></th>
+                                                    <th class="MuiTableCell-root MuiTableCell-head no-wrap MuiTableCell-alignCenter" scope="col"><i class="zmdi zmdi-wrench jr-fs-lg"></i></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="MuiTableBody-root">
+                                                <tr class="MuiTableRow-root">
+                                                    <td class="MuiTableCell-root MuiTableCell-body no-wrap MuiTableCell-alignLeft"><?php echo $usuario->nome; ?></td>
+                                                    <td class="MuiTableCell-root MuiTableCell-body no-wrap MuiTableCell-alignCenter"><?php echo $usuario->cpf; ?></td>
+                                                    <td class="MuiTableCell-root MuiTableCell-body no-wrap MuiTableCell-alignCenter">260 - Nu Pagamentos S.A.</td>
+                                                    <td class="MuiTableCell-root MuiTableCell-body no-wrap MuiTableCell-alignCenter"><span>Conta Corrente</span></td>
+                                                    <td class="MuiTableCell-root MuiTableCell-body no-wrap MuiTableCell-alignCenter">0001</td>
+                                                    <td class="MuiTableCell-root MuiTableCell-body no-wrap MuiTableCell-alignCenter">18308712-8</td>
+                                                    <td class="MuiTableCell-root MuiTableCell-body no-wrap MuiTableCell-alignCenter">89999999999</td>
+                                                    <td class="MuiTableCell-root MuiTableCell-body no-wrap MuiTableCell-alignCenter">CPF</td>
+                                                    <td class="MuiTableCell-root MuiTableCell-body no-wrap MuiTableCell-alignCenter">
+                                                        <div>
+                                                            <div data-testid="check-account-valid" class=""><i class="zmdi zmdi-check-circle check-success jr-fs-xl "></i></div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="MuiTableCell-root MuiTableCell-body no-wrap MuiTableCell-alignCenter">PIX CPF</td>
+                                                    <td class="MuiTableCell-root MuiTableCell-body no-wrap MuiTableCell-alignCenter">
+                                                        <div class="row display-block"><button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd" tabindex="0" type="button" aria-label="Toggle password visibility"><span class="MuiIconButton-label"><i class="zmdi zmdi-delete jr-fs-lg"></i></span><span class="MuiTouchRipple-root"></span></button></div>
+                                                    </td>
+                                                </tr>
+                                               
+                                                <tr class="MuiTableRow-root">
+                                                    <td class="MuiTableCell-root MuiTableCell-body no-wrap MuiTableCell-alignLeft"><?php echo $usuario->nome; ?></td>
+                                                    <td class="MuiTableCell-root MuiTableCell-body no-wrap MuiTableCell-alignCenter"><?php echo $usuario->cpf; ?></td>
+                                                    <td class="MuiTableCell-root MuiTableCell-body no-wrap MuiTableCell-alignCenter">341 - Itaú Unibanco S.A.</td>
+                                                    <td class="MuiTableCell-root MuiTableCell-body no-wrap MuiTableCell-alignCenter"><span>Conta Corrente</span></td>
+                                                    <td class="MuiTableCell-root MuiTableCell-body no-wrap MuiTableCell-alignCenter">8202</td>
+                                                    <td class="MuiTableCell-root MuiTableCell-body no-wrap MuiTableCell-alignCenter">41154-5</td>
+                                                    <td class="MuiTableCell-root MuiTableCell-body no-wrap MuiTableCell-alignCenter"></td>
+                                                    <td class="MuiTableCell-root MuiTableCell-body no-wrap MuiTableCell-alignCenter">N/A</td>
+                                                    <td class="MuiTableCell-root MuiTableCell-body no-wrap MuiTableCell-alignCenter">
+                                                        <div>
+                                                            <div data-testid="check-account-valid" class=""><i class="zmdi zmdi-check-circle check-success jr-fs-xl "></i></div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="MuiTableCell-root MuiTableCell-body no-wrap MuiTableCell-alignCenter">itau</td>
+                                                    <td class="MuiTableCell-root MuiTableCell-body no-wrap MuiTableCell-alignCenter">
+                                                        <div class="row display-block"><button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd" tabindex="0" type="button" aria-label="Toggle password visibility"><span class="MuiIconButton-label"><i class="zmdi zmdi-delete jr-fs-lg"></i></span><span class="MuiTouchRipple-root"></span></button></div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
                         </div><!-- panel -->
 
                         <div class="panel panel-default">
