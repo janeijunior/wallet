@@ -520,6 +520,55 @@
     </form>
 </div>
 
+
+<!-- modal-alterarSenha-->
+<div class="modal fade" id="modal-alterarSenha" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <form id="formSenha" action="<?php echo base_url();?>index.php/perfil/alterarSenha" method="post">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><?php echo $this->config->item('app_name'); ?> - Alterar Senha</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="box box-danger">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Alterar Senha</h3>
+                        </div>
+                        <!-- /.box-header -->
+                        <!-- form start -->
+
+                        <div class="box-body">
+
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa  fa-unlock"></i></span>
+                                <input type="password" id="oldSenha" name="oldSenha"  class="form-control" placeholder="Senha Atual">
+                            </div>
+                            <br>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa  fa-unlock"></i></span>
+                                <input type="password" id="novaSenha" name="novaSenha"  class="form-control" placeholder="Nova Senha">
+                            </div>
+                            <br>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa  fa-unlock"></i></span>
+                                <input type="password" name="confirmarSenha"   class="form-control" placeholder="Repita Nova Senha">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+                    <button class="btn btn-success">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
 <script src="<?php echo base_url() ?>js/jquery.validate.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
