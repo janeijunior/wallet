@@ -242,5 +242,22 @@ class Perfil extends CI_Controller {
         }
     }
 
+    public function alterarAntiphishing()
+    {
+        if ((!$this->session->userdata('session_id')) || (!$this->session->userdata('logado'))) {
+            redirect('sistema/login');
+        }
+
+        $oldSenha = $this->input->post('oldSenha');
+        $senha = $this->input->post('novaSenha');
+        $result = $this->perfil_model->antiPhishing($senha, $oldSenha, $this->session->userdata('id'));
+        if ($result) {
+            $this->session->set_flashdata('success', 'Anti Phishing Alterada com sucesso!');
+            redirect(base_url() . 'index.php/perfil/perfil');
+        } else {
+            $this->session->set_flashdata('error', 'Ocorreu um erro ao tentar alterar a Anti Phishing!');
+            redirect(base_url() . 'index.php/perfil/perfil');
+        }
+    }
 
 }
